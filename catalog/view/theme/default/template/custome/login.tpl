@@ -12,7 +12,6 @@
 	    <li><a data-toggle="tab" href="#step2">STEP 2</a></li>
 	    <li><a data-toggle="tab" href="#step3">STEP 3</a></li>
 	    <li><a data-toggle="tab" href="#step4">STEP 4</a></li>
-	    <li><a data-toggle="tab" href="#step5">STEP 5</a></li>
 	</ul>
 	<br><br><br>
 
@@ -22,7 +21,7 @@
 	<!-- begin step 1 -->
   <div class="tab-content">
     <div id="step1" class="tab-pane fade in active">
-      	<div class="step1-dt">
+      	<div class="step1-dt" id="step1-dt">
       		
 
 	      	<div id="note">
@@ -168,7 +167,7 @@
 	  		<form id="form-step1">
 	  			<input type="checkbox">
 	  			<span><b>I agree with this policy</b></span><br><br>
-	  			<button type="submit" class="btn btn-primary">Proceed to enter customer information</button>
+	  			<button type="submit" class="btn btn-primary" id="step1-dt-btn">Proceed to enter customer information</button>
 	  		</form>
 
       	</div>
@@ -179,7 +178,7 @@
 
     <!-- begin step 2 -->
     <div id="step2" class="tab-pane fade">
-      <div class="step2-dt">
+      <div class="step2-dt" id="step2-dt">
       		<h5><b>ENTER CUSTOMER INFORMATION</b></h5>
       		<br>
 
@@ -346,7 +345,7 @@
       		</table>
 
       		<form id="form-step2">
-	  			<button type="submit" class="btn btn-primary">Proceed to enter customer information</button>
+	  			<button type="submit" class="btn btn-primary" id="step2-dt-btn">Proceed to enter customer information</button>
 	  		</form>
       </div>
     </div>
@@ -356,7 +355,7 @@
 
     <!-- begin step 3 -->
     <div id="step3" class="tab-pane fade">
-     	<div class="step3-dt">
+     	<div class="step3-dt" id="step3-dt">
      		<div class="step3-dt1">
      			<p class="intro">
      				This document explains important points that customers should take into consideration when using the services. After fully understanding the contents of the contract, please proceed to the call from Softbank center. If you have any questions concerning features and details of our services, please refer to our homepage.
@@ -423,8 +422,7 @@
 
 
     <div id="step4" class="tab-pane fade">
-      <h3>STEP 4</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      	<div class="step4-dt" id="step4-dt"></div>
     </div>
   </div>
 
@@ -433,7 +431,36 @@
 </div> 
 <!-- end main-login -->
 
+<div id="initStates" style="display: none;"><?php echo $customer_states ?></div>
 
 <!-- include custome script here -->
 <script src="catalog/view/javascript/custome/custome-preview.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	var str_initStates = $('#initStates').html();
+	var arr_initStates = JSON.parse(str_initStates);
+	
+	if(arr_initStates[0] != 'none' && arr_initStates[0] == '0'){
+		$('#step2-dt').hide();
+		$('#step3-dt').hide();
+		$('#step4-dt').hide();
+	}
+
+	$('#step1-dt-btn').click(function(e){
+		e.preventDefault();
+		$('#step2-dt').show();
+	});
+
+	$('#step2-dt-btn').click(function(e){
+		e.preventDefault();
+		$('#step3-dt').show();
+	});
+});
+
+</script>
+
+<!-- <?php print_r($customer_states); ?> -->
+
 <?php echo $footer; ?>

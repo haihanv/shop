@@ -19,6 +19,23 @@ class ControllerCustomeLogin extends Controller
 		$data['custome_sample2'] = $server . 'image/custome/sample2.png';
 		$data['custome_upload'] = $server . 'image/custome/upload.png';
 
+		$this->load->model('custome/init_states');
+
+		if ($this->customer->isLogged()) {
+			$customer_id = $this->customer->isLogged();
+			$result = $this->model_custome_init_states->getCustmerStates($customer_id);		
+			$data['states'][] = $result['state_1'];
+			$data['states'][] = $result['state_2'];
+			$data['states'][] = $result['state_3'];
+			$data['states'][] = $result['state_4'];
+			$data['states'][] = $result['admin_message'];
+
+			$data['customer_states'] = json_encode($data['states']);
+		} else {
+			$data['states'][] = "none";
+			$data['customer_states'] = json_encode($data['states']);
+		}
+
 		$this->response->setOutput($this->load->view('custome/login', $data));
 	}
 }
