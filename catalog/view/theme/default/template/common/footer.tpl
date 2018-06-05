@@ -66,7 +66,7 @@ Please donate via PayPal to donate@opencart.com
 </footer>
 
 
-<a href="" class="btn navbar-btn-apply"><b>APPLY NOW</b></a>
+<a href="<?php echo $custome_login ?>" class="btn navbar-btn-apply"><b>APPLY NOW</b></a>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script>

@@ -41,6 +41,7 @@ class ControllerCommonHome extends Controller {
 		$data['img_15'] = $server . 'image/custome/15.png';
 		$data['img_16'] = $server . 'image/custome/16.png';
 		$data['img_17'] = $server . 'image/custome/17.png';
+		$data['custome_login'] = $this->url->link('custome/login', '', true);
 		
 
 

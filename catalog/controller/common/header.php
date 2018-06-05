@@ -149,9 +149,10 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		// modify data
-		$data['custome_logo'] = $server . 'image/catalog/custome-logo.png';
-		$data['fb_icon'] = $server . 'image/catalog/fb.png';
-		$data['skype_icon'] = $server . 'image/catalog/skype.png';
+		$data['custome_logo'] = $server . 'image/custome/custome-logo.png';
+		$data['fb_icon'] = $server . 'image/custome/fb.png';
+		$data['skype_icon'] = $server . 'image/custome/skype.png';
+		$data['custome_login'] = $this->url->link('custome/login', '', true);
 
 		return $this->load->view('common/header', $data);
 	}

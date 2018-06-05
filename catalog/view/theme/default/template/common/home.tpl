@@ -50,7 +50,7 @@
                         </a>
                       </li>
                       <li>
-                        <button class="btn navbar-btn"><b>APPLY NOW</b></button>
+                        <a href="<?php echo $custome_login ?>"><button class="btn navbar-btn"><b>APPLY NOW</b></button></a>
                       </li>
                     </ul>
                     </div>                  
