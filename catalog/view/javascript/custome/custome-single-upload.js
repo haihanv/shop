@@ -7,6 +7,7 @@ $('#btn-file-input1').click(function(){
 	var form_data = new FormData();
 	form_data.append('file', file_data);
 	form_data.append('customer_id', customer_id);
+	form_data.append('image_name', "image_1");
 
 	$.ajax({
 		url: 'index.php?route=custome/single_file_ajax',
@@ -28,6 +29,8 @@ $('#btn-file-input2').click(function(){
 	var form_data = new FormData();
 	form_data.append('file', file_data);
 	form_data.append('customer_id', customer_id);
+	form_data.append('image_name', "image_2");
+
 
 	$.ajax({
 		url: 'index.php?route=custome/single_file_ajax',
@@ -50,6 +53,7 @@ $('#btn-file-input3').click(function(){
 	var form_data = new FormData();
 	form_data.append('file', file_data);
 	form_data.append('customer_id', customer_id);
+	form_data.append('image_name', "image_3");
 
 	$.ajax({
 		url: 'index.php?route=custome/single_file_ajax',

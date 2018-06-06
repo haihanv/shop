@@ -21,6 +21,7 @@ class ModelCustomeStepProcess extends Model
 
 	public function updateCustomerImagePath($customer_id, $columnName, $path) {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer_images SET ".$columnName." = '".$path."' WHERE customer_id = '" . (int)$customer_id. "'");
+		
 	}
 
 
