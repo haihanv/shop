@@ -17,6 +17,7 @@ define('DIR_DOWNLOAD', '/var/www/html/shop/system/storage/download/');
 define('DIR_LOGS', '/var/www/html/shop/system/storage/logs/');
 define('DIR_MODIFICATION', '/var/www/html/shop/system/storage/modification/');
 define('DIR_UPLOAD', '/var/www/html/shop/system/storage/upload/');
+define('CUSTOME_DIR_UPLOAD', '/var/www/html/shop/image/custome/');
 
 // DB
 define('DB_DRIVER', 'mysqli');

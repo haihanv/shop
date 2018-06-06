@@ -397,3 +397,5 @@ admin/view/template/extension/module.tpl
 catalog/controller/custome/login.php
 catalog/view/theme/default/template/custome/login.tpl
 catalog/model/custome/init_states.php
+catalog/model/custome/step_process.php
+catalog/controller/custome/single_file_ajax.php

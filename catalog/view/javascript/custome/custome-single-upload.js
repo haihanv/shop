@@ -32,6 +32,7 @@ $('#btn-file-input2').click(function(){
 	form_data.append('image_name', "image_2");
 
 
+
 	$.ajax({
 		url: 'index.php?route=custome/single_file_ajax',
 		type: 'POST',
@@ -54,6 +55,7 @@ $('#btn-file-input3').click(function(){
 	form_data.append('file', file_data);
 	form_data.append('customer_id', customer_id);
 	form_data.append('image_name', "image_3");
+
 
 	$.ajax({
 		url: 'index.php?route=custome/single_file_ajax',
