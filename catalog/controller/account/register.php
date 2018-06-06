@@ -41,6 +41,10 @@ class ControllerAccountRegister extends Controller {
 
 			// ha added
 			// $this->response->redirect($this->url->link('account/success'));
+			$this->load->model('custome/init_states');
+			$this->load->model('custome/step_process');
+			$this->model_custome_init_states->createCustomerInitStates($customer_id);
+			$this->model_custome_step_process->createCustomerImages($customer_id);
 			$this->response->redirect($this->url->link('common/home'));
 		}
 
@@ -357,8 +361,10 @@ class ControllerAccountRegister extends Controller {
 		if(empty($this->error))
 			$this->response->setOutput($this->load->view('account/custome_register', $data));
 		else {
-			$this->error = array();
-			echo "false";
+			//$this->error = array();			
+			$this->response->setOutput($this->load->view('account/custome_register', $data));
+			// this is for ajax
+			echo '.';
 		}
 	}
 

@@ -8,5 +8,14 @@ class ModelCustomeInitStates extends Model
 
 		return $query->row;		
 	}
+
+	public function createCustomerInitStates($customer_id) {
+		$query = $this->db->query("INSERT INTO " . DB_PREFIX . "customer_states SET customer_id = '".(int)$customer_id."'");
+		return $query;
+	}
+
+	public function deleteCustomerStates($customer_id) {
+		$this->db->query("DELETE FROM `" . DB_PREFIX . " customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+	}
 }
 ?>

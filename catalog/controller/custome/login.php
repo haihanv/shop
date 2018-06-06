@@ -18,6 +18,7 @@ class ControllerCustomeLogin extends Controller
 		$data['custome_sample1'] = $server . 'image/custome/sample1.png';
 		$data['custome_sample2'] = $server . 'image/custome/sample2.png';
 		$data['custome_upload'] = $server . 'image/custome/upload.png';
+		$data['done_img'] = $server . 'image/custome/done_img.png';
 
 		$this->load->model('custome/init_states');
 
@@ -31,6 +32,7 @@ class ControllerCustomeLogin extends Controller
 			$data['states'][] = $result['admin_message'];
 
 			$data['customer_states'] = json_encode($data['states']);
+			$data['customer_id'] = $customer_id;
 		} else {
 			$data['states'][] = "none";
 			$data['customer_states'] = json_encode($data['states']);

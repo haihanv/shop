@@ -171,6 +171,9 @@
 	  		</form>
 
       	</div>
+      	<div id="step1-dt-1" style="display: none;">
+      		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
+      	</div>
     </div>
     <!-- end step 1 -->
 
@@ -281,7 +284,7 @@
 										    </label>
 										    <input id="file-input1" type="file" style="display: none;"/>
 										</div>
-								    	<button class="btn btn-primary">Re-up</button>
+								    	<button id="btn-file-input1" class="btn btn-primary">Re-up</button>
 								    </div>
 							    </div>
 						    <!-- </div> -->
@@ -312,7 +315,7 @@
 									    </label>
 									    <input id="file-input2" type="file" style="display: none;" />
 									</div>
-							    	<button class="btn btn-primary">Re-up</button>
+							    	<button id="btn-file-input2" class="btn btn-primary">Re-up</button>
 							    </div>
 					        </div>
 				        </td>				        
@@ -336,7 +339,7 @@
 									    </label>
 									    <input id="file-input3" type="file" style="display: none;" />
 									</div>
-							    	<button class="btn btn-primary">Re-up</button>
+							    	<button id="btn-file-input3" class="btn btn-primary">Re-up</button>
 							    </div>
 					        </div>
 				        </td>	
@@ -347,6 +350,9 @@
       		<form id="form-step2">
 	  			<button type="submit" class="btn btn-primary" id="step2-dt-btn">Proceed to enter customer information</button>
 	  		</form>
+      </div>
+      <div id="step2-dt-1" style="display: none;">
+      		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
       </div>
     </div>
     <!-- end step 2 -->
@@ -431,14 +437,14 @@
 </div> 
 <!-- end main-login -->
 
-<div id="initStates" style="display: none;"><?php echo $customer_states ?></div>
+<div id="initStates"><?php echo $customer_states ?></div>
+<div id="customer_id"><?php echo $customer_id ?></div>
 
 <!-- include custome script here -->
-<script src="catalog/view/javascript/custome/custome-preview.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+//script for initial states
 $(document).ready(function(){
-	
+	// this is the beginning of entering the login page
 	var str_initStates = $('#initStates').html();
 	var arr_initStates = JSON.parse(str_initStates);
 	
@@ -446,8 +452,42 @@ $(document).ready(function(){
 		$('#step2-dt').hide();
 		$('#step3-dt').hide();
 		$('#step4-dt').hide();
+	} else {		
+		$('#step2-dt').hide();
+		$('#step3-dt').hide();
+		$('#step4-dt').hide();
 	}
 
+	// check state 1
+	if(arr_initStates[0] == '1'){
+		$('#step2-dt').show();
+		$('#step1-dt').hide();
+		$('#step1-dt-1').show();
+	}
+
+	// check state 2
+	if(arr_initStates[1] == '1'){
+		$('#step3-dt').show();
+		$('#step2-dt').hide();
+		$('#step2-dt-1').show();
+	}
+
+	// check state 3
+	if(arr_initStates[2] == '1'){
+		$('#step4-dt').show();
+	} else if(arr_initStates[2] == '3'){
+		// todo: do st in current tab -> wait for admin to check data uploaded
+		// 
+		// 
+	}else if(arr_initStates[2] == '4'){
+		// get msg from admin to re-up data
+		// 
+		// 
+		$('#step2-dt').show();
+	}
+
+
+	// action after checking all states
 	$('#step1-dt-btn').click(function(e){
 		e.preventDefault();
 		$('#step2-dt').show();
@@ -458,9 +498,8 @@ $(document).ready(function(){
 		$('#step3-dt').show();
 	});
 });
-
 </script>
-
-<!-- <?php print_r($customer_states); ?> -->
+<script src="catalog/view/javascript/custome/custome-preview.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/custome/custome-single-upload.js" type="text/javascript"></script>
 
 <?php echo $footer; ?>
