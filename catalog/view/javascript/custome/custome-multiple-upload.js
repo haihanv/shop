@@ -6,6 +6,8 @@ function updateUX(input) {
 		$('#step3-dt').show();
 		$('#step2-dt').hide();
 		$('#step2-dt-1').show();
+	} else{
+		alert("Please try again.")
 	}
 }
 

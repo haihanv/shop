@@ -15,9 +15,7 @@ class ControllerCustomeSingleFileAjax extends Controller
 
 				$this->model_custome_step_process->updateCustomerImagePath($_POST['customer_id'], $_POST['image_name'], $image_path);
 				$this->model_custome_step_process->updateCustomerState($_POST['customer_id'], "state_2", 1);
-
-				// $result = $this->model_custome_step_process->getCustomerImagePath($_POST['customer_id'], "image_1");
-				// echo $result;
+				$this->model_custome_step_process->updateCustomerState($_POST['customer_id'], "state_3", 5);
 				echo "done";
 
 			}else{

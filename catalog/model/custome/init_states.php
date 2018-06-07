@@ -18,5 +18,9 @@ class ModelCustomeInitStates extends Model
 		$this->db->query("DELETE FROM `" . DB_PREFIX . " customer_states WHERE customer_id = '" . (int)$customer_id. "'");
 	}
 
+	public function getAdminMessage($customer_id) {
+		$query = $this->db->query("SELECT admin_message FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['admin_message'];
+	}
 }
 ?>

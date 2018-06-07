@@ -171,6 +171,7 @@
 	  		
 
       	</div>
+      	<br><br>
       	<div id="step1-dt-1" style="display: none;">
       		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
       	</div>
@@ -284,7 +285,7 @@
 										    </label>
 										    <input id="file-input1" type="file" name="file" style="display: none;"/>
 										</div>
-								    	<button id="btn-file-input1" class="btn btn-primary">Re-up</button>
+								    	<button id="btn-file-input1" class="btn btn-primary btn-re-up">Re-up</button>
 								    </div>
 							    </div>
 						    <!-- </div> -->
@@ -315,7 +316,7 @@
 									    </label>
 									    <input id="file-input2" type="file" name="file" style="display: none;" />
 									</div>
-							    	<button id="btn-file-input2" class="btn btn-primary">Re-up</button>
+							    	<button id="btn-file-input2" class="btn btn-primary btn-re-up">Re-up</button>
 							    </div>
 					        </div>
 				        </td>				        
@@ -339,7 +340,7 @@
 									    </label>
 									    <input id="file-input3" type="file" name="file" style="display: none;" />
 									</div>
-							    	<button id="btn-file-input3" class="btn btn-primary">Re-up</button>
+							    	<button id="btn-file-input3" class="btn btn-primary btn-re-up">Re-up</button>
 							    </div>
 					        </div>
 				        </td>	
@@ -415,13 +416,19 @@
      		</div>
 
      		<br><br>
-     		<form id="form-step3">
-	  			<input type="checkbox">
-	  			<span><b>I agree with the contract and ready for the call</b></span><br><br>
-	  			<button type="submit" class="btn btn-primary">Ok</button>
-	  		</form>
+     		
+  			<input type="checkbox" id="step3-dt-agree">
+  			<span><b>I agree with the contract and ready for the call</b></span><br><br>
+  			<button id="step3-dt-btn" class="btn btn-primary">Ok</button>
+	  		
 
-     	</div>    	
+     	</div> 
+     	<div id="step3-dt-1" style="display: none; text-align: center; font-size: 25px; color: #FFD52B; font-style: italic;">
+
+     	</div>
+     	<div id="step3-dt-2" style="display: none;">
+      		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
+      </div>   	
     </div>
     <!-- end step 3 -->
 
@@ -439,6 +446,7 @@
 
 <div id="initStates" style="display: none;"><?php echo $customer_states ?></div>
 <div id="customer_id" style="display: none;"><?php echo $customer_id ?></div>
+<div id="admin_message" style="display: none;"><?php echo $admin_message ?></div>
 
 <!-- include custome script here -->
 <script type="text/javascript">
@@ -448,6 +456,8 @@ $(document).ready(function(){
 	var str_initStates = $('#initStates').html();
 	var arr_initStates = JSON.parse(str_initStates);
 	
+	$('button.btn-re-up').hide();
+
 	if(arr_initStates[0] != 'none' && arr_initStates[0] == '0'){
 		$('#step2-dt').hide();
 		$('#step3-dt').hide();
@@ -466,42 +476,54 @@ $(document).ready(function(){
 	}
 
 	// check state 2
-	if(arr_initStates[1] == '1'){
+	if(arr_initStates[1] == '1' && arr_initStates[2] == '0'){
 		$('#step3-dt').show();
+		$('#step3-dt-1').hide();
+		$('#step3-dt-2').hide();
 		$('#step2-dt').hide();
 		$('#step2-dt-1').show();
-	}
+	} else if(arr_initStates[1] == '1' && arr_initStates[2] == '4'){
+		$('#step2-dt').show();
+		$('#step2-dt-1').hide();
+		$('.btn-re-up').show();
+
+	} else if(arr_initStates[1] == '1' && arr_initStates[2] == '1'){
+		$('#step2-dt').hide();
+		$('#step2-dt-1').show();
+	} 
 
 	// check state 3
 	if(arr_initStates[2] == '1'){
 		$('#step4-dt').show();
-	} else if(arr_initStates[2] == '3'){
-		// todo: do st in current tab -> wait for admin to check data uploaded
-		// 
-		// 
+		$('#step3-dt').hide();
+		$('#step3-dt-1').hide();
+		$('#step3-dt-2').show();
+
+	} else if(arr_initStates[2] == '3' || arr_initStates[2] == '5'){
+		//waiting confirmation from admin
+		$('#step3-dt').hide();
+		$('#step3-dt-1').fadeIn();
+		$('#step3-dt-1').html("Please wait to get Confirmation from Admin");
+		$('#step2-dt').hide();
+		$('#step2-dt-1').show();
+
 	}else if(arr_initStates[2] == '4'){
 		// get msg from admin to re-up data
-		// 
-		// 
-		$('#step2-dt').show();
-	}
+		$('#step3-dt').hide();
+		$('#step3-dt-1').fadeIn();
+		var admin_msg = $('#admin_message').html();
+		$('#step3-dt-1').html(admin_msg); 
+	} 
 
 
-	// action after checking all states
-	$('#step1-dt-btn').click(function(e){
-		e.preventDefault();
-		$('#step2-dt').show();
-	});
-
-	$('#step2-dt-btn').click(function(e){
-		e.preventDefault();
-		$('#step3-dt').show();
-	});
 });
 </script>
+
+
 <script src="catalog/view/javascript/custome/custome-register.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-preview.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-single-upload.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-multiple-upload.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/custome/custome-process.js" type="text/javascript"></script>
 
 <?php echo $footer; ?>

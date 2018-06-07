@@ -25,6 +25,8 @@ class ControllerCustomeLogin extends Controller
 		if ($this->customer->isLogged()) {
 			$customer_id = $this->customer->isLogged();
 			$result = $this->model_custome_init_states->getCustmerStates($customer_id);		
+			$data['admin_message'] = $this->model_custome_init_states->getAdminMessage($customer_id);	
+			
 			$data['states'][] = $result['state_1'];
 			$data['states'][] = $result['state_2'];
 			$data['states'][] = $result['state_3'];
