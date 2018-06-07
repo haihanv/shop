@@ -58,13 +58,16 @@ $(document).ready(function(){
 
           var form = $('#ajax-form');
           var formData = $(form).serialize();
+
+          
+
           $.ajax({
             type: 'POST',
             url: $(form).attr('action'),
             data: formData
           })
           .done(function(response){
-            if(response == 'false'){
+            if(response == 'failed'){
               alert('Please Enter the Form correctly and Agree the Policy');
             } else{
               window.location.replace("<?php echo $custome_home?>");

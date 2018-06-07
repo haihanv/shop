@@ -17,5 +17,6 @@ class ModelCustomeInitStates extends Model
 	public function deleteCustomerStates($customer_id) {
 		$this->db->query("DELETE FROM `" . DB_PREFIX . " customer_states WHERE customer_id = '" . (int)$customer_id. "'");
 	}
+
 }
 ?>

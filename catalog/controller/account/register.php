@@ -361,10 +361,7 @@ class ControllerAccountRegister extends Controller {
 		if(empty($this->error))
 			$this->response->setOutput($this->load->view('account/custome_register', $data));
 		else {
-			//$this->error = array();			
-			$this->response->setOutput($this->load->view('account/custome_register', $data));
-			// this is for ajax
-			echo '.';
+			echo "failed";
 		}
 	}
 

@@ -46,7 +46,7 @@
 					        <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="email" id="step1-dt-email" name="email" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -57,7 +57,7 @@
 				        	 <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="email" id="step1-dt-re-email" name="email" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -68,7 +68,7 @@
 				        	 <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="password" id="step1-dt-pass" name="password" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -79,7 +79,7 @@
 				        	 <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="password" id="step1-dt-re-pass" name="confirm" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -164,11 +164,11 @@
 	  		<!-- end Privacy -->
 	  		<br><br>
 
-	  		<form id="form-step1">
-	  			<input type="checkbox">
-	  			<span><b>I agree with this policy</b></span><br><br>
-	  			<button type="submit" class="btn btn-primary" id="step1-dt-btn">Proceed to enter customer information</button>
-	  		</form>
+	  		
+	  		<input type="checkbox" id="step1-dt-agree">
+	  		<span><b>I agree with this policy</b></span><br><br>
+	  		<button type="submit" class="btn btn-primary" id="step1-dt-btn">Proceed to enter customer information</button>
+	  		
 
       	</div>
       	<div id="step1-dt-1" style="display: none;">
@@ -193,7 +193,7 @@
 				        	 <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="text" id="step2-dt-name" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -204,7 +204,7 @@
 				        	 <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="text" id="step2-dt-address" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -215,7 +215,7 @@
 				        	 <div>
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<input type="" name="" class="form-control">
+					        		<input type="text" id="step2-dt-phone" class="form-control">
 					        	</div>
 					        </div>
 				        </td>
@@ -226,7 +226,7 @@
 				        	<div id="sel">
 					        	<div class="required"><span>Required</span></div>
 					        	<div class="input-field">
-					        		<select class="form-control">
+					        		<select class="form-control" id="step2-dt-time">
 								        <option>10.am - 11.am</option>
 								        <option>11.am - 12.am</option>
 								        <option>12.am - 1.pm</option>
@@ -282,7 +282,7 @@
 										    <label for="file-input1">
 										        <img src="<?php echo $custome_upload ?>"/>
 										    </label>
-										    <input id="file-input1" type="file" style="display: none;"/>
+										    <input id="file-input1" type="file" name="file" style="display: none;"/>
 										</div>
 								    	<button id="btn-file-input1" class="btn btn-primary">Re-up</button>
 								    </div>
@@ -313,7 +313,7 @@
 									    <label for="file-input2">
 									        <img src="<?php echo $custome_upload ?>"/>
 									    </label>
-									    <input id="file-input2" type="file" style="display: none;" />
+									    <input id="file-input2" type="file" name="file" style="display: none;" />
 									</div>
 							    	<button id="btn-file-input2" class="btn btn-primary">Re-up</button>
 							    </div>
@@ -337,7 +337,7 @@
 									    <label for="file-input3">
 									        <img src="<?php echo $custome_upload ?>"/>
 									    </label>
-									    <input id="file-input3" type="file" style="display: none;" />
+									    <input id="file-input3" type="file" name="file" style="display: none;" />
 									</div>
 							    	<button id="btn-file-input3" class="btn btn-primary">Re-up</button>
 							    </div>
@@ -347,9 +347,9 @@
       			</tbody>
       		</table>
 
-      		<form id="form-step2">
-	  			<button type="submit" class="btn btn-primary" id="step2-dt-btn">Proceed to enter customer information</button>
-	  		</form>
+      		
+	  		<button type="submit" class="btn btn-primary" id="step2-dt-btn">Proceed to enter customer information</button>
+	  		
       </div>
       <div id="step2-dt-1" style="display: none;">
       		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
@@ -437,8 +437,8 @@
 </div> 
 <!-- end main-login -->
 
-<div id="initStates"><?php echo $customer_states ?></div>
-<div id="customer_id"><?php echo $customer_id ?></div>
+<div id="initStates" style="display: none;"><?php echo $customer_states ?></div>
+<div id="customer_id" style="display: none;"><?php echo $customer_id ?></div>
 
 <!-- include custome script here -->
 <script type="text/javascript">
@@ -499,7 +499,9 @@ $(document).ready(function(){
 	});
 });
 </script>
+<script src="catalog/view/javascript/custome/custome-register.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-preview.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-single-upload.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/custome/custome-multiple-upload.js" type="text/javascript"></script>
 
 <?php echo $footer; ?>
