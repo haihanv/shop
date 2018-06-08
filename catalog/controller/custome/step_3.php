@@ -10,6 +10,7 @@ class ControllerCustomeStep3 extends Controller
 			
 			$this->load->model('custome/step_process');
 			$this->model_custome_step_process->updateCustomerState($_POST['customer_id'], "state_3", 3);
+			$this->model_custome_step_process->updateCurrentStep($_POST['customer_id'], 3);
 			echo "done";
 		}else{
 			echo "failed";

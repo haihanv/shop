@@ -22,5 +22,7 @@ class ModelCustomeInitStates extends Model
 		$query = $this->db->query("SELECT admin_message FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
 		return $query->row['admin_message'];
 	}
+
+	
 }
 ?>

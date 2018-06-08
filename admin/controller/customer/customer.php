@@ -8,6 +8,7 @@ class ControllerCustomerCustomer extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('customer/customer');
+		
 
 		$this->getList();
 	}
@@ -460,6 +461,9 @@ class ControllerCustomerCustomer extends Controller {
 
 		$results = $this->model_customer_customer->getCustomers($filter_data);
 
+		// ha added
+		$this->load->model('custome/states');
+
 		foreach ($results as $result) {
 			if (!$result['approved']) {
 				$approve = $this->url->link('customer/customer/approve', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, true);
@@ -475,14 +479,54 @@ class ControllerCustomerCustomer extends Controller {
 				$unlock = '';
 			}
 
+			// $data['customers'][] = array(
+			// 	'customer_id'    => $result['customer_id'],
+			// 	'name'           => $result['name'],
+			// 	'email'          => $result['email'],
+			// 	'customer_group' => $result['customer_group'],
+			// 	'status'         => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
+			// 	'ip'             => $result['ip'],
+			// 	'date_added'     => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+			// 	'approve'        => $approve,
+			// 	'unlock'         => $unlock,
+			// 	'edit'           => $this->url->link('customer/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, true)
+			// );
+
+			//ha added
+			$current_step = $this->model_custome_states->getCustomerCurrentStep($result['customer_id']);
+			$_state = $this->model_custome_states->getCustomerState($result['customer_id'], "state_".$current_step);
+			$avai_time = $this->model_custome_states->getCustomerTime($result['customer_id']);
+			$current_state = "";
+
+
+			switch ($_state) {
+				case 1:
+					$current_state = "Ok";
+					break;
+				case 2:
+					$current_state = "Failed";
+					break;
+				case 3:
+					$current_state = "Wating for response";
+					break;
+				case 4:
+					$current_state = "Re-up";
+					break;
+				case 5:
+					$current_state = "Wating for response after re-up";
+					break;
+				default:
+					$current_state = "undefined";
+					break;
+			}
+
 			$data['customers'][] = array(
 				'customer_id'    => $result['customer_id'],
 				'name'           => $result['name'],
 				'email'          => $result['email'],
-				'customer_group' => $result['customer_group'],
-				'status'         => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
-				'ip'             => $result['ip'],
-				'date_added'     => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+				'avai_time'		 => $avai_time,
+				'step'           => "Step ".$current_step,
+				'state'          => $current_state,
 				'approve'        => $approve,
 				'unlock'         => $unlock,
 				'edit'           => $this->url->link('customer/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, true)

@@ -358,7 +358,7 @@ class ControllerAccountRegister extends Controller {
 		// ha added
 		// $this->response->setOutput($this->load->view('account/register', $data));
 		$data['custome_home'] = $this->url->link('common/home');
-		if(empty($this->error))
+		if(empty($this->error))			
 			$this->response->setOutput($this->load->view('account/custome_register', $data));
 		else {
 			echo "failed";

@@ -20,6 +20,7 @@ define('DIR_LOGS', '/var/www/html/shop/system/storage/logs/');
 define('DIR_MODIFICATION', '/var/www/html/shop/system/storage/modification/');
 define('DIR_UPLOAD', '/var/www/html/shop/system/storage/upload/');
 define('DIR_CATALOG', '/var/www/html/shop/catalog/');
+define('CUSTOME_DIR_UPLOAD', '/var/www/html/shop/image/custome/customers/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
