@@ -4,14 +4,15 @@
 <div class="main-login bg-light-grey">
 
 <div class="container">
-	<h3>APPLICATION FORM</h3>
+	<h3 style="color: #0099cc; font-size: 25px;"><b>APPLICATION FORM</b></h3>
 	<br><br><br>
 
-	<ul class="nav nav-justified">
+	<ul class="nav nav-justified nav-wizard">
 	    <li class="active"><a data-toggle="tab" href="#step1">STEP 1</a></li>
 	    <li><a data-toggle="tab" href="#step2">STEP 2</a></li>
 	    <li><a data-toggle="tab" href="#step3">STEP 3</a></li>
 	    <li><a data-toggle="tab" href="#step4">STEP 4</a></li>
+	    <li><a data-toggle="tab" href="#step5">STEP 5</a></li>
 	</ul>
 	<br><br><br>
 
@@ -164,10 +165,11 @@
 	  		<!-- end Privacy -->
 	  		<br><br>
 
-	  		
-	  		<input type="checkbox" id="step1-dt-agree">
-	  		<span><b>I agree with this policy</b></span><br><br>
-	  		<button type="submit" class="btn btn-primary" id="step1-dt-btn">Proceed to enter customer information</button>
+	  		<div style="text-align: center;">
+		  		<input type="checkbox" id="step1-dt-agree">
+		  		<span><b>I agree with this policy</b></span><br><br>
+		  		<button type="submit" class="btn btn-primary submit-btn" id="step1-dt-btn" style="display: block; margin: 0 auto;">Proceed to enter customer information</button>
+	  		</div>
 	  		
 
       	</div>
@@ -348,8 +350,9 @@
       			</tbody>
       		</table>
 
-      		
-	  		<button type="submit" class="btn btn-primary" id="step2-dt-btn">Proceed to enter customer information</button>
+      		<div style="text-align: center;">
+		  		<button type="submit" class="btn btn-primary submit-btn" id="step2-dt-btn" style="display: block; margin: 0 auto;">Proceed to enter customer information</button>
+		  	</div>
 	  		
       </div>
       <div id="step2-dt-1" style="display: none;">
@@ -417,9 +420,11 @@
 
      		<br><br>
      		
-  			<input type="checkbox" id="step3-dt-agree">
-  			<span><b>I agree with the contract and ready for the call</b></span><br><br>
-  			<button id="step3-dt-btn" class="btn btn-primary">Ok</button>
+     		<div style="text-align: center;">
+	  			<input type="checkbox" id="step3-dt-agree">
+	  			<span><b>I agree with the contract and ready for the call</b></span><br><br>
+	  			<button id="step3-dt-btn" class="btn btn-primary submit-btn" style="display: block; margin: 0 auto;">Ok</button>
+	  		</div>
 	  		
 
      	</div> 
@@ -428,18 +433,417 @@
      	</div>
      	<div id="step3-dt-2" style="display: none;">
       		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
-      </div>   	
+      	</div>   	
     </div>
     <!-- end step 3 -->
 
 
 
     <div id="step4" class="tab-pane fade">
-      	<div class="step4-dt" id="step4-dt"></div>
+     	<div class="step4-dt" id="step4-dt">
+     		<div id="note">
+      			<h1>NOTE</h1>
+      			<p>
+      				You will receive a link after contract confirmation call from SoftBank center ( 0800-111-2009 )
+      			</p>
+      			<div class="clear"></div>
+      		</div>
+      		<!-- end note -->
+      		<div id="note-dt">
+      			<div class="row">
+	      			<div class="col-sm-2">
+	      				<p style="font-size: 15px;"><b>Message Sample:</b></p>
+	      			</div>
+	      			<div class="col-sm-8">
+
+	      				SoftBank Airより <br>
+	      				&lsaquo; &lsaquo; the link &rsaquo; &rsaquo; <br>
+	      				上記URLよりご契約に必要な登録手続きをお願いします。
+
+	      			</div>
+      			</div>
+      		</div>
+      		
+      		<div class="clear"></div><br>
+
+      		<div class="link">
+      			<div class="col-sm-3"><span><b>Please enter the link here:</b></span></div>
+      			<div class="col-sm-9">
+      				<input type="text" id="input_link" class="form-control">
+      			</div>
+      		</div>
+
+      		<br><br><br><br>
+      		<div class="payment">
+      			<div class="payment-img">
+      				<img src="<?php echo $custome_18 ?>" class="img-responsive">
+      			</div>
+      			<br><br><br>
+      			<div class="col-sm-6">
+      				<div class="payment-type">
+	      				<span><input type="checkbox" id="cb-bank"></span><br>
+	      				<h4>BANK WITHDRAW</h4>
+      				</div>
+      			</div>
+
+      			<div class="col-sm-6">
+      				<div class="payment-type">
+	      				<span><input type="checkbox" id="cb-credit"></span><br>
+	      				<h4>CREDIT CARD</h4>
+      				</div>
+      			</div>
+
+      			<br><br><br><br>
+      			<div class="clear"></div>
+      			<div class="bank-withdraw" style="display: none;">
+		      			<div class="block-1">
+			      			<div class="row">
+			      				<div class="col-sm-4">
+			      					<span><img class="img-responsive" src="<?php echo $custome_19 ?>"></span><br>
+			      					<span><input type="checkbox" name="bank" value="bank1"></span>
+			      				</div>
+			      				<div class="col-sm-4">
+			      					<span><img class="img-responsive" src="<?php echo $custome_20 ?>"></span><br>
+			      					<span><input type="checkbox" name="bank" value="bank2"></span>
+			      				</div>
+			      				<div class="col-sm-4">
+			      					<span><img class="img-responsive" src="<?php echo $custome_21 ?>"></span><br>
+			      					<span><input type="checkbox" name="bank" value="bank3"></span>
+			      				</div>
+			      			</div>
+		      			</div>
+		      			<div class="block-2">
+		      				<div class="row">
+		      				<div class="col-sm-4">
+		      					<span><img class="img-responsive" src="<?php echo $custome_22 ?>"></span><br>
+		      					<span><input id="cb-mufg" type="checkbox" name="bank" value="bank4"></span>
+		      				</div>
+		      				<div class="col-sm-4">
+		      					<span><img class="img-responsive" src="<?php echo $custome_23 ?>"></span><br>
+		      					<span><input type="checkbox" name="bank" value="bank5"></span>
+		      				</div>
+		      				<div class="col-sm-4">
+		      					<span style="color: #0099cc;"><b>OTHERS</b></span><br>
+		      					<span><input id="cb-other" type="checkbox" name="bank" value="other"></span>
+		      				</div>
+		      				</div>
+	      				</div>
+	      			<br>
+	      			<div class="clear"></div>
+	      			<div class="other" style="display: none;">
+	      				<p>
+	      					There is posibility that your bank is not supported to proceed payment registration online.
+	      					Therefore, we will send payment registration documents to your address. Please fill in the registration form, stamp on it with your seal (印鑑), put it in the envelop and send back the document to us.
+	      				</p>
+	      			</div>
+
+	      			<table class="table table-bordered">
+      					<tbody>
+      						<tr>
+      							<td class="payment-left">
+      								<span>Cash card or bank passbook cover</span>
+      							</td>
+      							<td class="payment-right">
+      								<div class="row">
+								        <div class="col-sm-3">
+									        <div class="payment-note">
+									        	<span>Required</span><br><br>
+									        	<span><i>* Photo of bank cash card or bank passbook cover: (which has your name and bank account number on it). </i></span>
+									        </div>
+									    </div>
+									    <div class="col-sm-6">   
+									        <div class="payment-img">
+									        	<img  id="payment-image1" class="img-responsive" src="" class="img-responsive">
+									        </div>
+									    </div> 
+									    <div class="col-sm-1">
+									    	<div class="image-upload">
+											    <label for="file-input4">
+											        <img src="<?php echo $custome_upload ?>"/>
+											    </label>
+											    <input id="file-input4" type="file" style="display: none;"/>
+											</div>
+									    	<button id="btn-file-input4" class="btn btn-primary btn-re-up">Re-up</button>
+									    </div>
+								    </div>
+      							</td>
+      						</tr>
+      						<tr>
+      							<td class="payment-left">
+      								<span>Security Code</span>
+      							</td>
+      							<td class="payment-right">
+      								<div class="row">
+		      							<div class="col-sm-3">
+		      								<span><i>* 4 digits</i></span>
+		      							</div>
+		      							<div class="col-sm-6">
+		      								<input type="password" id="security_code" class="form-control" style="width: 80%;">
+		      							</div>
+		      							<div class="col-sm-1">
+									    	<button class="btn btn-primary btn-re-up">Re-up</button>
+									    </div>
+								    </div>
+      							</td>
+      						</tr>
+      						<tr id="tr-mufg" style="display: none;">
+      							<td class="payment-left">
+      								<span>Passbook last page</span>
+      							</td>
+      							<td class="payment-right">
+      								<div class="row">
+								        <div class="col-sm-3">
+									        <div class="payment-note">
+									        	<span>Required</span><br><br>
+									        	<span><i>* Please send us the page below which shows the last printed account balance on your bank passbook. </i></span>
+									        </div>
+									    </div>
+									    <div class="col-sm-6">   
+									        <div class="payment-img">
+									        	<img  id="payment-image2" class="img-responsive" src="<?php echo $custome_sample4 ?>" class="img-responsive">
+									        </div>
+									    </div> 
+									    <div class="col-sm-1">
+									    	<div class="image-upload">
+											    <label for="file-input5">
+											        <img src="<?php echo $custome_upload ?>"/>
+											    </label>
+											    <input id="file-input5" type="file" style="display: none;"/>
+											</div>
+									    	<button id="btn-file-input5" class="btn btn-primary btn-re-up">Re-up</button>
+									    </div>
+								    </div>
+      							</td>
+      						</tr>
+      					</tbody>
+      				</table>
+
+      				<div>
+      					<button id="btn-payment-bank" class="btn btn-primary submit-btn" style="display: block; margin: 0 auto;">Submit</button>
+      				</div>
+      			</div>
+      			<!-- end bank-withdraw -->
+
+      			<br><br>
+      			<div class="credit-card" style="display: none;">
+
+      				<div class="credit-brand">
+      					<div class="row">
+      						<div class="col-sm-1"></div> 
+
+
+      						<div class="col-sm-2">
+      							<img src="<?php echo $custome_24 ?>" class="img-responsive">
+      						</div>
+      						<div class="col-sm-2">
+      							<img src="<?php echo $custome_25 ?>" class="img-responsive">
+      						</div>
+      						<div class="col-sm-2">
+      							<img src="<?php echo $custome_26 ?>" class="img-responsive">
+      						</div>
+      						<div class="col-sm-2">
+      							<img src="<?php echo $custome_27 ?>" class="img-responsive">
+      						</div>
+      						<div class="col-sm-2">
+      							<img src="<?php echo $custome_28 ?>" class="img-responsive">
+      						</div>
+
+
+      						<div class="col-sm-1"></div>
+      					</div>
+      				</div>
+      				<div class="clear"></div>
+      				<br><br><br>
+
+      				<table class="table table-bordered">
+      					<tbody>
+
+      						<tr>
+      							<td class="credit-left">
+      								<span>Card No</span>
+      							</td>
+      							<td class="credit-right">
+      								<div class="row">
+	      								<div class="col-sm-2">
+	      									<div class="credit-note">
+	      										<span> Required</span>
+	      									</div>
+	      								</div>
+	      								<div class="col-sm-10">
+	      									<div>
+	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<span> - </span>
+	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<span> - </span>
+	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<span> - </span>
+	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      									</div>
+	      								</div>
+      								</div>
+      							</td>
+      						</tr>
+      						<tr>
+      							<td class="credit-left">
+      								<span>Expire Date</span>
+      							</td>
+      							<td class="credit-right">
+      								<div class="row">
+	      								<div class="col-sm-2">
+	      									<div class="credit-note">
+	      										<span> Required</span>
+	      									</div>
+	      								</div>
+	      								<div class="col-sm-10">
+	      									<input type="text" placeholder="01" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	  										<span> / </span>
+	  										<input type="text" placeholder="2020" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      								</div>
+      								</div>
+      							</td>
+      						</tr>
+      						<tr>
+      							<td class="credit-left">
+      								<span>Security No</span>
+      							</td>
+      							<td class="credit-right">
+      								<div class="row">
+	      								<div class="col-sm-2">
+	      									<div class="credit-note">
+	      										<span> Required</span>
+	      									</div>
+	      								</div>
+	      								<div class="col-sm-5">
+	      									<input type="text" class="form-control">
+	      								</div>
+      								</div>
+      							</td>
+      						</tr>
+      						<tr>
+      							<td class="credit-left">
+      								<span>Phone No</span>
+      							</td>
+      							<td class="credit-right">
+      								<div class="row">
+	      								<div class="col-sm-2">
+	      									<div class="credit-note">
+	      										<span> Required</span>
+	      									</div>
+	      								</div>
+	      								<div class="col-sm-5">
+	      									<input type="text" class="form-control">
+	      								</div>
+      								</div>
+      							</td>
+      						</tr>
+      						<tr>
+      							<td class="credit-left">
+      								<span>User Name</span>
+      							</td>
+      							<td class="credit-right">
+      								<div class="row">
+	      								<div class="col-sm-2">
+	      									<div class="credit-note">
+	      										<span> Required</span>
+	      									</div>
+	      								</div>
+	      								<div class="col-sm-2">
+	      									<input type="text" placeholder="Last Name" class="form-control">
+	      								</div>
+	      								<div class="col-sm-2">
+	      									<input type="text" placeholder="First Name" class="form-control">
+	      								</div>
+      								</div>
+      							</td>
+      						</tr>
+
+      					</tbody>
+      				</table>
+
+      				<div>
+      					<button id="btn-payment-credit" class="btn btn-primary submit-btn" style="display: block; margin: 0 auto;">Submit</button>
+      				</div>
+      			</div>
+      			<!-- end creadit-card -->
+      		</div>
+      		<!-- end payment -->
+     	</div>
+     	<!-- end step4-dt -->
+     	<div id="step4-dt-1" style="display: none; text-align: center; font-size: 20px; color: #FFD52B; font-style: italic;">
+
+     	</div>
+     	<div id="step4-dt-2" style="display: none;">
+      		<img class="img-responsive" src="<?php echo $done_img;?>" style="margin: 0px auto; display: block;">
+      	</div> 
+
     </div>
+    <!-- end step 4 -->
+
+
+    <div id="step5" class="tab-pane fade">
+    	<div class="step5-dt" id="step5-dt">
+    		<h2>ORDER STATUS</h2>
+    		<br>
+    		<div class="row bs-wizard" style="border-bottom:0;">      
+		      <div class="col-xs-3 bs-wizard-step active" id="step5-dt-step1">
+		        <div class="text-center bs-wizard-stepnum">Order</div>
+		        <div class="progress"><div class="progress-bar"></div></div>
+		        <a href="#" class="bs-wizard-dot"></a>
+		        <div class="bs-wizard-info text-center"></div>
+		      </div>
+		      
+		      <div class="col-xs-3 bs-wizard-step disabled" id="step5-dt-step2"><!-- complete -->
+		        <div class="text-center bs-wizard-stepnum">Payment</div>
+		        <div class="progress"><div class="progress-bar"></div></div>
+		        <a href="#" class="bs-wizard-dot"></a>
+		        <div class="bs-wizard-info text-center"></div>
+		      </div>
+		      
+		      <div class="col-xs-3 bs-wizard-step disabled" id="step5-dt-step3"><!-- complete -->
+		        <div class="text-center bs-wizard-stepnum">Delivery</div>
+		        <div class="progress"><div class="progress-bar"></div></div>
+		        <a href="#" class="bs-wizard-dot"></a>
+		        <div class="bs-wizard-info text-center"></div>
+		      </div>
+		      
+		      <div class="col-xs-3 bs-wizard-step disabled" id="step5-dt-step4"><!-- active -->
+		        <div class="text-center bs-wizard-stepnum">Done</div>
+		        <div class="progress"><div class="progress-bar"></div></div>
+		        <a href="#" class="bs-wizard-dot"></a>
+		        <div class="bs-wizard-info text-center"></div>
+		      </div>
+			</div>
+
+			<br><br>
+			<div class="order-info">
+				<div class="row">
+					<div class="col-sm-3">
+						<h4>Customer Address</h4>
+						<p></p>
+					</div>
+					<div class="col-sm-3">
+						<h4>Delivery Time</h4>
+						<p></p>
+					</div>
+					<div class="col-sm-3">
+						<h4>Payment Confirmation</h4>
+						<p></p>
+					</div>
+					<div class="col-sm-3">
+						<h4>Payment Method</h4>
+						<p></p>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </div>
+    <!-- end step 5 -->
+
   </div>
+  <!-- end tabs contain -->
 
 </div>
+<!-- end container -->
 
 </div> 
 <!-- end main-login -->
@@ -447,6 +851,7 @@
 <div id="initStates" style="display: none;"><?php echo $customer_states ?></div>
 <div id="customer_id" style="display: none;"><?php echo $customer_id ?></div>
 <div id="admin_message" style="display: none;"><?php echo $admin_message ?></div>
+<div id="order_status" style="display: none;"><?php echo $order_status ?></div>
 
 <!-- include custome script here -->
 <script type="text/javascript">
@@ -455,6 +860,7 @@ $(document).ready(function(){
 	// this is the beginning of entering the login page
 	var str_initStates = $('#initStates').html();
 	var arr_initStates = JSON.parse(str_initStates);
+	
 	
 	$('button.btn-re-up').hide();
 
@@ -515,6 +921,35 @@ $(document).ready(function(){
 		$('#step3-dt-1').html(admin_msg); 
 	} 
 
+	// check for state 4
+	if(arr_initStates[3] == '1'){
+		$('#step4-dt').hide();
+		$('#step4-dt-1').hide();
+		$('#step4-dt-2').show();
+		$('#step5-dt').show();
+	} else if(arr_initStates[3] == '3' || arr_initStates[3] == '5'){
+		$('#step5-dt').hide();
+		$('#step4-dt').hide();
+		$('#step4-dt-2').hide();
+		$('#step4-dt-1').fadeIn();
+		$('#step4-dt-1').html("Please wait to get Confirmation from Admin");
+	} else if(arr_initStates[3] == '4') {
+		$('#step5-dt').hide();
+		$('#step4-dt').show();
+		$('#step4-dt-2').hide();
+		$('#step4-dt-1').fadeIn();
+		var admin_msg = $('#admin_message').html();
+		$('#step4-dt-1').html(admin_msg); 
+		$('.btn-re-up').show();
+	} else if(arr_initStates[3] == '0'){
+		$('#step5-dt').hide();
+		$('#step4-dt').show();
+		$('#step4-dt-1').hide();
+		$('#step4-dt-2').hide();
+	}
+
+	
+
 
 });
 </script>
@@ -525,5 +960,6 @@ $(document).ready(function(){
 <script src="catalog/view/javascript/custome/custome-single-upload.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-multiple-upload.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-process.js" type="text/javascript"></script>
-
+<script src="catalog/view/javascript/custome/custome-step4.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/custome/custome-step5.js" type="text/javascript"></script>
 <?php echo $footer; ?>

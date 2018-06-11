@@ -1,7 +1,67 @@
 <?php echo $header; ?>
 
-<hr>
+
 <div class="navigation" id="myPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11">
+            <nav class="navbar navbar-default">
+                <div class="container">
+
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                      </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                      <li>
+                        <a href="#myPage">
+                            <i><img src="<?php echo $img_1; ?>"></i>
+                            <h5>Home</h5>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#generalReason">
+                            <i><img src="<?php echo $img_2; ?>"></i>
+                            <h5>Reason</h5>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#price">
+                            <i><img src="<?php echo $img_3; ?>"></i>
+                            <h5>Price</h5>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#description">
+                            <i><img src="<?php echo $img_4; ?>"></i>
+                            <h5>Description</h5>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#flow-of-use">
+                            <i><img src="<?php echo $img_5; ?>"></i>
+                            <h5>Flow to use</h5>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="<?php echo $custome_login ?>"><button class="btn navbar-btn"><b>APPLY NOW</b></button></a>
+                      </li>
+                    </ul>
+                    </div>                  
+                </div>
+            </nav>
+            </div>
+        </div>
+    </div>
+</div><!--end navigation-->
+
+<div class="navigation" id="myPage1">
     <div class="container">
         <div class="row">
             <div class="col-sm-1"></div>

@@ -66,16 +66,21 @@ Please donate via PayPal to donate@opencart.com
 </footer>
 
 
-<a href="<?php echo $custome_login ?>" class="btn navbar-btn-apply"><b>APPLY NOW</b></a>
+<!-- <a href="<?php echo $custome_login ?>" class="btn navbar-btn-apply"><b>APPLY NOW</b></a> -->
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script>
+var windowWith = $(window).width();
+
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("myBtn").style.display = "block";
+        if(windowWith > 700)
+            document.getElementById("myPage1").style.display = "block";
     } else {
         document.getElementById("myBtn").style.display = "none";
+        document.getElementById("myPage1").style.display = "none";
     }
 }
 
@@ -83,6 +88,14 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+if(windowWith <700) {
+  $('.logo h4 i').hide();
+  $('#myPage1').hide();
+}else {
+  $('.logo h4 i').show();
+}
+
 </script>
 
 </body>

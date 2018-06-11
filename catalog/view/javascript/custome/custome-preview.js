@@ -23,3 +23,11 @@ $('#file-input2').change(function(){
 $('#file-input3').change(function(){
 	previewImage(this, "card-image2");
 });
+
+$('#file-input4').change(function(){
+	previewImage(this, "payment-image1");
+});
+
+$('#file-input5').change(function(){
+	previewImage(this, "payment-image2");
+});

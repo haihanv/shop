@@ -50,6 +50,24 @@ class ModelCustomeStepProcess extends Model
 	public function updateCurrentStep($customer_id, $value) {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET current_step = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
 	}	
+
+	public function getOrderStatus($customer_id) {
+		$query = $this->db->query("SELECT order_status FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['order_status'];
+	}
+
+	public function setOrderStatus($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET order_status = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+	public function getPaymentMethod($customer_id){
+		$query = $this->db->query("SELECT payment_method FROM " . DB_PREFIX . "customer_images WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['payment_method'];
+	}
+
+	public function setPaymentMethod($customer_id, $value){
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_images SET payment_method = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
 	
 }
 

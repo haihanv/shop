@@ -15,10 +15,6 @@ h3 {
 }
 
 
-hr {
-	width: 100%;
-}
-
 i {
 	padding-left: 12px;
 }
@@ -29,21 +25,31 @@ i {
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;
+	overflow: hidden;
 }
 
 #myPage ul li a {
 	
 	display: block;
 	margin: 0 auto;
+	text-align: center;
+	
 }
 
 #myPage ul li a h5 {
 	text-align: center;
+	font-size: 17px;
+}
+
+#myPage ul li a i {
+	height: 35px;
 }
 
 #myPage ul li a i img {
 	display: inline-block;
 	margin: 0 auto;
+	vertical-align: middle;
+	height: inherit;
 }
 
 .bg-light-blue {
@@ -57,32 +63,52 @@ i {
 .logo {
 	margin-top: 20px;
 	margin-bottom: 0px;
+	border-bottom: solid 1px;
 	border-bottom-color:  #eae9e5;
 	padding-bottom: 20px;
 }
 
 
-.logo .img-logo {
-	width: 60%;
-	float: left;
-}
-
-
-
 .logo h4 {
 	color: #0099cc;
 	float: right;
-	width: 40%;
-	font-size: 17px;
-	font-weight: 600;
+	width: 50%;
 }
 
-.navigation button {
+.logo h4 i {
+	font-size: 23px;
+	font-weight: bold;
+	height: inherit;
+	margin-right: 10px;
+	vertical-align: middle;
+	margin-top: 20px;
+}
+
+.logo h4 img {
+	margin-left: 10px;
+}
+.logo .img-logo {
+	width: 50%;
+	float: left;
+}
+
+.navigation ul li {
+	min-width: 160px;
+	height: 90px;
+}
+
+.navigation ul li:first-child {
+	border-left: none;
+}
+
+
+.navigation li button {
 
 	font-size: 20px;
 	padding: 20px 20px;
 	background-color: #EF135B;
 	color: white;
+	width: 100%;
 }
 
 .top-banner {
@@ -240,12 +266,8 @@ i {
 
 .custome-footer {
 	padding-bottom: 40px;
-	padding-top: 0px;
+	padding-top: 40px;
 	background-color: #CCCCCC;
-}
-
-.custome-footer div.container {
-	margin-top: 0px;
 }
 
 .custome-footer h2 {
@@ -302,7 +324,7 @@ i {
     background-color: #555; /* Add a dark-grey background on hover */
 }
 
-a.navbar-btn-apply {
+/*a.navbar-btn-apply {
 
 	font-size: 15px;
 	padding: 15px 15px;
@@ -312,10 +334,70 @@ a.navbar-btn-apply {
 	bottom: 40px;
 	right: 30px;
 	border-radius: 5px;
-}
+}*/
 
 .clear {
 	clear: both;
+}
+
+/*for second vaigation*/
+#myPage1 {
+	display: none;
+	width: 100%;
+	position: fixed;
+	z-index: 99;
+	top: 0px;
+	margin: auto;
+	background-color: white;
+	border: 1px solid;
+	height: auto;
+	border-color: #e6e6e6;
+
+}
+
+#myPage1 ul {
+	margin-bottom: 0px;
+}
+
+#myPage1 ul li {
+	display: block;
+	padding: 0 20px;
+	align-items: center;
+	border-left: solid 1px;
+	border-color: #e6e6e6;
+	height: inherit;
+}
+
+#myPage1 ul li:hover {
+	border-bottom: 2px solid #0099cc;
+}
+
+#myPage1 ul li:first-child {
+	border-left: none;
+}
+
+
+#myPage1 ul li a {
+	
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#myPage1 ul li a h5 {
+	text-align: center;
+	font-size: 17px;
+}
+
+#myPage1 ul li a i {
+	height: 35px;
+}
+
+#myPage1 ul li a i img {
+	display: inline-block;
+	margin: 0 auto;
+	vertical-align: middle;
+	height: inherit;
 }
 
 
@@ -490,4 +572,152 @@ table td.td-right div.input-field {
 	color: white;
 	font-size: 15px;
 	font-weight: 650;
+}
+
+
+/*for step 5*/
+
+.step5-dt .order-info {
+	border: 2px solid;
+	border-color: #0099cc;
+	min-height: 100px;
+	padding-top: 20px;	
+}
+
+.step5-dt .order-info h2{
+	color: #0099cc;
+	text-align: center;
+}
+
+.step5-dt .order-info h4 {
+	color: #0099cc;
+	text-align: center;
+}
+
+.step5-dt h2 {
+	text-align: center;
+	font-weight: bold;
+	color: #0099cc;
+}
+
+
+/*for step 4*/
+
+#note-dt {
+	margin-top: 0px;
+	padding: 20px;
+	border: 1px solid;
+	border-color: #FFD52B;
+}
+
+.payment .payment-img img{
+	display: block;
+	margin: 0 auto;
+}
+
+.payment .payment-type {
+	text-align: center;	
+}
+
+.payment h4 {
+	color: #0099cc;
+	font-weight: bold;
+}
+
+
+.bank-withdraw .block-1, .block-2{
+	text-align: center;
+}
+
+
+.bank-withdraw .block-1 img {
+	width:  120px;
+	height: 100px;
+	display: block;
+	margin: 0 auto;	
+}
+
+.bank-withdraw .block-2 img {
+	width:  120px;
+	height: 150px;
+	display: block;
+	margin: 0 auto;	
+}
+
+.bank-withdraw .block-2 .row .col-sm-4:last-child{
+	padding-top: 40px;
+}
+
+.other{
+	margin-bottom: 0px;
+	padding: 10px 20px;
+	background-color: white;
+	border: 1px solid #ddd;
+}
+
+.bank-withdraw td.payment-left{
+	padding-top: 20px;
+}
+
+.bank-withdraw td.payment-left span{
+	font-size: 15px;
+	font-weight: bold;
+	vertical-align: middle;
+	margin-top: 20px;
+}
+
+
+.bank-withdraw td.payment-right .payment-note span:first-child {
+	background-color: #EF135B;
+    display: inline-block;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+
+.credit-card .credit-brand img {
+	width: 120px;
+	height: 100px;
+	display: block;
+	margin: 0 auto;
+}
+
+
+.credit-card td.credit-left span{
+	font-size: 15px;
+	font-weight: bold;
+	vertical-align: middle;
+	margin-top: 20px;
+}
+
+.credit-card td.credit-right .credit-note span:first-child {
+	background-color: #EF135B;
+    display: inline-block;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+
+/*for button only*/
+.submit-btn {
+    margin-top: 20px;
+    -moz-box-shadow: 3px 4px 0px 0px #1564ad;
+    -webkit-box-shadow: 3px 4px 0px 0px #1564ad;
+    box-shadow: 3px 4px 0px 0px #1564ad;
+    background-color: #3389BA;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #337bc4;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 12px 12px;
+    text-decoration: none;
 }

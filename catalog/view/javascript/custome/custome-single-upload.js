@@ -68,3 +68,47 @@ $('#btn-file-input3').click(function(){
 	});
 
 });
+
+$('#btn-file-input4').click(function(){
+
+	var file_data = $('#file-input4').prop('files')[0];
+	var form_data = new FormData();
+	form_data.append('file', file_data);
+	form_data.append('customer_id', customer_id);
+	form_data.append('image_name', "image_4");
+
+	$.ajax({
+		url: 'index.php?route=custome/single_file_ajax',
+		type: 'POST',
+		data: form_data,
+		cache       : false,
+        contentType : false,
+        processData : false,
+        success     : function(output){
+        	alert(output);
+        } 
+	});
+
+});
+
+$('#btn-file-input5').click(function(){
+
+	var file_data = $('#file-input5').prop('files')[0];
+	var form_data = new FormData();
+	form_data.append('file', file_data);
+	form_data.append('customer_id', customer_id);
+	form_data.append('image_name', "image_5");
+
+	$.ajax({
+		url: 'index.php?route=custome/single_file_ajax',
+		type: 'POST',
+		data: form_data,
+		cache       : false,
+        contentType : false,
+        processData : false,
+        success     : function(output){
+        	alert(output);
+        } 
+	});
+
+});
