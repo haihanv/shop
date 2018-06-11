@@ -868,10 +868,12 @@ $(document).ready(function(){
 		$('#step2-dt').hide();
 		$('#step3-dt').hide();
 		$('#step4-dt').hide();
+		$('#step5-dt').hide();
 	} else {		
 		$('#step2-dt').hide();
 		$('#step3-dt').hide();
 		$('#step4-dt').hide();
+		$('#step5-dt').hide();
 	}
 
 	// check state 1
