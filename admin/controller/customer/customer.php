@@ -1074,64 +1074,59 @@ class ControllerCustomerCustomer extends Controller {
 		$data['image_5'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_5");
 
 		$_current_step = $this->model_custome_states->getCustomerCurrentStep($customer_id);		
+		$_current_state = $this->model_custome_states->getCustomerState($customer_id, "state_".$_current_step);
 		$current_state = "";
+		$order_state = "";
+		
 
-		if($_current_step != 5){
+		switch ($_current_state) {
+			case 1:
+				$current_state = "Ok";
+				break;
+			case 2:
+				$current_state = "Failed";
+				break;
+			case 3:
+				$current_state = "Wating for response";
+				break;
+			case 4:
+				$current_state = "Re-up";
+				break;
+			case 5:
+				$current_state = "Wating for response after re-up";
+				break;
+			default:
+				$current_state = "undefined";
+				break;
+		}
 
-			$_current_state = $this->model_custome_states->getCustomerState($customer_id, "state_".$_current_step);
+		$data['current_state'] = $current_state;
+		$data['current_step'] = $_current_step;
 
-			switch ($_current_state) {
+		if($_current_step == 4 && $_current_state == 1){
+			$_order_state = $this->model_custome_states->getCustomerOrderState($customer_id);
+
+			switch ($_order_state) {
 				case 1:
-					$current_state = "Ok";
+					$order_state = "Order active";
 					break;
 				case 2:
-					$current_state = "Failed";
+					$order_state = "Order completed. Payment active";
 					break;
 				case 3:
-					$current_state = "Wating for response";
+					$order_state = "Payment completed. Delivery active";
 					break;
 				case 4:
-					$current_state = "Re-up";
-					break;
-				case 5:
-					$current_state = "Wating for response after re-up";
+					$order_state = "Delivery done";
 					break;
 				default:
-					$current_state = "undefined";
+					$order_state = "undefined";
 					break;
 			}
-
-			$data['current_state'] = $current_state;
-			$data['current_step'] = $_current_step;
-		} else {
-
-			//do some thing with order status
-			$_current_state = $this->model_custome_states->getCustomerOrderState($customer_id);
-			switch ($_current_state) {
-				case 1:
-					$current_state = "Order active";
-					break;
-				case 2:
-					$current_state = "Order completed. Payment active";
-					break;
-				case 3:
-					$current_state = "Payment completed. Delivery active";
-					break;
-				case 4:
-					$current_state = "Delivery done";
-					break;
-				default:
-					$current_state = "undefined";
-					break;
-			}
-
-			$data['current_state'] = $current_state;
-			$data['current_step'] = $_current_step;
 
 		}
 
-		
-
+		$data['order_state'] = $_order_state;
 
 		$this->response->setOutput($this->load->view('customer/customer_form', $data));
 	}
