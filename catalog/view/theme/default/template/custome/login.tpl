@@ -945,7 +945,7 @@ $(document).ready(function(){
 		var admin_msg = $('#admin_message').html();
 		$('#step4-dt-1').html(admin_msg); 
 		$('.btn-re-up').show();
-	} else if(arr_initStates[3] == '0'){
+	} else if(arr_initStates[3] == '0' && arr_initStates[2] == '1'){
 		$('#step5-dt').hide();
 		$('#step4-dt').show();
 		$('#step4-dt-1').hide();

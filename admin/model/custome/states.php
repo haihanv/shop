@@ -26,6 +26,23 @@ class ModelCustomeStates extends Model {
 		return $query->row['time'];
 	}
 
+	public function getCustomerImagePath($customer_id, $columnName){
+		$query = $this->db->query("SELECT ".$columnName." FROM " . DB_PREFIX . "customer_images WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row[$columnName];
+	}
+
+
+	public function getCustomerOrderState($customer_id) {
+		$query = $this->db->query("SELECT order_status FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['order_status'];
+
+	}
+
+
+	public function updateCustomerOrderState($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET order_status = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
 	
 }
 

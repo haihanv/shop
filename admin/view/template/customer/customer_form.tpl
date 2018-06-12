@@ -32,7 +32,7 @@
             <!-- <li><a href="#tab-transaction" data-toggle="tab"><?php echo $tab_transaction; ?></a></li>
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-ip" data-toggle="tab"><?php echo $tab_ip; ?></a></li> -->
-            <li><a href="#tab-custome-info" data-toggle="tab">Demo</a></li>
+            <li><a href="#tab-custome-info" data-toggle="tab">Customer Info</a></li>
             <?php } ?>
           </ul>
           <div class="tab-content">
@@ -46,7 +46,7 @@
                     <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('#address a:first').tab('show'); $('#address a[href=\'#tab-address<?php echo $address_row; ?>\']').parent().remove(); $('#tab-address<?php echo $address_row; ?>').remove();"></i> <?php echo $tab_address . ' ' . $address_row; ?></a></li>
                     <?php $address_row++; ?>
                     <?php } ?>
-                    <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li>
+                    <!-- <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li> -->
                   </ul>
                 </div>
                 <div class="col-sm-10">
@@ -650,7 +650,80 @@
               </div>
             </div> -->
             <div id="tab-custome-info" class="tab-pane">
-                this is demo tab
+                <table class="table table-bordered table-hover">
+                     <thead>
+                      <tr>
+                        <td class="text-left">Name</td>
+                        <td class="text-left">Current Step</td>
+                        <td class="text-left">Current State</td>
+                        <td class="text-left">Next State</td>
+                        <td class="text-left">Action</td>
+                      </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                          <td class="text-left">Step Status</td>
+                          <td class="text-left">Current Step</td>
+                          <td class="text-left">Current State</td>
+                          <td class="text-left">Next State</td>
+                          <td class="text-left">Action</td>
+                        </tr>
+                     </tbody>
+                </table>
+
+                <br>
+                <h2>Images</h2>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="<?php echo $image_1 ?>" target="_blank"><img src="<?php echo $image_1 ?>" class="img-responsive"></a>
+                        <p></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="<?php echo $image_2 ?>" target="_blank"><img src="<?php echo $image_2 ?>" class="img-responsive"></a>
+                        <p></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="<?php echo $image_3 ?>" target="_blank"><img src="<?php echo $image_3 ?>" class="img-responsive"></a>
+                        <p></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="<?php echo $image_4 ?>" target="_blank"><img src="<?php echo $image_4 ?>" class="img-responsive"></a>
+                        <p></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="<?php echo $image_5 ?>" target="_blank"><img src="<?php echo $image_5 ?>" class="img-responsive"></a>
+                        <p></p>
+                    </div>
+                </div>
+                <br><br>
+                
+                <?php if ($payment_method == 1) { ?>
+                  <h2>Payment: <span><i style="color: #0099cc; font-size: 18px;">Bank Withdraw</i></span></h2><br><br>
+                <?php } else { ?>
+                  <h2>Payment: <span><i style="color: #0099cc; font-size: 18px;">Credit Card</i></span></h2><br><br>
+                <?php } ?>
+
+                <?php if ($payment_method == 1) { ?>
+
+                  <h4>Bank Name: <span style="color: #0099cc;"><?php echo $bank_name ?></span></h4>
+                  <h4>Security Code: <span style="color: #0099cc;"><?php echo $security_code ?></span></h4>
+
+                <?php } else { ?>
+
+                  <h4>card No: <span style="color: #0099cc;"><?php echo $card_no ?></span></h4>
+                  <h4>Expire Date: <span style="color: #0099cc;"><?php echo $expire_date ?></span></h4>
+                  <h4>Security No: <span style="color: #0099cc;"><?php echo $security_no ?></span></h4>
+                  <h4>Phone No: <span style="color: #0099cc;"><?php echo $phone_no ?></span></h4>
+                  <h4>First Name: <span style="color: #0099cc;"><?php echo $first_name ?></span></h4>
+                  <h4>Last Name: <span style="color: #0099cc;"><?php echo $last_name ?></span></h4>
+
+                 <?php } ?>
+                <h4>SoftBank Link: <span style="color: #0099cc;"><?php echo $link ?></span></h4>
+
+                <br><br>
+                <button class="btn btn-danger">Delete</button>
+
             </div>
             <?php } ?>
             <!-- <div class="tab-pane" id="tab-ip">

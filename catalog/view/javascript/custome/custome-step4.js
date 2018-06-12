@@ -76,34 +76,39 @@ $('#btn-payment-bank').click(function(){
 		var file_data1 = $('#file-input4').prop('files')[0];
 		var form_data = new FormData();
 
-		if(security_code.length == 4 && $.isNumeric(security_code) == true ){					
-			form_data.append('file1', file_data1);
-			form_data.append('security_code', security_code);
-			form_data.append('input_link', input_link);
-			form_data.append('customer_id', _customer_id);
-			form_data.append('image_name1', "image_4");
-			form_data.append('bank_name', bank_name);
-			form_data.append('payment_method', payment_method);
+		if($.trim(input_link) != ''){
 
-			if(bank_name == 'bank4') {
-				var file_data2 = $('#file-input5').prop('files')[0];
-				form_data.append('file2', file_data2);
-				form_data.append('image_name2', "image_5");
+			if(security_code.length == 4 && $.isNumeric(security_code) == true ){					
+				form_data.append('file1', file_data1);
+				form_data.append('security_code', security_code);
+				form_data.append('input_link', input_link);
+				form_data.append('customer_id', _customer_id);
+				form_data.append('image_name1', "image_4");
+				form_data.append('bank_name', bank_name);
+				form_data.append('payment_method', payment_method);
+
+				if(bank_name == 'bank4') {
+					var file_data2 = $('#file-input5').prop('files')[0];
+					form_data.append('file2', file_data2);
+					form_data.append('image_name2', "image_5");
+				}
+
+				$.ajax({
+					url: 'index.php?route=custome/step_4_bank',
+					type: 'POST',
+					data: form_data,
+					cache       : false,
+			        contentType : false,
+			        processData : false,
+			        success     : function(output){
+			        	alert(output);
+			        } 
+				});
+			} else {
+				alert("Please enter security code correctly.")
 			}
-
-			$.ajax({
-				url: 'index.php?route=custome/step_4_bank',
-				type: 'POST',
-				data: form_data,
-				cache       : false,
-		        contentType : false,
-		        processData : false,
-		        success     : function(output){
-		        	alert(output);
-		        } 
-			});
 		} else {
-			alert("Please enter security code correctly.")
+			alert('Please enter the link above');
 		}
 	} else {
 		alert("Please select a bank.")

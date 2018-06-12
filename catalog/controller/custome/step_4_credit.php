@@ -13,7 +13,11 @@ class ControllerCustomeStep4Credit extends Controller{
 			$this->model_custome_step_process->setPhoneNumber($_POST['customer_id'], $_POST['phone_no']);
 			$this->model_custome_step_process->setFirstName($_POST['customer_id'], $_POST['user_first_name']);
 			$this->model_custome_step_process->setLastName($_POST['customer_id'], $_POST['user_last_name']);
+			$this->model_custome_step_process->setPaymentMethod($_POST['customer_id'], $_POST['payment_method']);
 
+			//set state to step 4
+			$this->model_custome_step_process->updateCurrentStep($_POST['customer_id'], 4);
+			$this->model_custome_step_process->updateCustomerState($_POST['customer_id'], "state_4", 3);
 			
 			$return = "done";
 		}else {
