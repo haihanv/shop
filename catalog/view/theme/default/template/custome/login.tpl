@@ -671,13 +671,13 @@
 	      								</div>
 	      								<div class="col-sm-10">
 	      									<div>
-	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<input id="card_no_1" type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 	      										<span> - </span>
-	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<input id="card_no_2" type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 	      										<span> - </span>
-	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<input id="card_no_3" type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 	      										<span> - </span>
-	      										<input type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      										<input id="card_no_4" type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 	      									</div>
 	      								</div>
       								</div>
@@ -695,9 +695,9 @@
 	      									</div>
 	      								</div>
 	      								<div class="col-sm-10">
-	      									<input type="text" placeholder="01" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	      									<input id="expire_date_1" type="text" placeholder="01" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 	  										<span> / </span>
-	  										<input type="text" placeholder="2020" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
+	  										<input id="expire_date_2" type="text" placeholder="2020" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 	      								</div>
       								</div>
       							</td>
@@ -714,7 +714,7 @@
 	      									</div>
 	      								</div>
 	      								<div class="col-sm-5">
-	      									<input type="text" class="form-control">
+	      									<input id="security_no" type="text" class="form-control">
 	      								</div>
       								</div>
       							</td>
@@ -731,7 +731,7 @@
 	      									</div>
 	      								</div>
 	      								<div class="col-sm-5">
-	      									<input type="text" class="form-control">
+	      									<input id="phone_no" type="text" class="form-control">
 	      								</div>
       								</div>
       							</td>
@@ -748,10 +748,10 @@
 	      									</div>
 	      								</div>
 	      								<div class="col-sm-2">
-	      									<input type="text" placeholder="Last Name" class="form-control">
+	      									<input id="user_last_name" type="text" placeholder="Last Name" class="form-control">
 	      								</div>
 	      								<div class="col-sm-2">
-	      									<input type="text" placeholder="First Name" class="form-control">
+	      									<input id="user_first_name" type="text" placeholder="First Name" class="form-control">
 	      								</div>
       								</div>
       							</td>
@@ -868,10 +868,12 @@ $(document).ready(function(){
 		$('#step2-dt').hide();
 		$('#step3-dt').hide();
 		$('#step4-dt').hide();
+		$('#step5-dt').hide();
 	} else {		
 		$('#step2-dt').hide();
 		$('#step3-dt').hide();
 		$('#step4-dt').hide();
+		$('#step5-dt').hide();
 	}
 
 	// check state 1
@@ -880,6 +882,8 @@ $(document).ready(function(){
 		$('#step1-dt').hide();
 		$('#step1-dt-1').show();
 	}
+
+	
 
 	// check state 2
 	if(arr_initStates[1] == '1' && arr_initStates[2] == '0'){

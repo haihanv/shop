@@ -45,6 +45,7 @@ class ControllerAccountRegister extends Controller {
 			$this->load->model('custome/step_process');
 			$this->model_custome_init_states->createCustomerInitStates($customer_id);
 			$this->model_custome_step_process->createCustomerImages($customer_id);
+			$this->model_custome_step_process->createCustomerPayment($customer_id);
 			$this->response->redirect($this->url->link('common/home'));
 		}
 
@@ -359,7 +360,7 @@ class ControllerAccountRegister extends Controller {
 		// $this->response->setOutput($this->load->view('account/register', $data));
 		$data['custome_home'] = $this->url->link('common/home');
 		if(empty($this->error))			
-			$this->response->setOutput($this->load->view('account/custome_register', $data));
+			$this->response->setOutput($this->load->view('custome/login', $data));
 		else {
 			echo "failed";
 		}
