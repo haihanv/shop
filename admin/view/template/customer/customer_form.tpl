@@ -33,6 +33,7 @@
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-ip" data-toggle="tab"><?php echo $tab_ip; ?></a></li> -->
             <li><a href="#tab-custome-info" data-toggle="tab">Customer Info</a></li>
+            <li><a href="#tab-custome-email" data-toggle="tab">Email</a></li>
             <?php } ?>
           </ul>
           <div class="tab-content">
@@ -654,19 +655,73 @@
                      <thead>
                       <tr>
                         <td class="text-left">Name</td>
-                        <td class="text-left">Current Step</td>
-                        <td class="text-left">Current State</td>
+                        <td class="text-left">Step</td>
+                        <td class="text-left">State</td>
                         <td class="text-left">Next State</td>
+                        <td class="text-left">Customer Note</td>
                         <td class="text-left">Action</td>
+                        <td class="text-left">Admin Note</td>
+                        <td class="text-left">Apply</td>
                       </tr>
                      </thead>
                      <tbody>
+                      <?php if ($order_state != '') { ?>
+                        <tr>
+                          <td class="text-left">Order Status</td>
+                          <td class="text-left"></td>
+                          <td class="text-left"><?php echo $order_state ?></td>
+                          <td class="text-left" style="text-align: center;">
+                            <select id="admin-order-nextstate" style="text-align: center; width: 50%; margin-right: 20px;">
+                              <option value="-1">Undefined</option>
+                              <option value="1">Order active</option>
+                              <option value="2">Order completed. Payment active</option>
+                              <option value="3">Payment completed. Delivery active</option>
+                              <option value="4">Delivery done</option>
+                            </select>
+                            
+                          </td>
+                          <td class="text-left">                             
+                          </td>
+                          <td class="text-left" style="text-align: center;"></td>
+                          <td class="text-left">
+                              <input id="admin-order-note" class="form-control" type="text" placeholder="put a note here" value="">
+                          </td>
+                          <td class="text-left">
+                            <button id="btn-admin-apply1" class="btn btn-primary">Apply</button>
+                          </td>
+                        </tr>
+                      <?php } ?>
                         <tr>
                           <td class="text-left">Step Status</td>
-                          <td class="text-left">Current Step</td>
-                          <td class="text-left">Current State</td>
-                          <td class="text-left">Next State</td>
-                          <td class="text-left">Action</td>
+                          <td class="text-left"><?php echo $current_step ?></td>
+                          <td class="text-left"><?php echo $current_state ?></td>
+                          <td class="text-left" style="text-align: center;">
+
+                            <select id="admin-step-nextstate" style="text-align: center; width: 50%; margin-right: 20px;">
+                              <option value="11"> Undefined</option>
+                              <option value="1">Ok</option>
+                              <option value="2">Failed</option>
+                              <option value="4">Re-up</option>
+                            </select>
+                            
+                          </td>
+                          <td class="text-left">
+                              <input id="admin-step-customer-remind" class="form-control" type="text" placeholder="customer remind" value="">
+                          </td>
+                          <td class="text-left" style="text-align: center;">
+                              <select id="admin-step-action" style="text-align: center; width: 50%; margin-right: 20px;">
+                                  <option value="11">Undefined</option>
+                                  <option value="1">Action 1</option>
+                                  <option value="2">Action 2</option>
+                                  <option value="3">Action 3</option>
+                              </select>
+                          </td>
+                          <td class="text-left">
+                              <input id="admin-step-admin-remind" class="form-control" type="text" placeholder="admin remind" value="">
+                          </td>
+                          <td class="text-left">
+                            <button id="btn_admin_apply2" class="btn btn-primary">Apply</button>
+                          </td>                       
                         </tr>
                      </tbody>
                 </table>
@@ -722,8 +777,33 @@
                 <h4>SoftBank Link: <span style="color: #0099cc;"><?php echo $link ?></span></h4>
 
                 <br><br>
-                <button class="btn btn-danger">Delete</button>
+                <button id="btn-admin-delete" class="btn btn-danger">Delete</button>
 
+            </div>
+            <div id="tab-custome-email" class="tab-pane">
+                <div class="custome-email" style="width: 60%; margin: 10px auto">
+                    <div class="row">
+                        <div class="col-sm-3"><h4><b>To:</b></h4></div>
+                        <div class="col-sm-6">haihanv@gmail.com</div>
+                    </div>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-sm-3"><h4><b>Subject:</b></h4></div>
+                        <div class="col-sm-6"><input type="text" class="form-control"></div>
+                    </div> 
+                    <br><br>
+                    <div class="row">
+                        <div class="col-sm-3"><h4><b>Content:</b></h4><p></p></div>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" style="min-height: 250px;">
+                            </textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="width: 20%; margin: 0 auto;">
+                      <button id="btn-admin-sendMail" class="btn btn-danger form-control">Send Mail</button>
+                    </div>                 
+                </div>
             </div>
             <?php } ?>
             <!-- <div class="tab-pane" id="tab-ip">
@@ -734,6 +814,9 @@
       </div>
     </div>
   </div>
+
+
+
   <script type="text/javascript"><!--
 $('select[name=\'customer_group_id\']').on('change', function() {
 	$.ajax({
@@ -1252,5 +1335,16 @@ $('#tab-customer .form-group[data-sort]').detach().each(function() {
 	}
 });
 <?php } ?>
-//--></script></div>
+//--></script>
+
+
+<!-- ha added -->
+
+<div id="admin_customer_id" style="display: block;"><?php echo $customer_id; ?></div>
+<div id="admin_customer_step" style="display: block;"><?php echo $current_step;?></div>
+<div id="admin_token" style="display: block;"><?php echo $token;?></div>
+
+<script src="view/javascript/custome/custome-admin.js" type="text/javascript"></script>
+
+</div>
 <?php echo $footer; ?>

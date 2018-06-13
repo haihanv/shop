@@ -21,9 +21,6 @@ class ControllerCustomeMultipleFileAjax extends Controller
 
 
 			$this->load->model('custome/step_process');
-			$image_path1 = CUSTOME_DIR_UPLOAD.$_POST['customer_id']."_".($this->request->files['file1']['name']);
-			$image_path2 = CUSTOME_DIR_UPLOAD.$_POST['customer_id']."_".($this->request->files['file2']['name']);
-			$image_path3 = CUSTOME_DIR_UPLOAD.$_POST['customer_id']."_".($this->request->files['file3']['name']);
 
 			$filename1 = $this->request->files['file1']['name'];
 			$filename2 = $this->request->files['file2']['name'];
@@ -31,6 +28,12 @@ class ControllerCustomeMultipleFileAjax extends Controller
 			$ext1 = pathinfo($filename1, PATHINFO_EXTENSION);
 			$ext2 = pathinfo($filename2, PATHINFO_EXTENSION);
 			$ext3 = pathinfo($filename3, PATHINFO_EXTENSION);
+
+			$image_path1 = CUSTOME_DIR_UPLOAD.$_POST['customer_id']."_".$_POST['image_name1'].".".$ext1;
+			$image_path2 = CUSTOME_DIR_UPLOAD.$_POST['customer_id']."_".$_POST['image_name2'].".".$ext2;
+			$image_path3 = CUSTOME_DIR_UPLOAD.$_POST['customer_id']."_".$_POST['image_name3'].".".$ext3;
+
+			
 
 
 			if(($ext1 == 'png' || $ext1 == 'jpg' || $ext1 == 'jpeg') && 

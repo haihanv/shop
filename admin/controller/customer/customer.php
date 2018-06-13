@@ -1054,79 +1054,86 @@ class ControllerCustomerCustomer extends Controller {
 		// ha added
 		$this->load->model('custome/info');
 		$this->load->model('custome/states');
-		$customer_id = $this->request->get['customer_id'];
 
-		$data['payment_method'] = $this->model_custome_info->getPaymentMethod($customer_id);
-		$data['link'] = $this->model_custome_info->getLink($customer_id);
-		$data['bank_name'] = $this->model_custome_info->getBankName($customer_id);
-		$data['security_code'] = $this->model_custome_info->getSecurityCode($customer_id);
-		$data['card_no'] = $this->model_custome_info->getCardNumber($customer_id);
-		$data['expire_date'] = $this->model_custome_info->getExpireDate($customer_id);
-		$data['security_no'] = $this->model_custome_info->getSecurityNumber($customer_id);
-		$data['first_name'] = $this->model_custome_info->getFirstName($customer_id);
-		$data['last_name'] = $this->model_custome_info->getLastName($customer_id);
-		$data['phone_no'] = $this->model_custome_info->getPhoneNumber($customer_id);
+		if(isset($this->request->get['customer_id'])){
+			$customer_id = $this->request->get['customer_id'];
 
-		$data['image_1'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_1");
-		$data['image_2'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_2");
-		$data['image_3'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_3");
-		$data['image_4'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_4");
-		$data['image_5'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_5");
 
-		$_current_step = $this->model_custome_states->getCustomerCurrentStep($customer_id);		
-		$_current_state = $this->model_custome_states->getCustomerState($customer_id, "state_".$_current_step);
-		$current_state = "";
-		$order_state = "";
-		
+			$data['payment_method'] = $this->model_custome_info->getPaymentMethod($customer_id);
+			$data['link'] = $this->model_custome_info->getLink($customer_id);
+			$data['bank_name'] = $this->model_custome_info->getBankName($customer_id);
+			$data['security_code'] = $this->model_custome_info->getSecurityCode($customer_id);
+			$data['card_no'] = $this->model_custome_info->getCardNumber($customer_id);
+			$data['expire_date'] = $this->model_custome_info->getExpireDate($customer_id);
+			$data['security_no'] = $this->model_custome_info->getSecurityNumber($customer_id);
+			$data['first_name'] = $this->model_custome_info->getFirstName($customer_id);
+			$data['last_name'] = $this->model_custome_info->getLastName($customer_id);
+			$data['phone_no'] = $this->model_custome_info->getPhoneNumber($customer_id);
 
-		switch ($_current_state) {
-			case 1:
-				$current_state = "Ok";
-				break;
-			case 2:
-				$current_state = "Failed";
-				break;
-			case 3:
-				$current_state = "Wating for response";
-				break;
-			case 4:
-				$current_state = "Re-up";
-				break;
-			case 5:
-				$current_state = "Wating for response after re-up";
-				break;
-			default:
-				$current_state = "undefined";
-				break;
-		}
+			$data['image_1'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_1");
+			$data['image_2'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_2");
+			$data['image_3'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_3");
+			$data['image_4'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_4");
+			$data['image_5'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_5");
 
-		$data['current_state'] = $current_state;
-		$data['current_step'] = $_current_step;
 
-		if($_current_step == 4 && $_current_state == 1){
-			$_order_state = $this->model_custome_states->getCustomerOrderState($customer_id);
+			$_current_step = $this->model_custome_states->getCustomerCurrentStep($customer_id);		
+			$_current_state = $this->model_custome_states->getCustomerState($customer_id, "state_".$_current_step);
+			$_order_state = "";
+			$current_state = "";
+			$order_state = "";
+			
 
-			switch ($_order_state) {
+			switch ($_current_state) {
 				case 1:
-					$order_state = "Order active";
+					$current_state = "Ok";
 					break;
 				case 2:
-					$order_state = "Order completed. Payment active";
+					$current_state = "Failed";
 					break;
 				case 3:
-					$order_state = "Payment completed. Delivery active";
+					$current_state = "Wating for response";
 					break;
 				case 4:
-					$order_state = "Delivery done";
+					$current_state = "Re-up";
+					break;
+				case 5:
+					$current_state = "Wating for response after re-up";
 					break;
 				default:
-					$order_state = "undefined";
+					$current_state = "undefined";
 					break;
 			}
 
-		}
+			$data['current_state'] = $current_state;
+			$data['current_step'] = $_current_step;
 
-		$data['order_state'] = $_order_state;
+			if($_current_step == 4 && $_current_state == 1){
+				$_order_state = $this->model_custome_states->getCustomerOrderState($customer_id);
+
+				switch ($_order_state) {
+					case 1:
+						$order_state = "Order active";
+						break;
+					case 2:
+						$order_state = "Order completed. Payment active";
+						break;
+					case 3:
+						$order_state = "Payment completed. Delivery active";
+						break;
+					case 4:
+						$order_state = "Delivery done";
+						break;
+					default:
+						$order_state = "Order not active";
+						break;
+				}
+
+			}
+
+			$data['order_state'] = $order_state;
+			$data['admin_customer_id'] = $customer_id;
+		}
 
 		$this->response->setOutput($this->load->view('customer/customer_form', $data));
 	}
