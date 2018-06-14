@@ -34,6 +34,7 @@ class ControllerCustomeLogin extends Controller
 		$data['custome_26'] = $server . 'image/custome/26.png';
 		$data['custome_27'] = $server . 'image/custome/27.png';
 		$data['custome_28'] = $server . 'image/custome/28.png';
+		$data['custome_29'] = $server . 'image/custome/29.png';
 
 		$this->load->model('custome/init_states');
 		$this->load->model('custome/step_process');

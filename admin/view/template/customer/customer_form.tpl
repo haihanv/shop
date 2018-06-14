@@ -687,7 +687,7 @@
                               <input id="admin-order-note" class="form-control" type="text" placeholder="put a note here" value="">
                           </td>
                           <td class="text-left">
-                            <button id="btn-admin-apply1" class="btn btn-primary">Apply</button>
+                            <button id="btn_admin_apply1" class="btn btn-primary">Apply</button>
                           </td>
                         </tr>
                       <?php } ?>
@@ -1285,6 +1285,7 @@ $('#content').delegate('button[id^=\'button-custom-field\'], button[id^=\'button
 			});
 		}
 	}, 500);
+  
 });
 
 $('.date').datetimepicker({
@@ -1343,6 +1344,7 @@ $('#tab-customer .form-group[data-sort]').detach().each(function() {
 <div id="admin_customer_id" style="display: block;"><?php echo $customer_id; ?></div>
 <div id="admin_customer_step" style="display: block;"><?php echo $current_step;?></div>
 <div id="admin_token" style="display: block;"><?php echo $token;?></div>
+<div id="order_state_int" style="display: block;"><?php echo $order_state_int;?></div>
 
 <script src="view/javascript/custome/custome-admin.js" type="text/javascript"></script>
 

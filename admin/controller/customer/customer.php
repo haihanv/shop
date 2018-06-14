@@ -1079,7 +1079,7 @@ class ControllerCustomerCustomer extends Controller {
 
 			$_current_step = $this->model_custome_states->getCustomerCurrentStep($customer_id);		
 			$_current_state = $this->model_custome_states->getCustomerState($customer_id, "state_".$_current_step);
-			$_order_state = "";
+			$_order_state = 0;
 			$current_state = "";
 			$order_state = "";
 			
@@ -1132,6 +1132,7 @@ class ControllerCustomerCustomer extends Controller {
 			}
 
 			$data['order_state'] = $order_state;
+			$data['order_state_int'] = $_order_state;
 			$data['admin_customer_id'] = $customer_id;
 		}
 

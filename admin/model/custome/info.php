@@ -112,6 +112,26 @@ class ModelCustomeInfo extends Model {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer_payment SET security_code = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
 	}
 
+	public function getAdminNote($customer_id) {
+		$query = $this->db->query("SELECT admin_note FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['admin_note'];
+	}
+
+
+	public function setAdminNote($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET admin_note = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+	public function getOrderNote($customer_id) {
+		$query = $this->db->query("SELECT order_note FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['order_note'];
+	}
+
+
+	public function setOrderNote($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET order_note = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
 }
 
 

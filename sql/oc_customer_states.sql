@@ -33,12 +33,14 @@ CREATE TABLE IF NOT EXISTS `oc_customer_states` (
   `state_2` int(11) NOT NULL DEFAULT '0',
   `state_3` int(11) NOT NULL DEFAULT '0',
   `state_4` int(11) NOT NULL DEFAULT '0',
-  `admin_message` varchar(255) NOT NULL DEFAULT 'default',
-  `time` varchar(255) NOT NULL DEFAULT 'default',
+  `admin_message` varchar(255) NOT NULL DEFAULT 'none',
+  `time` varchar(255) NOT NULL DEFAULT 'none',
   `current_step` int(11) NOT NULL DEFAULT '1',
   `order_status` int(11) NOT NULL DEFAULT '0',
+  `admin_note` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `order_note` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `oc_customer_states`

@@ -54,28 +54,28 @@
         <h4>
           <i>KANTAN WIFI JAPAN</i>
           <span><a href="#"><img src="<?php echo $fb_icon; ?>"></a></span>
-          <span><a href="#"><img src="<?php echo $skype_icon; ?>"></a></span>
-        </h4>
-      </div>
-      <div class="col-sm-1">
-        <ul class="list-inline">
-          <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
-            <ul class="dropdown-menu dropdown-menu-right">
+          <span><a href="#"><img src="<?php echo $skype_icon; ?>"></a></span>        
+        </h4>      
 
-              <?php if ($logged) { ?>
-              <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-              <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-              <?php } else { ?>
-              <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-              <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-              <?php } ?>
-            </ul>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
 </div> <!--end logo-->
+
+<ul class="list-inline" style="display: inline-block; position: fixed; top: 80px; right: 10px; z-index: 999;">
+  <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"></span> <span class="caret"></span></a>
+    <ul class="dropdown-menu dropdown-menu-right">
+
+      <?php if ($logged) { ?>
+      <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+      <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+      <?php } else { ?>
+      <!-- <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li> -->
+      <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
+      <?php } ?>
+    </ul>
+  </li>
+</ul>
 
 
 <!-- <nav id="top">

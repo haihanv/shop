@@ -9,6 +9,11 @@ class ModelCustomeStates extends Model {
 	}
 
 
+	public function setCustomerCurrentStep($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET current_step = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+
 	public function getCustomerState($customer_id, $stateName) {
 		$query = $this->db->query("SELECT ".$stateName." FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
 		return $query->row[$stateName];
