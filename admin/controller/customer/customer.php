@@ -1069,6 +1069,7 @@ class ControllerCustomerCustomer extends Controller {
 			$data['first_name'] = $this->model_custome_info->getFirstName($customer_id);
 			$data['last_name'] = $this->model_custome_info->getLastName($customer_id);
 			$data['phone_no'] = $this->model_custome_info->getPhoneNumber($customer_id);
+			
 
 			$data['image_1'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_1");
 			$data['image_2'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_2");

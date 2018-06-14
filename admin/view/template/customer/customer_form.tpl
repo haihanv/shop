@@ -784,7 +784,7 @@
                 <div class="custome-email" style="width: 60%; margin: 10px auto">
                     <div class="row">
                         <div class="col-sm-3"><h4><b>To:</b></h4></div>
-                        <div class="col-sm-6">haihanv@gmail.com</div>
+                        <div class="col-sm-6" id="customer_email"><?php echo $email; ?> </div>
                     </div>
                     <br><br>
                     <div class="row">

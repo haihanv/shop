@@ -132,6 +132,12 @@ class ModelCustomeInfo extends Model {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET order_note = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
 	}
 
+	// for email
+
+	public function getCustomerEmail($customer_id) {
+		$query = $this->db->query("SELECT email FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['email'];
+	}
 }
 
 
