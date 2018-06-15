@@ -6,6 +6,9 @@ var str_customer_step = $('#admin_customer_step').html();
 var str_order_state = $('#order_state_int').html();
 
 
+
+
+
 var _customer_id = parseInt(str_customer_id);
 var _customer_step = parseInt(str_customer_step);
 var _order_state = parseInt(str_order_state);
@@ -27,7 +30,16 @@ $('#btn_admin_apply1').on('click', function(e) {
 		order_state: _order_state,
 		customer_id: _customer_id
 	}, function(value, stt){
-		alert(value);
+		//alert(value);
+
+		if(value == 'order_done' || value == 'done') {
+			window.location.replace("index.php?route=customer/customer/edit&token="+token+ "&customer_id=" + _customer_id);
+		} else if(value == 'order_failed'){
+			alert('Order state must be the state after current state');
+		} else {
+			alert('Failed');
+		}
+
 	});
 
 	alert(typeof _order_state);
@@ -45,7 +57,7 @@ $('#btn_admin_apply2').on('click', function(e) {
 	var _admin_step_nextstate = parseInt(str_admin_step_nextstate);
 	var _action = parseInt(str_action);
 
-	if(_admin_step_nextstate != 11){
+	// if(_admin_step_nextstate != 11){
 
 		var url = "index.php?route=custome/customer_info&token="+token;
 
@@ -61,13 +73,57 @@ $('#btn_admin_apply2').on('click', function(e) {
 			customer_step: _customer_step,
 			customer_id: _customer_id
 		}, function(value, stt){
-			alert(value);
+			// alert(value);
+
+			if(value == 'step_done' || value == 'done') {
+				window.location.replace("index.php?route=customer/customer/edit&token="+token+ "&customer_id=" + _customer_id);
+			} else {
+				alert('Failed');
+			}
 		});
 		
-		alert('ki ta');
+		// alert('ki ta');
 				
+	// } else {
+	// 	alert(typeof _admin_step_nextstate);
+	// }
+
+});
+
+
+// for sending email in email tab
+// 
+
+$('#btn_admin_sendMail').on('click', function(e) {
+
+	e.preventDefault();
+
+	var token = $('#admin_token').html();
+	var url = "index.php?route=custome/customer_mail&token="+token;
+
+	var str_customer_email = $('#customer_email').html();
+	var str_subject = $('#customer_subject').val();
+	var str_content = $('#customer_content').val();
+
+	if($.trim(str_subject) == '' || $.trim(str_content) == ''){
+		alert("Please fill both Subject and Content of email");
 	} else {
-		alert(typeof _admin_step_nextstate);
+
+		$.post(url, {
+			customer_id: _customer_id,
+			subject: str_subject,
+			content: str_content,
+			email: str_customer_email
+		}, function(value, stt){
+			if(value == 'done') {
+				$('#customer_subject').val("");
+				$('#customer_content').val("");
+				alert('Email sent successfully');
+			}else {
+				alert('Failed to send email')
+			}	
+		});
+
 	}
 
 });

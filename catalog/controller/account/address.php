@@ -206,15 +206,43 @@ class ControllerAccountAddress extends Controller {
 			if ($result['address_format']) {
 				$format = $result['address_format'];
 			} else {
-				$format = '{firstname} {lastname}' . "\n" . '{company}' . "\n" . '{address_1}' . "\n" . '{address_2}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
+				// $format = '{firstname} {lastname}' . "\n" . '{company}' . "\n" . '{address_1}' . "\n" . '{address_2}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
+
+				//ha added
+				$format = '{firstname}' . "\n" .  '{address_1}' . "\n" . '{city} {postcode}' . "\n" . '{zone}' . "\n" . '{country}';
 			}
 
+			// $find = array(
+			// 	'{firstname}',
+			// 	'{lastname}',
+			// 	'{company}',
+			// 	'{address_1}',
+			// 	'{address_2}',
+			// 	'{city}',
+			// 	'{postcode}',
+			// 	'{zone}',
+			// 	'{zone_code}',
+			// 	'{country}'
+			// );
+
+			// $replace = array(
+			// 	'firstname' => $result['firstname'],
+			// 	'lastname'  => $result['lastname'],
+			// 	'company'   => $result['company'],
+			// 	'address_1' => $result['address_1'],
+			// 	'address_2' => $result['address_2'],
+			// 	'city'      => $result['city'],
+			// 	'postcode'  => $result['postcode'],
+			// 	'zone'      => $result['zone'],
+			// 	'zone_code' => $result['zone_code'],
+			// 	'country'   => $result['country']
+			// );
+
+			// ha added
+			
 			$find = array(
 				'{firstname}',
-				'{lastname}',
-				'{company}',
 				'{address_1}',
-				'{address_2}',
 				'{city}',
 				'{postcode}',
 				'{zone}',
@@ -224,16 +252,16 @@ class ControllerAccountAddress extends Controller {
 
 			$replace = array(
 				'firstname' => $result['firstname'],
-				'lastname'  => $result['lastname'],
-				'company'   => $result['company'],
 				'address_1' => $result['address_1'],
-				'address_2' => $result['address_2'],
 				'city'      => $result['city'],
 				'postcode'  => $result['postcode'],
 				'zone'      => $result['zone'],
 				'zone_code' => $result['zone_code'],
 				'country'   => $result['country']
 			);
+
+
+			// end ha added
 
 			$data['addresses'][] = array(
 				'address_id' => $result['address_id'],

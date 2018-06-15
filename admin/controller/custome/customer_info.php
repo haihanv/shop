@@ -6,6 +6,7 @@ class ControllerCustomeCustomerInfo extends Controller {
 		$retVal = "";
 		if(isset($_POST['customer_id'])) {
 
+			$retVal = 'done';
 
 			$this->load->model('custome/info');
 			$this->load->model('custome/states');
@@ -23,7 +24,7 @@ class ControllerCustomeCustomerInfo extends Controller {
 
 			// process when next state is not undefined 		
 			if(isset($_POST['step_next_state']) && $_POST['step_next_state'] != 11){
-				echo "state";
+				
 
 				$next_state = $_POST['step_next_state'];
 				$customer_current_state = "state_".$_POST['customer_step'];
@@ -35,38 +36,34 @@ class ControllerCustomeCustomerInfo extends Controller {
 					$this->model_custome_states->updateCustomerState($_POST['customer_id'], $customer_current_state, $next_state);
 				}
 
+				$retVal= 'step_done';
+
 			}
 
+			
 
 			//process for order status
 			if(isset($_POST['order_nextstate'])) {
 				
+				if($_POST['order_nextstate'] != 11 && $_POST['order_nextstate'] >= $_POST['order_state']){
+
+					$this->model_custome_info->setOrderNote($_POST['customer_id'], $_POST['order_note']);
+					$this->model_custome_states->updateCustomerOrderState($_POST['customer_id'], $_POST['order_nextstate']);
+
+					$retVal = 'order_done';
+
+				} else {
+
+					$retVal = 'order_failed';
+				}
 			}
 
-
-
-			//process for order status
-			// if($_POST['order_nextstate'] != 11 && $_POST['order_nextstate'] >= $_POST['order_state']){
-
-			// 	$this->model_custome_info->setOrderNote($_POST['customer_id'], $_POST['order_note']);
-			// 	$this->model_custome_states->updateCustomerOrderState($_POST['customer_id'], $_POST['order_nextstate']);
-			// }
-		
-
-			// if(isset($_POST['order_nextstate'])) {
-			// 	echo "order";
-			// } else {
-			// 	echo "not order";
-			// }
-
-			
-
-			$retVal= 'done';			
+						
 		}else {
 			$retVal= 'failed';
 		}
 
-		echo "sao ki vay";
+		echo $retVal;
 	}
 }
 

@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<br>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -22,7 +23,8 @@
         <fieldset>
           <legend><?php echo $text_your_details; ?></legend>
           <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?> </label>
+            <!-- <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?> </label> -->
+            <label class="col-sm-2 control-label" for="input-firstname">Name</label>
             <div class="col-sm-10">
               <input type="text" name="firstname" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" />
               <?php if ($error_firstname) { ?>
@@ -30,7 +32,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group required">
+          <div class="form-group required" style="display: none;">
             <label class="col-sm-2 control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
             <div class="col-sm-10">
               <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />

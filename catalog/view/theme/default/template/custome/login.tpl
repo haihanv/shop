@@ -794,7 +794,7 @@
 <!-- end application-form -->
 
 
-	<div class="step5-dt" id="step5-dt">
+	<div class="step5-dt" id="step5-dt" style="display: none;">
 		<h2>ORDER STATUS</h2>
 		<br>
 		<div class="row bs-wizard" style="border-bottom:0;">      
@@ -839,7 +839,7 @@
 					<p></p>
 				</div>
 				<div class="col-sm-3">
-					<h4>Payment Confirmation</h4>
+					<h4>Payment Status</h4>
 					<p></p>
 				</div>
 				<div class="col-sm-3">

@@ -138,6 +138,13 @@ class ModelCustomeInfo extends Model {
 		$query = $this->db->query("SELECT email FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id. "'");
 		return $query->row['email'];
 	}
+
+
+	// end email
+
+
+
+
 }
 
 

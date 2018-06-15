@@ -60,6 +60,11 @@ class ModelCustomerCustomer extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+
+		// ha added
+		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_payment WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_images WHERE customer_id = '" . (int)$customer_id . "'");
 	}
 
 	public function getCustomer($customer_id) {

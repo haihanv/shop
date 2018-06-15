@@ -139,6 +139,7 @@ class ControllerCustomerCustomer extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('customer/customer');
+		$this->load->model('custome/info');
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
 			foreach ($this->request->post['selected'] as $customer_id) {
@@ -189,6 +190,7 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
+			
 			$this->response->redirect($this->url->link('customer/customer', 'token=' . $this->session->data['token'] . $url, true));
 		}
 

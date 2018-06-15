@@ -783,25 +783,27 @@
             <div id="tab-custome-email" class="tab-pane">
                 <div class="custome-email" style="width: 60%; margin: 10px auto">
                     <div class="row">
-                        <div class="col-sm-3"><h4><b>To:</b></h4></div>
-                        <div class="col-sm-6" id="customer_email"><?php echo $email; ?> </div>
+                        <div class="col-sm-2"><h4><b>To:</b></h4></div>
+                        <div class="col-sm-6" id="customer_email" style="font-size: 17px;"><?php echo $email; ?></div>
                     </div>
                     <br><br>
                     <div class="row">
-                        <div class="col-sm-3"><h4><b>Subject:</b></h4></div>
-                        <div class="col-sm-6"><input type="text" class="form-control"></div>
+                        <div class="col-sm-2"><h4><b>Subject:</b></h4></div>
+                        <div class="col-sm-10">
+                          <input id="customer_subject" type="text" class="form-control">
+                        </div>
                     </div> 
                     <br><br>
                     <div class="row">
-                        <div class="col-sm-3"><h4><b>Content:</b></h4><p></p></div>
-                        <div class="col-sm-8">
-                            <textarea class="form-control" style="min-height: 250px;">
+                        <div class="col-sm-2"><h4><b>Content:</b></h4><p></p></div>
+                        <div class="col-sm-10">
+                            <textarea id="customer_content" class="form-control" style="min-height: 350px; padding: 10px;">
                             </textarea>
                         </div>
                     </div>
                     <br>
                     <div style="width: 20%; margin: 0 auto;">
-                      <button id="btn-admin-sendMail" class="btn btn-danger form-control">Send Mail</button>
+                      <button id="btn_admin_sendMail" class="btn btn-danger form-control">Send Mail</button>
                     </div>                 
                 </div>
             </div>
@@ -1341,10 +1343,10 @@ $('#tab-customer .form-group[data-sort]').detach().each(function() {
 
 <!-- ha added -->
 
-<div id="admin_customer_id" style="display: block;"><?php echo $customer_id; ?></div>
-<div id="admin_customer_step" style="display: block;"><?php echo $current_step;?></div>
-<div id="admin_token" style="display: block;"><?php echo $token;?></div>
-<div id="order_state_int" style="display: block;"><?php echo $order_state_int;?></div>
+<div id="admin_customer_id" style="display: none;"><?php echo $customer_id; ?></div>
+<div id="admin_customer_step" style="display: none;"><?php echo $current_step;?></div>
+<div id="admin_token" style="display: none;"><?php echo $token;?></div>
+<div id="order_state_int" style="display: none;"><?php echo $order_state_int;?></div>
 
 <script src="view/javascript/custome/custome-admin.js" type="text/javascript"></script>
 
