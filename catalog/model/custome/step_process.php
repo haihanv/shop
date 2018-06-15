@@ -28,7 +28,7 @@ class ModelCustomeStepProcess extends Model
 	}
 
 	public function updateCustomerAddress($customer_id, $address) {
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_1 = '".$address."' WHERE customer_id = '" . (int)$customer_id. "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "address SET address_1 = '".$address."' WHERE customer_id = '" .(int)$customer_id. "'");
 	}
 
 	public function updateCustomerPhone($customer_id, $phone) {

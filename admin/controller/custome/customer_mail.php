@@ -25,7 +25,7 @@ class ControllerCustomeCustomerMail extends Controller {
 			$mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
 			$mail->setSubject(html_entity_decode($subject, ENT_QUOTES, 'UTF-8'));
 			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
-			// $mail->send();
+			$mail->send();
 
 			$ret = 'done';
 		}else {
