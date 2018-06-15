@@ -23,7 +23,21 @@ class ModelCustomeStepProcess extends Model
 	}
 
 
+	public function updateCustomerName($customer_id, $name) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET firstname = '".$name."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
 
+	public function updateCustomerAddress($customer_id, $address) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_1 = '".$address."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+	public function updateCustomerPhone($customer_id, $phone) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET telephone = '".$phone."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+	public function updateCustomerTime($customer_id, $time) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET time = '".$time."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
 
 
 	public function updateCustomerImagePath($customer_id, $columnName, $path) {

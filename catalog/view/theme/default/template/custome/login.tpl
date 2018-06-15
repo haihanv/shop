@@ -239,6 +239,7 @@
 						        	<div class="required"><span>Required</span></div>
 						        	<div class="input-field">
 						        		<select class="form-control" id="step2-dt-time">
+						        			<option>None</option>
 									        <option>10.am - 11.am</option>
 									        <option>11.am - 12.am</option>
 									        <option>12.am - 1.pm</option>
@@ -255,6 +256,10 @@
 					    </tr>
 	      			</tbody>
 	      		</table>
+
+	      		<div style="text-align: center;">
+	      			<span><button id="btn-file-input6" class="btn btn-primary btn-re-up">Re-up</button></span>
+	      		</div>
 
 	      		<br><br>
 
@@ -360,7 +365,7 @@
 	      		</table>
 
 	      		<div style="text-align: center;">
-			  		<button type="submit" class="btn btn-primary submit-btn" id="step2-dt-btn" style="display: block; margin: 0 auto;">Proceed to enter customer information</button>
+			  		<button type="submit" class="btn btn-primary submit-btn" id="step2-dt-btn" style="display: inline-block; margin: 0 auto;  ">Proceed to enter customer information</button>
 			  	</div>
 		  		
 	      </div>

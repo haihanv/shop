@@ -112,3 +112,26 @@ $('#btn-file-input5').click(function(){
 	});
 
 });
+
+
+$('#btn-file-input6').click(function(){
+
+
+	var str_name = $('#step2-dt-name').val();
+	var str_address = $('#step2-dt-address').val();
+	var str_phone = $('#step2-dt-phone').val();
+	var str_time = $('#step2-dt-time option:selected').text();
+
+	$.post('index.php?route=custome/single_info_ajax',{
+		customer_id: customer_id,
+		name: $.trim(str_name),
+		address: $.trim(str_address),
+		phone: $.trim(str_phone),
+		time: str_time
+
+	}, function(value, stt){
+		alert(value);
+	});
+
+	alert('nan qua');
+});	

@@ -21,6 +21,8 @@ $('#step2-dt-btn').click(function(e){
 	
 	if($.trim(name) == '' || $.trim(address) == '' || $.trim(phone) == ''){
 		alert('Please fill all the missing fields');
+	} else if(time == 'None'){
+		alert('Please select available time');
 	} else {
 		var file_data1 = $('#file-input1').prop('files')[0];
 		var file_data2 = $('#file-input2').prop('files')[0];

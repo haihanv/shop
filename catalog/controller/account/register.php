@@ -359,9 +359,19 @@ class ControllerAccountRegister extends Controller {
 		// ha added
 		// $this->response->setOutput($this->load->view('account/register', $data));
 		$data['custome_home'] = $this->url->link('common/home');
-		if(empty($this->error))			
+		if(empty($this->error)){
+			
+			if ($this->request->server['HTTPS']) {
+				//$server = $this->config->get('config_ssl');
+				$server = 'http://10.184.140.222/shop/';
+			} else {
+				//$server = $this->config->get('config_url');
+				$server = 'http://10.184.140.222/shop/';
+			}
+
+			$data['custome_29'] = $server . 'image/custome/29.png';		
 			$this->response->setOutput($this->load->view('custome/login', $data));
-		else {
+		} else {
 			echo "failed";
 		}
 	}
