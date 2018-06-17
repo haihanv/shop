@@ -44,14 +44,17 @@ class ControllerCustomeMultipleFileAjax extends Controller
 				$ret1 = move_uploaded_file($this->request->files['file1']['tmp_name'], $image_path1);
 				$ret2 = move_uploaded_file($this->request->files['file2']['tmp_name'], $image_path2);
 				$ret3 = move_uploaded_file($this->request->files['file3']['tmp_name'], $image_path3);
-
-
-				$image_path1 = $server."image/custome/customers/".$_POST['customer_id']."_".$_POST['image_name1'].".".$ext1;
-				$image_path2 = $server."image/custome/customers/".$_POST['customer_id']."_".$_POST['image_name2'].".".$ext2;
-				$image_path3 = $server."image/custome/customers/".$_POST['customer_id']."_".$_POST['image_name3'].".".$ext3;
-				
+	
 
 				if($ret1 && $ret2 && $ret3) {
+
+					chmod($image_path1, 0777);
+					chmod($image_path2, 0777);
+					chmod($image_path3, 0777);
+
+					$image_path1 = $server."image/custome/customers/".$_POST['customer_id']."_".$_POST['image_name1'].".".$ext1;
+					$image_path2 = $server."image/custome/customers/".$_POST['customer_id']."_".$_POST['image_name2'].".".$ext2;
+					$image_path3 = $server."image/custome/customers/".$_POST['customer_id']."_".$_POST['image_name3'].".".$ext3;
 
 					$this->model_custome_step_process->updateCustomerImagePath($_POST['customer_id'], $_POST['image_name1'], $image_path1);
 					$this->model_custome_step_process->updateCustomerImagePath($_POST['customer_id'], $_POST['image_name2'], $image_path2);

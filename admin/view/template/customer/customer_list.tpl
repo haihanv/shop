@@ -149,6 +149,8 @@
                   <td class="text-left">Available Time</td>
                   <td class="text-left">Current Step</td>
                   <td class="text-left">State</td>
+                  <td class="text-left">Admin Note</td>
+                  <td class="text-left">Currently modified by</td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -172,6 +174,8 @@
                   <td class="text-left"><?php echo $customer['avai_time']; ?></td>
                   <td class="text-left"><?php echo $customer['step']; ?></td>
                   <td class="text-left"><?php echo $customer['state']; ?></td>
+                  <td class="text-left"><?php echo $customer['admin_note']; ?></td>
+                  <td class="text-left"><?php echo $customer['modified_by']; ?></td>
 
                   <td class="text-right"><?php if ($customer['approve']) { ?>
                     <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>

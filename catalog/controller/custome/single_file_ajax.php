@@ -24,6 +24,7 @@ class ControllerCustomeSingleFileAjax extends Controller
 
 				if(move_uploaded_file($this->request->files['file']['tmp_name'], $image_path)) {
 
+					chmod($image_path, 0777);
 					$image_path = $server."image/custome/customers/".$_POST['customer_id']."_". $_POST['image_name'].".".$ext;
 
 					$this->model_custome_step_process->updateCustomerImagePath($_POST['customer_id'], $_POST['image_name'], $image_path);

@@ -21,6 +21,7 @@ $('#btn_admin_apply1').on('click', function(e) {
 	var str_admin_order_nextstate = $('#admin-order-nextstate option:selected').val();
 	var str_admin_order_note = $('#admin-order-note').val();
 	var _order_nextstate = parseInt(str_admin_order_nextstate);
+	var str_delivery_time = $('#admin-delivery-time').val();
 
 	var url = "index.php?route=custome/customer_info&token="+token;
 
@@ -28,23 +29,20 @@ $('#btn_admin_apply1').on('click', function(e) {
 		order_note: str_admin_order_note,
 		order_nextstate: _order_nextstate,
 		order_state: _order_state,
+		delivery_time: str_delivery_time,
 		customer_id: _customer_id
 	}, function(value, stt){
-		//alert(value);
 
 		if(value == 'order_done' || value == 'done') {
 			window.location.replace("index.php?route=customer/customer/edit&token="+token+ "&customer_id=" + _customer_id);
 		} else if(value == 'order_failed'){
-			alert('Order state must be the state after current state');
+			alert('Order state must be the states after current state');
 		} else {
 			alert('Failed');
 		}
 
 	});
 
-	alert(typeof _order_state);
-	// alert(typeof _order_nextstate);
-	// alert(typeof str_admin_order_note);
 });
 
 $('#btn_admin_apply2').on('click', function(e) {

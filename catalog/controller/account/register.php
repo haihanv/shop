@@ -361,16 +361,17 @@ class ControllerAccountRegister extends Controller {
 		$data['custome_home'] = $this->url->link('common/home');
 		if(empty($this->error)){
 			
-			if ($this->request->server['HTTPS']) {
-				//$server = $this->config->get('config_ssl');
-				$server = 'http://10.184.140.222/shop/';
-			} else {
-				//$server = $this->config->get('config_url');
-				$server = 'http://10.184.140.222/shop/';
-			}
+			// if ($this->request->server['HTTPS']) {
+			// 	$server = $this->config->get('config_ssl');
+			// 	//$server = 'http://10.184.140.222/shop/';
+			// } else {
+			// 	$server = $this->config->get('config_url');
+			// 	//$server = 'http://10.184.140.222/shop/';
+			// }
 
-			$data['custome_29'] = $server . 'image/custome/29.png';		
-			$this->response->setOutput($this->load->view('custome/login', $data));
+			// $data['custome_29'] = $server . 'image/custome/29.png';		
+			// $this->response->setOutput($this->load->view('custome/login', $data));
+			$this->response->redirect($this->url->link('custome/login'));
 		} else {
 			echo "failed";
 		}
@@ -441,7 +442,7 @@ class ControllerAccountRegister extends Controller {
             }
 		}
 
-		if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {
+		if ((utf8_strlen($this->request->post['password']) < 6) || (utf8_strlen($this->request->post['password']) > 20)) {
 			$this->error['password'] = $this->language->get('error_password');
 		}
 

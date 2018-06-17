@@ -8,8 +8,12 @@ $('#step1-dt-btn').click(function(){
 
 		var form_data = new FormData();
 
+
+
+
 		if($.trim(email) != $.trim(re_email) || $.trim(email) == ''){
 			alert("Please enter email and re-enter email correctly !");
+					
 		}else {
 			form_data.append('email', email);
 			form_data.append('password', pass);
@@ -36,7 +40,7 @@ $('#step1-dt-btn').click(function(){
 		        	if(output != 'failed')
 		        		window.location.replace("index.php?route=custome/login");
 		        	else{
-		        		alert("Failed ! Please try again.");
+		        		alert("Registration is not successful. Please try again.");
 		        	}
 		        } 
 			});
@@ -44,5 +48,6 @@ $('#step1-dt-btn').click(function(){
 
 	}else {
 		alert("Please check 'I agree with this policy'");
+
 	}
 });

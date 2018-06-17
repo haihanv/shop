@@ -456,6 +456,7 @@ i {
 
 .main-login table td {
 	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 table td.td-left{
@@ -466,10 +467,16 @@ table td.td-left{
 	font-size: 17px;
 }
 
+table td.td-left p {
+	margin-top: 20px;
+	padding-left: 20px;
+}
+
 table td.td-left span {
 	font-style: italic;
 	font-size: 15px;
 	font-weight: 400;
+	margin-top: 20px;
 }
 
 table td.td-right {
@@ -480,6 +487,7 @@ table td.td-right div.required {
 	width: 20%;
 	text-align: center;
 	float: left;
+	margin: 20px 0;
 }
 
 table td.td-right div.required span {
@@ -494,6 +502,7 @@ table td.td-right div.required span {
 table td.td-right div.input-field {
 	width: 75%;
 	float: left;
+	margin: 20px 0;
 }
 
 

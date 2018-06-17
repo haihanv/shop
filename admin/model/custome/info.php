@@ -142,8 +142,39 @@ class ModelCustomeInfo extends Model {
 
 	// end email
 
+	public function getDeliveryTime($customer_id) {
+		$query = $this->db->query("SELECT delivery_time FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['delivery_time'];
+	}
 
 
+	public function setDeliveryTime($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET delivery_time = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+	public function getAdminMessage($customer_id) {
+		$query = $this->db->query("SELECT admin_message FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['admin_message'];
+	}
+
+	public function setAdminMessage($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET admin_message = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+	public function getModifiedBy($customer_id) {
+		$query = $this->db->query("SELECT modified_by FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['modified_by'];
+	}
+
+	public function setModifiedBy($customer_id, $value) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_states SET modified_by = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+
+	public function getCustomerImagePath($customer_id, $columnName){
+		$query = $this->db->query("SELECT ".$columnName." FROM " . DB_PREFIX . "customer_images WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row[$columnName];
+	}	
 
 }
 

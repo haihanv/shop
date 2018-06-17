@@ -130,8 +130,11 @@ $('#btn-file-input6').click(function(){
 		time: str_time
 
 	}, function(value, stt){
-		alert(value);
+		// alert(value);
+		if(value == 'done'){
+			alert('Uploaded successfully.');
+		} else{
+			alert('Please try again');
+		}
 	});
-
-	alert('nan qua');
 });	

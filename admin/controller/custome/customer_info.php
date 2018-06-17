@@ -15,7 +15,7 @@ class ControllerCustomeCustomerInfo extends Controller {
 
 			// process when action is not undefined
 			if(isset($_POST['admin_action']) && $_POST['admin_action'] != 11) {
-				echo "action";
+				// echo "action";
 
 				
 
@@ -43,9 +43,9 @@ class ControllerCustomeCustomerInfo extends Controller {
 			
 
 			//process for order status
-			if(isset($_POST['order_nextstate'])) {
+			if(isset($_POST['order_nextstate']) && $_POST['order_nextstate'] != 11) {
 				
-				if($_POST['order_nextstate'] != 11 && $_POST['order_nextstate'] >= $_POST['order_state']){
+				if($_POST['order_nextstate'] >= $_POST['order_state']){
 
 					$this->model_custome_info->setOrderNote($_POST['customer_id'], $_POST['order_note']);
 					$this->model_custome_states->updateCustomerOrderState($_POST['customer_id'], $_POST['order_nextstate']);
@@ -58,6 +58,26 @@ class ControllerCustomeCustomerInfo extends Controller {
 				}
 			}
 
+			
+
+			if(isset($_POST['customer_remind']) && $_POST['customer_remind'] != ''){
+				$this->model_custome_info->setAdminMessage($_POST['customer_id'], $_POST['customer_remind']);
+			}
+
+			if(isset($_POST['admin_remind']) && $_POST['admin_remind'] != ''){
+				$this->model_custome_info->setAdminNote($_POST['customer_id'], $_POST['admin_remind']);
+			}
+
+			if(isset($_POST['order_note']) && $_POST['order_note'] != ''){
+				$this->model_custome_info->setOrderNote($_POST['customer_id'], $_POST['order_note']);
+			}
+
+			if(isset($_POST['delivery_time']) && $_POST['delivery_time'] != ''){
+				$this->model_custome_info->setDeliveryTime($_POST['customer_id'], $_POST['delivery_time']);
+			}
+
+
+			$this->model_custome_info->setModifiedBy($_POST['customer_id'], $this->user->getUserName());
 						
 		}else {
 			$retVal= 'failed';

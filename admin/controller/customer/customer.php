@@ -143,6 +143,7 @@ class ControllerCustomerCustomer extends Controller {
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
 			foreach ($this->request->post['selected'] as $customer_id) {
+				$this->deleteCustomerImages($customer_id);
 				$this->model_customer_customer->deleteCustomer($customer_id);
 			}
 
@@ -465,6 +466,7 @@ class ControllerCustomerCustomer extends Controller {
 
 		// ha added
 		$this->load->model('custome/states');
+		$this->load->model('custome/info');
 
 		foreach ($results as $result) {
 			if (!$result['approved']) {
@@ -498,6 +500,7 @@ class ControllerCustomerCustomer extends Controller {
 			$current_step = $this->model_custome_states->getCustomerCurrentStep($result['customer_id']);
 			$_state = $this->model_custome_states->getCustomerState($result['customer_id'], "state_".$current_step);
 			$avai_time = $this->model_custome_states->getCustomerTime($result['customer_id']);
+			$admin_note = $this->model_custome_info->getAdminNote($result['customer_id']);
 			$current_state = "";
 
 
@@ -509,16 +512,16 @@ class ControllerCustomerCustomer extends Controller {
 					$current_state = "Failed";
 					break;
 				case 3:
-					$current_state = "Wating for response";
+					$current_state = "Wating for Response";
 					break;
 				case 4:
 					$current_state = "Re-up";
 					break;
 				case 5:
-					$current_state = "Wating for response after re-up";
+					$current_state = "Wating for Response after Re-up";
 					break;
 				default:
-					$current_state = "undefined";
+					$current_state = "Undefined";
 					break;
 			}
 
@@ -529,6 +532,8 @@ class ControllerCustomerCustomer extends Controller {
 				'avai_time'		 => $avai_time,
 				'step'           => "Step ".$current_step,
 				'state'          => $current_state,
+				'admin_note'     => $admin_note,
+				'modified_by'	 => $this->model_custome_info->getModifiedBy($result['customer_id']),
 				'approve'        => $approve,
 				'unlock'         => $unlock,
 				'edit'           => $this->url->link('customer/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, true)
@@ -1664,5 +1669,46 @@ class ControllerCustomerCustomer extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+
+	protected function deleteCustomerImages($customerId) {
+		$this->load->model('custome/info');
+
+		
+
+		$path_1 = $this->model_custome_info->getCustomerImagePath($customerId, "image_1");
+		$path_2 = $this->model_custome_info->getCustomerImagePath($customerId, "image_2");
+		$path_3 = $this->model_custome_info->getCustomerImagePath($customerId, "image_3");
+		$path_4 = $this->model_custome_info->getCustomerImagePath($customerId, "image_4");
+		$path_5 = $this->model_custome_info->getCustomerImagePath($customerId, "image_5");
+
+		
+
+		if($path_1 != 'none'){
+			$image_path1 = str_replace(HTTPS_CATALOG."image/custome/customers/", CUSTOME_DIR_UPLOAD, $path_1);
+			unlink($image_path1);
+		}
+
+		if($path_2 != 'none'){
+			$image_path2 = str_replace(HTTPS_CATALOG."image/custome/customers/", CUSTOME_DIR_UPLOAD, $path_2);
+			unlink($image_path2);
+		}
+
+		if($path_3 != 'none'){
+			$image_path3 = str_replace(HTTPS_CATALOG."image/custome/customers/", CUSTOME_DIR_UPLOAD, $path_3);
+			unlink($image_path3);
+		}
+
+		if($path_4 != 'none'){
+			$image_path4 = str_replace(HTTPS_CATALOG."image/custome/customers/", CUSTOME_DIR_UPLOAD, $path_4);
+			unlink($image_path4);
+		}
+
+		if($path_5 != 'none'){
+			$image_path5 = str_replace(HTTPS_CATALOG."image/custome/customers/", CUSTOME_DIR_UPLOAD, $path_5);
+			unlink($image_path5);
+		}
+
 	}
 }

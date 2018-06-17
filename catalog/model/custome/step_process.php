@@ -45,6 +45,13 @@ class ModelCustomeStepProcess extends Model
 		
 	}
 
+
+	public function getCustomerAddress($customer_id){
+		$query = $this->db->query("SELECT address_1 FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['address_1'];
+	}
+
+
 	public function getCustomerImagePath($customer_id, $columnName){
 		$query = $this->db->query("SELECT ".$columnName." FROM " . DB_PREFIX . "customer_images WHERE customer_id = '" . (int)$customer_id. "'");
 		return $query->row[$columnName];
@@ -179,6 +186,12 @@ class ModelCustomeStepProcess extends Model
 
 	public function setSecurityCode($customer_id, $value) {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer_payment SET security_code = '".$value."' WHERE customer_id = '" . (int)$customer_id. "'");
+	}
+
+
+	public function getDeliveryTime($customer_id) {
+		$query = $this->db->query("SELECT delivery_time FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
+		return $query->row['delivery_time'];
 	}
 
 	

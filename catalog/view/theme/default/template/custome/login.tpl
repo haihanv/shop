@@ -51,7 +51,7 @@
 		      	<table class="table table-bordered">
 		  			<tbody>
 		  				<tr>
-					        <td class="td-left" valign="middle">Email</td>
+					        <td class="td-left" valign="middle"><p>Email</p></td>
 					        <td class="td-right" valign="middle">
 						        <div>
 						        	<div class="required"><span>Required</span></div>
@@ -62,7 +62,7 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left">Email <span>(re-enter)</span></td>
+					        <td class="td-left"><p>Email <span>(re-enter)</span></p></td>
 					        <td class="td-right">
 					        	 <div>
 						        	<div class="required"><span>Required</span></div>
@@ -73,18 +73,19 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left">Password</td>
+					        <td class="td-left"><p>Password</p></td>
 					        <td class="td-right">
 					        	 <div>
 						        	<div class="required"><span>Required</span></div>
 						        	<div class="input-field">
 						        		<input type="password" id="step1-dt-pass" name="password" class="form-control">
+						        		<span><i style="font-size: 12px;">Password (at least 6 characters)</i></span>
 						        	</div>
 						        </div>
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left">Password <span>(re-enter)</span></td>
+					        <td class="td-left"><p>Password <span>(re-enter)</span></p></td>
 					       	<td class="td-right">
 					        	 <div>
 						        	<div class="required"><span>Required</span></div>
@@ -194,13 +195,13 @@
 	    <!-- begin step 2 -->
 	    <div id="step2" class="tab-pane fade">
 	      <div class="step2-dt" id="step2-dt">
-	      		<h5><b>ENTER CUSTOMER INFORMATION</b></h5>
+	      		<h4><b>ENTER CUSTOMER INFORMATION</b></h4>
 	      		<br>
 
 	      		<table class="table table-bordered upload-info">
 	      			<tbody>
 	      				<tr>
-					        <td class="td-left">Name</td>
+					        <td class="td-left"><p>Name</p></td>
 					        <td class="td-right">
 					        	 <div>
 						        	<div class="required"><span>Required</span></div>
@@ -211,7 +212,7 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left">Address</td>
+					        <td class="td-left"><p>Address</p></td>
 					        <td class="td-right">
 					        	 <div>
 						        	<div class="required"><span>Required</span></div>
@@ -222,7 +223,7 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left">Phone Number</td>
+					        <td class="td-left"><p>Phone Number</p></td>
 					        <td class="td-right">
 					        	 <div>
 						        	<div class="required"><span>Required</span></div>
@@ -233,7 +234,7 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left">Available time for calling</td>
+					        <td class="td-left"><p>Available time for calling</p></td>
 					        <td class="td-right">
 					        	<div id="sel">
 						        	<div class="required"><span>Required</span></div>
@@ -263,7 +264,7 @@
 
 	      		<br><br>
 
-	      		<h5><b>UPLOAD INFORMATION</b></h5>
+	      		<h4><b>UPLOAD INFORMATION</b></h4>
 	      		<br>
 	      		<!-- begin note -->
 	      		<div id="note">
@@ -321,7 +322,7 @@
 							        	<div class="card-img">
 							        		<div class="front">
 							        			<p><b>Front</b></p>
-							        			<img  id="card-image1" src="<?php echo $custome_sample ?>" class="img-responsive">
+							        			<img  id="card-image1" src="<?php echo $custome_sample2 ?>" class="img-responsive">
 							        		</div>						        		
 							        	</div>
 						        	</div>
@@ -345,7 +346,7 @@
 							        	<div class="card-img">
 							        		<div class="back">
 							        			<p><b>Back</b></p>
-							        			<img id="card-image2" src="<?php echo $custome_sample ?>" class="img-responsive">
+							        			<img id="card-image2" src="<?php echo $custome_sample3 ?>" class="img-responsive">
 							        		</div>
 							        	</div>
 						        	</div>
@@ -837,19 +838,27 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<h4>Customer Address</h4>
-					<p></p>
+					<p style="text-align: center;"><?php echo $customer_address; ?></p>
 				</div>
 				<div class="col-sm-3">
 					<h4>Delivery Time</h4>
-					<p></p>
+					<p style="text-align: center;"><?php echo $customer_delivery_time; ?></p>
 				</div>
 				<div class="col-sm-3">
 					<h4>Payment Status</h4>
-					<p></p>
+					<?php if($customer_order_status < 3){ ?>
+					<p style="text-align: center;">In Progress</p>
+					<?php } else { ?>
+					<p style="text-align: center;">Done</p>
+					<?php } ?>
 				</div>
 				<div class="col-sm-3">
 					<h4>Payment Method</h4>
-					<p></p>
+					<?php if($customer_payment_method == 1){ ?>
+					<p style="text-align: center;">Bank Withdraw</p>
+					<?php } else { ?>
+					<p style="text-align: center;">Credit Card</p>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -864,6 +873,8 @@
 <div id="customer_id" style="display: none;"><?php echo $customer_id ?></div>
 <div id="admin_message" style="display: none;"><?php echo $admin_message ?></div>
 <div id="order_status" style="display: none;"><?php echo $order_status ?></div>
+<div id="current_step" style="display: block;"><?php echo $current_step ?></div>
+
 
 <!-- include custome script here -->
 <script type="text/javascript">
@@ -963,7 +974,34 @@ $(document).ready(function(){
 	}
 
 	
+	//active current step
+	var current_step = parseInt($('#current_step').html());
+	$('ul.nav-wizard li').each(function(index){
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+		}
 
+		if((index+1) == current_step){
+			$(this).addClass('active');
+		}
+	});
+
+	if(current_step == 0) {
+		$('ul.nav-wizard li:first-child').addClass('active'); 
+	}
+
+	for(var i=1; i<5; i++){
+		$('#step'+i).removeClass('active');
+		$('#step'+i).removeClass('in');
+	}
+
+	if(current_step == 0){
+		$('#step1').addClass('active');
+		$('#step1').addClass('in');
+	} else {
+		$('#step'+current_step).addClass('active');
+		$('#step'+current_step).addClass('in');
+	}
 
 });
 </script>

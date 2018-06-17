@@ -44,7 +44,9 @@
                     <li class="active"><a href="#tab-customer" data-toggle="tab"><?php echo $tab_general; ?></a></li>
                     <?php $address_row = 1; ?>
                     <?php foreach ($addresses as $address) { ?>
-                    <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('#address a:first').tab('show'); $('#address a[href=\'#tab-address<?php echo $address_row; ?>\']').parent().remove(); $('#tab-address<?php echo $address_row; ?>').remove();"></i> <?php echo $tab_address . ' ' . $address_row; ?></a></li>
+                    <!-- <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('#address a:first').tab('show'); $('#address a[href=\'#tab-address<?php echo $address_row; ?>\']').parent().remove(); $('#tab-address<?php echo $address_row; ?>').remove();"></i> <?php echo $tab_address . ' ' . $address_row; ?></a></li> -->
+
+                    <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><?php echo $tab_address;?></a></li>
                     <?php $address_row++; ?>
                     <?php } ?>
                     <!-- <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li> -->
@@ -53,7 +55,7 @@
                 <div class="col-sm-10">
                   <div class="tab-content">
                     <div class="tab-pane active" id="tab-customer">
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-customer-group"><?php echo $entry_customer_group; ?></label>
                         <div class="col-sm-10">
                           <select name="customer_group_id" id="input-customer-group" class="form-control">
@@ -68,7 +70,8 @@
                         </div>
                       </div>
                       <div class="form-group required">
-                        <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
+                        <!-- <label class="col-sm-2 control-label" for="input-firstname"><?php echo $entry_firstname; ?></label> -->
+                        <label class="col-sm-2 control-label" for="input-firstname">Name</label>
                         <div class="col-sm-10">
                           <input type="text" name="firstname" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" />
                           <?php if ($error_firstname) { ?>
@@ -76,7 +79,7 @@
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group required">
+                      <div class="form-group required" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
                         <div class="col-sm-10">
                           <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />
@@ -280,7 +283,7 @@
                           <?php  } ?>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-newsletter"><?php echo $entry_newsletter; ?></label>
                         <div class="col-sm-10">
                           <select name="newsletter" id="input-newsletter" class="form-control">
@@ -294,7 +297,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
                         <div class="col-sm-10">
                           <select name="status" id="input-status" class="form-control">
@@ -308,7 +311,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-approved"><?php echo $entry_approved; ?></label>
                         <div class="col-sm-10">
                           <select name="approved" id="input-approved" class="form-control">
@@ -322,7 +325,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-safe"><?php echo $entry_safe; ?></label>
                         <div class="col-sm-10">
                           <select name="safe" id="input-safe" class="form-control">
@@ -342,7 +345,8 @@
                     <div class="tab-pane" id="tab-address<?php echo $address_row; ?>">
                       <input type="hidden" name="address[<?php echo $address_row; ?>][address_id]" value="<?php echo $address['address_id']; ?>" />
                       <div class="form-group required">
-                        <label class="col-sm-2 control-label" for="input-firstname<?php echo $address_row; ?>"><?php echo $entry_firstname; ?></label>
+                        <!-- <label class="col-sm-2 control-label" for="input-firstname<?php echo $address_row; ?>"><?php echo $entry_firstname; ?></label> -->
+                        <label class="col-sm-2 control-label" for="input-firstname<?php echo $address_row; ?>">Name</label>
                         <div class="col-sm-10">
                           <input type="text" name="address[<?php echo $address_row; ?>][firstname]" value="<?php echo $address['firstname']; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname<?php echo $address_row; ?>" class="form-control" />
                           <?php if (isset($error_address[$address_row]['firstname'])) { ?>
@@ -350,7 +354,7 @@
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group required">
+                      <div class="form-group required" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-lastname<?php echo $address_row; ?>"><?php echo $entry_lastname; ?></label>
                         <div class="col-sm-10">
                           <input type="text" name="address[<?php echo $address_row; ?>][lastname]" value="<?php echo $address['lastname']; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname<?php echo $address_row; ?>" class="form-control" />
@@ -359,7 +363,7 @@
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-company<?php echo $address_row; ?>"><?php echo $entry_company; ?></label>
                         <div class="col-sm-10">
                           <input type="text" name="address[<?php echo $address_row; ?>][company]" value="<?php echo $address['company']; ?>" placeholder="<?php echo $entry_company; ?>" id="input-company<?php echo $address_row; ?>" class="form-control" />
@@ -374,7 +378,7 @@
                           <?php } ?>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-address-2<?php echo $address_row; ?>"><?php echo $entry_address_2; ?></label>
                         <div class="col-sm-10">
                           <input type="text" name="address[<?php echo $address_row; ?>][address_2]" value="<?php echo $address['address_2']; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2<?php echo $address_row; ?>" class="form-control" />
@@ -659,7 +663,7 @@
                         <td class="text-left">State</td>
                         <td class="text-left">Next State</td>
                         <td class="text-left">Customer Note</td>
-                        <td class="text-left">Action</td>
+                        <!-- <td class="text-left">Action</td> -->
                         <td class="text-left">Admin Note</td>
                         <td class="text-left">Apply</td>
                       </tr>
@@ -672,7 +676,7 @@
                           <td class="text-left"><?php echo $order_state ?></td>
                           <td class="text-left" style="text-align: center;">
                             <select id="admin-order-nextstate" style="text-align: center; width: 50%; margin-right: 20px;">
-                              <option value="-1">Undefined</option>
+                              <option value="11">Undefined</option>
                               <option value="1">Order active</option>
                               <option value="2">Order completed. Payment active</option>
                               <option value="3">Payment completed. Delivery active</option>
@@ -680,11 +684,12 @@
                             </select>
                             
                           </td>
-                          <td class="text-left">                             
-                          </td>
-                          <td class="text-left" style="text-align: center;"></td>
                           <td class="text-left">
-                              <input id="admin-order-note" class="form-control" type="text" placeholder="put a note here" value="">
+                          <textarea id="admin-delivery-time" class="form-control" type="text" placeholder="Delivery time here" value=""></textarea>
+                          </td>
+                          <!-- <td class="text-left"></td> -->
+                          <td class="text-left">
+                              <textarea id="admin-order-note" class="form-control" type="text" placeholder="Order note here" value=""></textarea>
                           </td>
                           <td class="text-left">
                             <button id="btn_admin_apply1" class="btn btn-primary">Apply</button>
@@ -706,18 +711,18 @@
                             
                           </td>
                           <td class="text-left">
-                              <input id="admin-step-customer-remind" class="form-control" type="text" placeholder="customer remind" value="">
+                              <textarea id="admin-step-customer-remind" class="form-control" type="text" placeholder="customer remind" value=""></textarea>
                           </td>
-                          <td class="text-left" style="text-align: center;">
+                          <!-- <td class="text-left" style="text-align: center;">
                               <select id="admin-step-action" style="text-align: center; width: 50%; margin-right: 20px;">
                                   <option value="11">Undefined</option>
                                   <option value="1">Action 1</option>
                                   <option value="2">Action 2</option>
                                   <option value="3">Action 3</option>
                               </select>
-                          </td>
+                          </td> -->
                           <td class="text-left">
-                              <input id="admin-step-admin-remind" class="form-control" type="text" placeholder="admin remind" value="">
+                              <textarea id="admin-step-admin-remind" class="form-control" type="text" placeholder="admin remind" value=""></textarea>
                           </td>
                           <td class="text-left">
                             <button id="btn_admin_apply2" class="btn btn-primary">Apply</button>
@@ -777,7 +782,7 @@
                 <h4>SoftBank Link: <span style="color: #0099cc;"><?php echo $link ?></span></h4>
 
                 <br><br>
-                <button id="btn-admin-delete" class="btn btn-danger">Delete</button>
+                <!-- <button id="btn-admin-delete" class="btn btn-danger">Delete</button> -->
 
             </div>
             <div id="tab-custome-email" class="tab-pane">

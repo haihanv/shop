@@ -15,8 +15,8 @@ class ControllerCustomeLogin extends Controller
 
 		//ha added
 		$data['custome_sample'] = $server . 'image/custome/sample.png';
-		$data['custome_sample1'] = $server . 'image/custome/sample1.png';
 		$data['custome_sample2'] = $server . 'image/custome/sample2.png';
+		$data['custome_sample3'] = $server . 'image/custome/sample3.png';
 		$data['custome_sample4'] = $server . 'image/custome/sample4.png';
 		$data['custome_upload'] = $server . 'image/custome/upload.png';
 		$data['done_img'] = $server . 'image/custome/done_img.png';
@@ -53,9 +53,20 @@ class ControllerCustomeLogin extends Controller
 
 			$data['customer_states'] = json_encode($data['states']);
 			$data['customer_id'] = $customer_id;
+
+			$data['current_step'] = $this->model_custome_step_process->getCurrentStep($customer_id);
+
+			//for step 5
+			$data['customer_address'] = $this->model_custome_step_process->getCustomerAddress($customer_id);
+			$data['customer_order_status'] = $this->model_custome_step_process->getOrderStatus($customer_id);
+			$data['customer_payment_method'] = $this->model_custome_step_process->getPaymentMethod($customer_id);
+			$data['customer_delivery_time'] = $this->model_custome_step_process->getDeliveryTime($customer_id);
+
+
 		} else {
 			$data['states'][] = "none";
 			$data['customer_states'] = json_encode($data['states']);
+			$data['current_step'] = 0;
 		}
 
 		$this->response->setOutput($this->load->view('custome/login', $data));
