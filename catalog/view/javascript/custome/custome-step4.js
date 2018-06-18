@@ -101,7 +101,12 @@ $('#btn-payment-bank').click(function(){
 			        contentType : false,
 			        processData : false,
 			        success     : function(output){
-			        	alert(output);
+			        	// alert(output);
+			        	if(output == 'done'){
+			        		window.location.replace("index.php?route=custome/login");
+			        	} else {
+			        		alert('Please try again');
+			        	}
 			        } 
 				});
 			} else {
@@ -166,7 +171,11 @@ $('#btn-payment-credit').click(function(){
 		 	'user_first_name': user_first_name,
 		 	'user_last_name': user_last_name
 		 }, function(data, stt){
-		 	alert(data);
+			 	if(output == 'done'){
+	        		window.location.replace("index.php?route=custome/login");
+	        	} else {
+	        		alert('Please try again');
+	        	}
 		 });
 	}
 

@@ -685,11 +685,22 @@
                             
                           </td>
                           <td class="text-left">
-                          <textarea id="admin-delivery-time" class="form-control" type="text" placeholder="Delivery time here" value=""></textarea>
+                          <?php 
+                                $tmp_delivery_time = "Delivery time here";
+                                if($delivery_time != 'none')
+                                  $tmp_delivery_time = "Current note: " . $delivery_time;
+                            ?>
+                          <textarea id="admin-delivery-time" class="form-control" type="text" placeholder="<?php echo $tmp_delivery_time; ?>" value=""></textarea>
                           </td>
                           <!-- <td class="text-left"></td> -->
                           <td class="text-left">
-                              <textarea id="admin-order-note" class="form-control" type="text" placeholder="Order note here" value=""></textarea>
+                              <?php 
+                                  $tmp_order_note = "Delivery time here";
+                                  if($order_note != 'none')
+                                    $tmp_order_note = "Current note: " . $order_note;
+                              ?>
+
+                              <textarea id="admin-order-note" class="form-control" type="text" placeholder="<?php echo $tmp_order_note; ?>" value=""></textarea>
                           </td>
                           <td class="text-left">
                             <button id="btn_admin_apply1" class="btn btn-primary">Apply</button>
@@ -711,7 +722,12 @@
                             
                           </td>
                           <td class="text-left">
-                              <textarea id="admin-step-customer-remind" class="form-control" type="text" placeholder="customer remind" value=""></textarea>
+                              <?php 
+                                  $tmp_customer_remind = "Customer remind";
+                                  if($customer_note != 'none')
+                                    $tmp_customer_remind = "Current note: " . $customer_note;
+                              ?>
+                              <textarea id="admin-step-customer-remind" class="form-control" type="text" placeholder="<?php echo $tmp_customer_remind; ?>" value=""></textarea>
                           </td>
                           <!-- <td class="text-left" style="text-align: center;">
                               <select id="admin-step-action" style="text-align: center; width: 50%; margin-right: 20px;">
@@ -722,7 +738,12 @@
                               </select>
                           </td> -->
                           <td class="text-left">
-                              <textarea id="admin-step-admin-remind" class="form-control" type="text" placeholder="admin remind" value=""></textarea>
+                              <?php 
+                                  $tmp_admin_note = "Admin remind";
+                                  if($admin_note != 'none')
+                                    $tmp_customer_remind = "Current note: " . $admin_note;
+                              ?>
+                              <textarea id="admin-step-admin-remind" class="form-control" type="text" placeholder="<?php echo $tmp_admin_note; ?>" value=""></textarea>
                           </td>
                           <td class="text-left">
                             <button id="btn_admin_apply2" class="btn btn-primary">Apply</button>

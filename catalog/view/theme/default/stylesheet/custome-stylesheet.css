@@ -243,15 +243,17 @@ i {
 
 .description-dt p{
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 20px;
 	padding-bottom: 10px;
 	border: solid 3px;
 	border-color: #0099cc;
-	display: block;
 	width: 80%;
-	margin: auto;
+	margin: 20px auto;
 	font-size: 20px;
 	font-weight: 600;
+	min-height: 80px;
+	line-height: inherit;
+	
 }
 
 .description-dt p span{
@@ -272,6 +274,9 @@ i {
 
 .custome-footer h2 {
 	text-align: center;
+	padding-bottom: 20px;
+	font-weight: bold;
+	width: 100%;
 }
 
 .custome-footer h3 {
@@ -282,19 +287,16 @@ i {
 	padding-bottom: 20px;
 }
 
-.custome-footer p {
+.custome-footer div span {
 	padding-left: 5px;
 	font-size: 18px;
-	font-weight: 600px;
-	border-bottom: solid 1px;
 	padding-bottom: 20px;
 	padding-top: 20px;
 	display: block;
 	color: black;
-}
+	font-weight: bold;
+	padding-left: 20px;
 
-.custome-footer p span {
-	float: right;
 }
 
 

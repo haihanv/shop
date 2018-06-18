@@ -36,6 +36,11 @@ class ControllerCustomeCustomerInfo extends Controller {
 					$this->model_custome_states->updateCustomerState($_POST['customer_id'], $customer_current_state, $next_state);
 				}
 
+				if($next_state == 1){
+					$this->model_custome_info->setAdminMessage($_POST['customer_id'], 'none');
+					$this->model_custome_info->setAdminNote($_POST['customer_id'], 'none');
+				}
+
 				$retVal= 'step_done';
 
 			}

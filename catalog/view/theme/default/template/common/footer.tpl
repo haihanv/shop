@@ -55,10 +55,19 @@ Please donate via PayPal to donate@opencart.com
     <div class="col-sm-3"></div>
 
     <div class="col-sm-6">
-      <h2> Comapy Information</h4>
-      <p>Name <span>ten cong ty</span></p>      
-      <p>Location <span>dia chi cong ty</span></p>
-      <p>Tel <span>0123456789</span></p>
+        <h2> Comapy Information</h4>
+        <div class="row" style="border-bottom: 1px solid black; border-top: 1px solid #000;">
+            <div class="col-sm-3"><span>Name</span></div>
+            <div class="col-sm-8"><span>DMA株式会社</span></div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid black;">
+            <div class="col-sm-3"><span>Location</span></div>
+            <div class="col-sm-8"><span>埼玉県春日部市備後東2丁目2番18号大熊アパートFー101</span></div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid black;">
+            <div class="col-sm-3"><span>Tel</span></div>
+            <div class="col-sm-8"><span>0123456</span></div>
+        </div>
     </div>
 
     <div class="col-sm-3"></div>

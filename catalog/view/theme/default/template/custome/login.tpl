@@ -515,15 +515,15 @@
 				      			<div class="row">
 				      				<div class="col-sm-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_19 ?>"></span><br>
-				      					<span><input type="checkbox" name="bank" value="bank1"></span>
+				      					<span><input type="checkbox" name="bank" value="Mizuho"></span>
 				      				</div>
 				      				<div class="col-sm-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_20 ?>"></span><br>
-				      					<span><input type="checkbox" name="bank" value="bank2"></span>
+				      					<span><input type="checkbox" name="bank" value="Resona"></span>
 				      				</div>
 				      				<div class="col-sm-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_21 ?>"></span><br>
-				      					<span><input type="checkbox" name="bank" value="bank3"></span>
+				      					<span><input type="checkbox" name="bank" value="Japan Post Bank (Yucho)"></span>
 				      				</div>
 				      			</div>
 			      			</div>
@@ -531,11 +531,11 @@
 			      				<div class="row">
 			      				<div class="col-sm-4">
 			      					<span><img class="img-responsive" src="<?php echo $custome_22 ?>"></span><br>
-			      					<span><input id="cb-mufg" type="checkbox" name="bank" value="bank4"></span>
+			      					<span><input id="cb-mufg" type="checkbox" name="bank" value="Mitsubishi UFJ"></span>
 			      				</div>
 			      				<div class="col-sm-4">
 			      					<span><img class="img-responsive" src="<?php echo $custome_23 ?>"></span><br>
-			      					<span><input type="checkbox" name="bank" value="bank5"></span>
+			      					<span><input type="checkbox" name="bank" value="Sumitomo (SMBC)"></span>
 			      				</div>
 			      				<div class="col-sm-4">
 			      					<span style="color: #0099cc;"><b>OTHERS</b></span><br>

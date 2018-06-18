@@ -1084,6 +1084,11 @@ class ControllerCustomerCustomer extends Controller {
 			$data['image_4'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_4");
 			$data['image_5'] = $this->model_custome_states->getCustomerImagePath($customer_id, "image_5");
 
+			$data['customer_note'] = $this->model_custome_info->getAdminMessage($customer_id);
+			$data['admin_note'] = $this->model_custome_info->getAdminNote($customer_id);
+			$data['delivery_time'] = $this->model_custome_info->getDeliveryTime($customer_id);
+			$data['order_note'] = $this->model_custome_info->getOrderNote($customer_id);
+
 
 			$_current_step = $this->model_custome_states->getCustomerCurrentStep($customer_id);		
 			$_current_state = $this->model_custome_states->getCustomerState($customer_id, "state_".$_current_step);
