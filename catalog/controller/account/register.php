@@ -46,6 +46,7 @@ class ControllerAccountRegister extends Controller {
 			$this->model_custome_init_states->createCustomerInitStates($customer_id);
 			$this->model_custome_step_process->createCustomerImages($customer_id);
 			$this->model_custome_step_process->createCustomerPayment($customer_id);
+			$this->model_custome_step_process->updateCurrentStep($customer_id, 2);
 			$this->response->redirect($this->url->link('common/home'));
 		}
 

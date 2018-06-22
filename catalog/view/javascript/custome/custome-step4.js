@@ -93,6 +93,8 @@ $('#btn-payment-bank').click(function(){
 					form_data.append('image_name2', "image_5");
 				}
 
+				$("#btn-payment-bank").prop("disabled",true);
+
 				$.ajax({
 					url: 'index.php?route=custome/step_4_bank',
 					type: 'POST',
@@ -103,9 +105,11 @@ $('#btn-payment-bank').click(function(){
 			        success     : function(output){
 			        	// alert(output);
 			        	if(output == 'done'){
-			        		window.location.replace("index.php?route=custome/login");
+			        		// window.location.replace("index.php?route=custome/login");
+			        		location.reload(true);
 			        	} else {
 			        		alert('Please try again');
+			        		$("#btn-payment-bank").prop("disabled",false);
 			        	}
 			        } 
 				});
@@ -160,6 +164,8 @@ $('#btn-payment-credit').click(function(){
 		 var card_no = card_no_1 + '-' + card_no_2 + '-' + card_no_3 + '-' + card_no_4;
 		 var expire_date = expire_date_1 + '/' + expire_date_2;
 
+		 $("#btn-payment-credit").prop("disabled",true);
+
 		 $.post('index.php?route=custome/step_4_credit',{
 		 	'customer_id': _customer_id,
 		 	'input_link': input_link,
@@ -172,9 +178,11 @@ $('#btn-payment-credit').click(function(){
 		 	'user_last_name': user_last_name
 		 }, function(data, stt){
 			 	if(output == 'done'){
-	        		window.location.replace("index.php?route=custome/login");
+	        		// window.location.replace("index.php?route=custome/login");
+	        		location.reload(true);
 	        	} else {
 	        		alert('Please try again');
+	        		$("#btn-payment-credit").prop("disabled",false);
 	        	}
 		 });
 	}

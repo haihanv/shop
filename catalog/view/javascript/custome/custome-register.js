@@ -1,6 +1,8 @@
 $('#step1-dt-btn').click(function(){
 	if($('#step1-dt-agree').is(':checked')){
 
+		$("#step1-dt-btn").prop("disabled",true);
+
 		var email = $('#step1-dt-email').val();
 		var re_email = $('#step1-dt-re-email').val();
 		var pass = $('#step1-dt-pass').val();
@@ -37,10 +39,14 @@ $('#step1-dt-btn').click(function(){
 		        contentType : false,
 		        processData : false,
 		        success     : function(output){
-		        	if(output != 'failed')
-		        		window.location.replace("index.php?route=custome/login");
+		        	if(output != 'failed'){
+		        		// window.location.replace("index.php?route=custome/login");
+		        		location.reload(true);
+		        				        		
+		        	}
 		        	else{
 		        		alert("Registration is not successful. Please try again.");
+		        		$("#step1-dt-btn").prop("disabled",false);
 		        	}
 		        } 
 			});

@@ -741,7 +741,7 @@
                               <?php 
                                   $tmp_admin_note = "Admin remind";
                                   if($admin_note != 'none')
-                                    $tmp_customer_remind = "Current note: " . $admin_note;
+                                    $tmp_admin_note = "Current note: " . $admin_note;
                               ?>
                               <textarea id="admin-step-admin-remind" class="form-control" type="text" placeholder="<?php echo $tmp_admin_note; ?>" value=""></textarea>
                           </td>

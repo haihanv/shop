@@ -63,7 +63,7 @@ class ControllerCustomeMultipleFileAjax extends Controller
 					$this->model_custome_step_process->updateCustomerInfo($_POST['customer_id'],$_POST['customer_name'],$_POST['customer_address'], $_POST['customer_phone'],$_POST['customer_time']);
 
 					$this->model_custome_step_process->updateCustomerState($_POST['customer_id'], "state_2", 1);
-					$this->model_custome_step_process->updateCurrentStep($_POST['customer_id'], 2);
+					$this->model_custome_step_process->updateCurrentStep($_POST['customer_id'], 3);
 
 					echo "done";
 

@@ -538,6 +538,17 @@ table td.td-right div.input-field {
 	font-size: 17px;
 }
 
+.td-passport-left p {
+	margin-top: 80px;
+	padding-left: 10px;
+}
+
+.td-card-left p{
+
+	margin-top: 150px;
+	padding-left: 10px;
+}
+
 
 .td-passport-right .passport-note span:first-child {
 	background-color: #EF135B;

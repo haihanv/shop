@@ -254,7 +254,7 @@
         <div class="col-sm-8 reason-dt3">
             <p>
                 <i> * The actual communication speed varies depending on the customers' environment
-                (can reach maximum downlink from 261 to 350Mbps). Communication speed may be lowerd due to the speed limitation
+                (can reach maximum downlink from 261 to 350Mbps).<br> Communication speed may be lowerd due to the speed limitation
                 due to the stable provision of service during timezone (such as nighttime) when usage is concentrated.</i>
             </p>
         </div>
@@ -286,7 +286,7 @@
             <div class="col-sm-1"></div>            
         </div>
         <div class="description-dt">
-            <p> Compact size, only about <span>20cm</span> height </p>
+            <p> Compact size, only about  <span>20cm</span>  height </p>
         </div>
         <div class="row description-dt">
             <div class="col-sm-1"></div>
@@ -308,6 +308,13 @@
                 <img class="img-responsive" src="<?php echo $img_16; ?>" />
             </div>
             <div class="col-sm-1"></div>    
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="margin: 0 auto; display: block;">
+                <a href=""><img class="img-responsive" src="trans4/30.png" style="display: inline-block; float: left;" /></a>
+                <img class="img-responsive" src="trans4/31.png" style="display: inline-block; float: left;"/>
+                <img class="img-responsive" src="trans4/32.png" style="display: inline-block; float: left;"/>
+            </div>
         </div>
     </div>
 </div><!-- end low-of-use-->

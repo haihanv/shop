@@ -36,7 +36,7 @@
 
 		      	<div id="note">
 		      		<h1>NOTE</h1>
-		      		<p>
+		      		<p style="padding-top: 18px;">
 		      			
 		      		Your account will be the email you registered for the application.
 		      		We will be sending important notices so please make sure that your email address is correct.
@@ -269,8 +269,8 @@
 	      		<!-- begin note -->
 	      		<div id="note">
 	      			<h1>NOTE</h1>
-	      			<p>
-	      				Please upload the first page photo of your passport (The first page is the one with your photo and info on it, and not visa page). 
+	      			<p style="padding-top: 27px;">
+	      				Please check the date of expiration of your document. We do not accept expired passport or residence card 
 	      			</p>
 	      			<div class="clear"></div>
 	      		</div>
@@ -280,13 +280,13 @@
 	      		<table class="table table-bordered">
 	      			<tbody>
 	      				<tr>
-					        <td class="td-passport-left">Passport</td>
+					        <td class="td-passport-left"><p>Passport</p></td>
 					        <td class="td-passport-right">
 						        <!-- <div class="container"> -->
 							        <div class="row">
 								        <div class="col-sm-3">
-									        <div class="passport-note">
-									        	<span>Required</span><br><br>
+									        <div class="passport-note">											     
+									        	<span style="margin-top: 20px;">Required</span><br><br>
 									        	<span><i>* Note: Please upload the first page photo of your passport (The first page is the one with your photo and info on it, and not visa page). </i></span>
 									        </div>
 									    </div>
@@ -296,7 +296,7 @@
 									        </div>
 									    </div> 
 									    <div class="col-sm-1">
-									    	<div class="image-upload">
+									    	<div class="image-upload" style="margin-top: 100px; ">
 											    <label for="file-input1">
 											        <img src="<?php echo $custome_upload ?>"/>
 											    </label>
@@ -309,12 +309,12 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <th class="td-card-left" rowspan="2">Residence card photos</th>
+					        <th class="td-card-left" rowspan="2"><p>Residence card photos</p></th>
 					        <td class="td-card-right" style="border-bottom: none;">
 						        <div class="row">
 						        	<div class="col-sm-3">
 							        	<div class="card-note">
-							        		<span>Required</span><br><br>
+							        		<span style="margin-top: 40px;">Required</span><br><br>
 							        		<span><i>* Note: Please upload both front and back photos of your residence card.</i></span>
 							        	</div>
 						        	</div>
@@ -327,7 +327,7 @@
 							        	</div>
 						        	</div>
 						        	<div class="col-sm-1">
-								    	<div class="image-upload">
+								    	<div class="image-upload" style="margin-top: 100px;">
 										    <label for="file-input2">
 										        <img src="<?php echo $custome_upload ?>"/>
 										    </label>
@@ -351,7 +351,7 @@
 							        	</div>
 						        	</div>
 						        	<div class="col-sm-1">
-								    	<div class="image-upload">
+								    	<div class="image-upload" style="margin-top: 100px;">
 										    <label for="file-input3">
 										        <img src="<?php echo $custome_upload ?>"/>
 										    </label>
@@ -778,6 +778,7 @@
 	      				<div>
 	      					<button id="btn-payment-credit" class="btn btn-primary submit-btn" style="display: block; margin: 0 auto;">Submit</button>
 	      				</div>
+	      				<br><br>
 	      			</div>
 	      			<!-- end creadit-card -->
 	      		</div>
@@ -945,7 +946,8 @@ $(document).ready(function(){
 		$('#step3-dt').hide();
 		$('#step3-dt-1').fadeIn();
 		var admin_msg = $('#admin_message').html();
-		$('#step3-dt-1').html(admin_msg); 
+		if(admin_msg !== 'none')
+			$('#step3-dt-1').html(admin_msg); 
 	} 
 
 	// check for state 4
@@ -964,7 +966,8 @@ $(document).ready(function(){
 		$('#step4-dt-2').hide();
 		$('#step4-dt-1').fadeIn();
 		var admin_msg = $('#admin_message').html();
-		$('#step4-dt-1').html(admin_msg); 
+		if(admin_msg !== 'none')
+			$('#step4-dt-1').html(admin_msg); 
 		$('.btn-re-up').show();
 	} else if(arr_initStates[3] == '0' && arr_initStates[2] == '1'){
 		$('#step5-dt').hide();
