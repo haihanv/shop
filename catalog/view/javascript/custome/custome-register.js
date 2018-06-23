@@ -15,6 +15,7 @@ $('#step1-dt-btn').click(function(){
 
 		if($.trim(email) != $.trim(re_email) || $.trim(email) == ''){
 			alert("Please enter email and re-enter email correctly !");
+			$("#step1-dt-btn").prop("disabled",false);
 					
 		}else {
 			form_data.append('email', email);

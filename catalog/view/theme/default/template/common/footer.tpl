@@ -50,6 +50,27 @@ Please donate via PayPal to donate@opencart.com
 
 <!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '796777377189380',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-customerchat" page_id="225432204709858"></div>
+
+
+
 <footer class="custome-footer">  
   <div class="container">
     <div class="col-sm-3"></div>

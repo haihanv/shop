@@ -1,6 +1,7 @@
 body {
 	font-family: Helvetica;
 	font-size: 16px;
+	color: black;
 }
 .container .navbar-default{
 	background-color: #ffffff;
@@ -21,11 +22,11 @@ i {
 
 #myPage ul li {
 	display: block;
-	padding: 0 20px;
+/*	padding: 0 20px;*/
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;
-	overflow: hidden;
+
 }
 
 #myPage ul li a {
@@ -92,23 +93,35 @@ i {
 	float: left;
 }
 
+.navigation ul {
+	width: 100%;
+}
+
 .navigation ul li {
-	min-width: 160px;
+	/*min-width: 160px;*/
 	height: 90px;
+	display: inline-block;
+	width: auto;
+	direction: rtl;
+	width:14%;
 }
 
 .navigation ul li:first-child {
 	border-left: none;
 }
 
+/*.navigation ul li:last-child {
+	padding-right: 0px;
+	width: 23%;
+}
+*/
 
 .navigation li button {
 
-	font-size: 20px;
-	padding: 20px 20px;
+	font-size: 16px;
+	padding: 15px 15px;
 	background-color: #EF135B;
 	color: white;
-	width: 100%;
 }
 
 .top-banner {
@@ -359,15 +372,17 @@ i {
 
 #myPage1 ul {
 	margin-bottom: 0px;
+	width: 100%;
 }
 
 #myPage1 ul li {
 	display: block;
-	padding: 0 20px;
+	/*padding: 0 20px;*/
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;
 	height: inherit;
+	width: 14%;
 }
 
 #myPage1 ul li:hover {
@@ -678,7 +693,8 @@ table td.td-right div.input-field {
 }
 
 .bank-withdraw td.payment-left{
-	padding-top: 20px;
+	padding-top: 10px;
+
 }
 
 .bank-withdraw td.payment-left span{

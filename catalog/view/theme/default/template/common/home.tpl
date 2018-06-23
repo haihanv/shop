@@ -46,7 +46,7 @@
                       <li>
                         <a href="#flow-of-use">
                             <i><img src="<?php echo $img_5; ?>"></i>
-                            <h5>Flow to use</h5>
+                            <h5>Flow Of Use</h5>
                         </a>
                       </li>
                       <li>
@@ -106,7 +106,7 @@
                       <li>
                         <a href="#flow-of-use">
                             <i><img src="<?php echo $img_5; ?>"></i>
-                            <h5>Flow to use</h5>
+                            <h5>Flow Of Use</h5>
                         </a>
                       </li>
                       <li>
@@ -131,7 +131,7 @@
     <div class="row reason-general">
         <img src="<?php echo $img_6; ?>" class="img-responsive">
         <div class="col-sm-4 reason">
-            <div>
+            <div style="width: 73%; float: right;">
                 <p>Point 1</p>
                 <div>
                     <img src="<?php echo $img_7; ?>">
@@ -141,7 +141,7 @@
         </div>
 
         <div class="col-sm-4 reason">
-            <div>
+            <div style="width: 73%; margin-left: auto; margin-right: auto;">
                 <p>Point 2</p>
                 <div>
                     <img src="<?php echo $img_8; ?>">
@@ -151,7 +151,7 @@
         </div>
 
         <div class="col-sm-4 reason">
-            <div>
+            <div style="width: 73%; float: left;">
                 <p>Point 3</p>
                 <div>
                     <img src="<?php echo $img_9; ?>">
@@ -311,9 +311,9 @@
         </div>
         <div class="row">
             <div class="col-sm-12" style="margin: 0 auto; display: block;">
-                <a href=""><img class="img-responsive" src="trans4/30.png" style="display: inline-block; float: left;" /></a>
-                <img class="img-responsive" src="trans4/31.png" style="display: inline-block; float: left;"/>
-                <img class="img-responsive" src="trans4/32.png" style="display: inline-block; float: left;"/>
+                <a href=""><img class="img-responsive" src="<?php echo $img_30; ?>" style="display: inline-block; float: left; margin-left: 30px;" /></a>
+                <img class="img-responsive" src="<?php echo $img_31; ?>" style="display: inline-block; float: left;"/>
+                <img class="img-responsive" src="<?php echo $img_32; ?>" style="display: inline-block; float: left;"/>
             </div>
         </div>
     </div>

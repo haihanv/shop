@@ -9,10 +9,10 @@
 		<br><br><br>
 
 		<ul class="nav nav-justified nav-wizard">
-		    <li class="active"><a data-toggle="tab" href="#step1">STEP 1 <br> ACCOUNT REGISTRATION</a></li>
-		    <li><a data-toggle="tab" href="#step2">STEP 2 <br> CUSTOMER INFORMATION</a></li>
-		    <li><a data-toggle="tab" href="#step3">STEP 3 <br> CONTRACT INFORMATION</a></li>
-		    <li><a data-toggle="tab" href="#step4">STEP 4 <br> PAYMENT REGISTRATION</a></li>
+		    <li class="active" id="li_step1"><a data-toggle="tab" href="#step1">STEP 1 <br> ACCOUNT REGISTRATION</a></li>
+		    <li id="li_step2"><a data-toggle="tab" href="#step2">STEP 2 <br> CUSTOMER INFORMATION</a></li>
+		    <li id="li_step3"><a data-toggle="tab" href="#step3">STEP 3 <br> CONTRACT INFORMATION</a></li>
+		    <li id="li_step4"><a data-toggle="tab" href="#step4">STEP 4 <br> PAYMENT REGISTRATION</a></li>
 		</ul>
 		<br><br><br>
 
@@ -438,7 +438,7 @@
 	     		<div style="text-align: center;">
 		  			<input type="checkbox" id="step3-dt-agree">
 		  			<span><b>I agree with the contract and ready for the call</b></span><br><br>
-		  			<button id="step3-dt-btn" class="btn btn-primary submit-btn" style="display: block; margin: 0 auto;">Ok</button>
+		  			<button id="step3-dt-btn" class="btn btn-primary submit-btn" style="display: block; margin: 0 auto;">OK</button>
 		  		</div>
 		  		
 
@@ -458,7 +458,7 @@
 	     	<div class="step4-dt" id="step4-dt">
 	     		<div id="note">
 	      			<h1>NOTE</h1>
-	      			<p>
+	      			<p style="padding-top: 30px;">
 	      				You will receive a link after contract confirmation call from SoftBank center ( 0800-111-2009 )
 	      			</p>
 	      			<div class="clear"></div>
@@ -491,7 +491,7 @@
 	      		<br><br><br><br>
 	      		<div class="payment">
 	      			<div class="payment-img">
-	      				<img src="<?php echo $custome_18 ?>" class="img-responsive">
+	      				<img src="<?php echo $custome_18 ?>" class="img-responsive" style="width: 100%;">
 	      			</div>
 	      			<br><br><br>
 	      			<div class="col-sm-6">
@@ -555,7 +555,7 @@
 		      			<table class="table table-bordered">
 	      					<tbody>
 	      						<tr>
-	      							<td class="payment-left">
+	      							<td class="payment-left" style="padding-top: 70px;">
 	      								<span>Cash card or bank passbook cover</span>
 	      							</td>
 	      							<td class="payment-right">
@@ -593,7 +593,7 @@
 			      								<span><i>* 4 digits</i></span>
 			      							</div>
 			      							<div class="col-sm-6">
-			      								<input type="password" id="security_code" class="form-control" style="width: 80%;">
+			      								<input type="password" id="security_code" class="form-control" style="width: 90%; margin-left: 20px;">
 			      							</div>
 			      							<div class="col-sm-1">
 										    	<button class="btn btn-primary btn-re-up">Re-up</button>
@@ -602,13 +602,13 @@
 	      							</td>
 	      						</tr>
 	      						<tr id="tr-mufg" style="display: none;">
-	      							<td class="payment-left">
+	      							<td class="payment-left" style="padding-top: 100px;">
 	      								<span>Passbook last page</span>
 	      							</td>
 	      							<td class="payment-right">
 	      								<div class="row">
 									        <div class="col-sm-3">
-										        <div class="payment-note">
+										        <div class="payment-note" style="margin-top: 20px;">
 										        	<span>Required</span><br><br>
 										        	<span><i>* Please send us the page below which shows the last printed account balance on your bank passbook. </i></span>
 										        </div>
@@ -640,7 +640,7 @@
 	      			<!-- end bank-withdraw -->
 
 	      			<br><br>
-	      			<div class="credit-card" style="display: none;">
+	      			<div class="credit-card" style="display: none; ">
 
 	      				<div class="credit-brand">
 	      					<div class="row">
@@ -984,14 +984,30 @@ $(document).ready(function(){
 			$(this).removeClass('active');
 		}
 
+		$(this).find('a').attr('data-toggle', '');
+		$(this).find('a').removeAttr('href');
+
 		if((index+1) == current_step){
 			$(this).addClass('active');
+			$(this).find('a').attr('data-toggle', 'tab');
+			$(this).find('a').attr('href', '#step'+current_step);
 		}
+
 	});
 
 	if(current_step == 0) {
 		$('ul.nav-wizard li:first-child').addClass('active'); 
+		$('ul.nav-wizard li:first-child a').attr('data-toggle', 'tab');
+		$('ul.nav-wizard li:first-child a').attr('href', '#step1');
+
 	}
+
+	if(current_step == 3 && arr_initStates[2] == '4'){
+		$('#li_step2 a').attr('data-toggle', 'tab');
+		$('#li_step2 a').attr('href', '#step2');
+	}
+
+
 
 	for(var i=1; i<5; i++){
 		$('#step'+i).removeClass('active');

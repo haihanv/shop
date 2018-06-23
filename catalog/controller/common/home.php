@@ -13,7 +13,7 @@ class ControllerCommonHome extends Controller {
 		 $data['column_right'] = $this->load->controller('common/column_right');
 		 $data['content_top'] = $this->load->controller('common/content_top');
 		 $data['content_bottom'] = $this->load->controller('common/content_bottom');
-		 $data['footer'] = $this->load->controller('common/footer');
+		 $data['footer'] = $this->load->controller('common/footer_custome');
 		 $data['header'] = $this->load->controller('common/header');
 
 
@@ -41,6 +41,9 @@ class ControllerCommonHome extends Controller {
 		$data['img_15'] = $server . 'image/custome/15.png';
 		$data['img_16'] = $server . 'image/custome/16.png';
 		$data['img_17'] = $server . 'image/custome/17.png';
+		$data['img_30'] = $server . 'image/custome/30.png';
+		$data['img_31'] = $server . 'image/custome/31.png';
+		$data['img_32'] = $server . 'image/custome/32.png';
 		$data['custome_login'] = $this->url->link('custome/login', '', true);
 		
 

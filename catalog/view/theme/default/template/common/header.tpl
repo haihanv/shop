@@ -53,9 +53,9 @@
           <a href="<?php echo $home; ?>"><img class="img-responsive" src="<?php echo $custome_logo; ?>"></a>
         </div>
         <h4>
-          <i>KANTAN WIFI JAPAN</i>
-          <span><a href="#"><img src="<?php echo $fb_icon; ?>"></a></span>
-          <span><a href="#"><img src="<?php echo $skype_icon; ?>"></a></span>        
+          <span style="float: right; padding-top: 10px"><a href="#"><img src="<?php echo $skype_icon; ?>"></a></span>
+          <span style="float: right; padding-top: 10px"><a href="https://www.facebook.com/KantanWifiJP/" target="_blank"><img src="<?php echo $fb_icon; ?>"></a></span>           
+          <i style="float: right;">KANTAN WIFI JAPAN</i>      
         </h4>      
 
       </div>
