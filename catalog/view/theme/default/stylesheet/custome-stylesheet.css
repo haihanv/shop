@@ -22,7 +22,6 @@ i {
 
 #myPage ul li {
 	display: block;
-/*	padding: 0 20px;*/
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;
@@ -98,23 +97,19 @@ i {
 }
 
 .navigation ul li {
-	/*min-width: 160px;*/
+
 	height: 90px;
 	display: inline-block;
 	width: auto;
 	direction: rtl;
-	width:14%;
+	min-width:14%;
 }
 
 .navigation ul li:first-child {
 	border-left: none;
 }
 
-/*.navigation ul li:last-child {
-	padding-right: 0px;
-	width: 23%;
-}
-*/
+
 
 .navigation li button {
 
@@ -377,7 +372,6 @@ i {
 
 #myPage1 ul li {
 	display: block;
-	/*padding: 0 20px;*/
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;

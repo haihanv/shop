@@ -50,12 +50,21 @@ Please donate via PayPal to donate@opencart.com
 
 <!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=796777377189380&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <footer class="custome-footer">  
   <div class="container">
    
 
     <div class="col-sm-6">
-        <h2> Comapy Information</h4>
+        <h2> Comapy Information</h2>
         <div class="row" style="border-bottom: 1px solid black; border-top: 1px solid #000;">
             <div class="col-sm-3"><span>Name</span></div>
             <div class="col-sm-8"><span>DMA株式会社</span></div>
@@ -70,20 +79,14 @@ Please donate via PayPal to donate@opencart.com
         </div>
     </div>
 
+
     <div class="col-sm-6">
 
 
-      <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=796777377189380&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
-      <div class="fb-comments" data-href="https://www.facebook.com/KantanWifiJP/" data-numposts="5"></div>
+
+      <div class="fb-comments" data-href="https://www.facebook.com/KantanWifiJP/" data-width="100%" data-numposts="5"></div>
 
     </div>
   </div>
