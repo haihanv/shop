@@ -20,12 +20,20 @@ i {
 	padding-left: 12px;
 }
 
+#myPage ul {
+	padding-left: 0px;
+}
+
 #myPage ul li {
 	display: block;
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;
 
+}
+
+#myPage ul li:first-child{
+	margin-left: 0px;
 }
 
 #myPage ul li a {
@@ -109,6 +117,10 @@ i {
 	border-left: none;
 }
 
+#myNavbar {
+	padding-left: 0px;
+}
+
 
 
 .navigation li button {
@@ -143,6 +155,8 @@ i {
 	margin-bottom: 40px;
 }
 
+
+
 .reason-general img {
 	display: block;
 	margin: 20px auto;
@@ -151,6 +165,10 @@ i {
 
 .reason {
 	margin-bottom: 30px;
+}
+
+.reason:hover {
+	color: #666;
 }
 
 .reason div {
@@ -191,11 +209,13 @@ i {
 
 .reason-detail .reason-dtt p{
 	text-align: center;
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: 600;
 	display: block;
 	margin: 0 auto;
 }
+
+
 
 .reason-detail .reason-dtt div {
 	float: left;
@@ -203,6 +223,11 @@ i {
 	border-radius: 5px;
 	border-color:  #0099cc;
 	padding: 10px;
+}
+
+.reason-detail .reason-dtt div:last-child p {
+	text-align: left;
+	display: block;
 }
 
 .reason-detail .reason-dtt div:first-child {
@@ -255,8 +280,8 @@ i {
 	padding-bottom: 10px;
 	border: solid 3px;
 	border-color: #0099cc;
-	width: 80%;
-	margin: 20px auto;
+	width: 83%;
+	margin: 0 auto;
 	font-size: 20px;
 	font-weight: 600;
 	min-height: 80px;
@@ -278,6 +303,7 @@ i {
 	padding-bottom: 40px;
 	padding-top: 40px;
 	background-color: #CCCCCC;
+	margin-top: 0px;
 }
 
 .custome-footer h2 {

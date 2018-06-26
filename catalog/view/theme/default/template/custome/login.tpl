@@ -874,7 +874,7 @@
 <div id="customer_id" style="display: none;"><?php echo $customer_id ?></div>
 <div id="admin_message" style="display: none;"><?php echo $admin_message ?></div>
 <div id="order_status" style="display: none;"><?php echo $order_status ?></div>
-<div id="current_step" style="display: block;"><?php echo $current_step ?></div>
+<div id="current_step" style="display: none;"><?php echo $current_step ?></div>
 
 
 <!-- include custome script here -->
