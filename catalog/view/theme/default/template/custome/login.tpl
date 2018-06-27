@@ -539,7 +539,7 @@
 			      				</div>
 			      				<div class="col-sm-4">
 			      					<span style="color: #0099cc;"><b>OTHERS</b></span><br>
-			      					<span><input id="cb-other" type="checkbox" name="bank" value="other"></span>
+			      					<span><input id="cb-other" type="checkbox" name="bank" value="other" style="margin-top: 65px;"></span>
 			      				</div>
 			      				</div>
 		      				</div>
@@ -563,7 +563,7 @@
 									        <div class="col-sm-3">
 										        <div class="payment-note">
 										        	<span>Required</span><br><br>
-										        	<span><i>* Photo of bank cash card or bank passbook cover: (which has your name and bank account number on it). </i></span>
+										        	<span style="font-style: italic;">*Photo of bank cash card or bank passbook cover: (which has your name and bank account number on it).</span>
 										        </div>
 										    </div>
 										    <div class="col-sm-6">   
@@ -590,7 +590,7 @@
 	      							<td class="payment-right">
 	      								<div class="row">
 			      							<div class="col-sm-3">
-			      								<span><i>* 4 digits</i></span>
+			      								<span style="font-style: italic;">*4 digits</span>
 			      							</div>
 			      							<div class="col-sm-6">
 			      								<input type="password" id="security_code" class="form-control" style="width: 90%; margin-left: 20px;">
@@ -610,7 +610,7 @@
 									        <div class="col-sm-3">
 										        <div class="payment-note" style="margin-top: 20px;">
 										        	<span>Required</span><br><br>
-										        	<span><i>* Please send us the page below which shows the last printed account balance on your bank passbook. </i></span>
+										        	<span style="font-style: italic;">*Please send us the page below which shows the last printed account balance on your bank passbook.</span>
 										        </div>
 										    </div>
 										    <div class="col-sm-6">   
@@ -808,28 +808,28 @@
 	      <div class="col-xs-3 bs-wizard-step active" id="step5-dt-step1">
 	        <div class="text-center bs-wizard-stepnum">Order</div>
 	        <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot"></a>
+	        <a class="bs-wizard-dot"></a>
 	        <div class="bs-wizard-info text-center"></div>
 	      </div>
 	      
 	      <div class="col-xs-3 bs-wizard-step disabled" id="step5-dt-step2"><!-- complete -->
 	        <div class="text-center bs-wizard-stepnum">Payment</div>
 	        <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot"></a>
+	        <a class="bs-wizard-dot"></a>
 	        <div class="bs-wizard-info text-center"></div>
 	      </div>
 	      
 	      <div class="col-xs-3 bs-wizard-step disabled" id="step5-dt-step3"><!-- complete -->
 	        <div class="text-center bs-wizard-stepnum">Delivery</div>
 	        <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot"></a>
+	        <a class="bs-wizard-dot"></a>
 	        <div class="bs-wizard-info text-center"></div>
 	      </div>
 	      
 	      <div class="col-xs-3 bs-wizard-step disabled" id="step5-dt-step4"><!-- active -->
 	        <div class="text-center bs-wizard-stepnum">Done</div>
 	        <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot"></a>
+	        <a class="bs-wizard-dot"></a>
 	        <div class="bs-wizard-info text-center"></div>
 	      </div>
 		</div>
@@ -838,27 +838,27 @@
 		<div class="order-info">
 			<div class="row">
 				<div class="col-sm-3">
-					<h4>Customer Address</h4>
-					<p style="text-align: center;"><?php echo $customer_address; ?></p>
+					<h4>Customer Address</h4><br>
+					<p><?php echo $customer_address; ?></p>
 				</div>
 				<div class="col-sm-3">
-					<h4>Delivery Time</h4>
-					<p style="text-align: center;"><?php echo $customer_delivery_time; ?></p>
+					<h4>Delivery Time</h4><br>
+					<p><?php echo $customer_delivery_time; ?></p>
 				</div>
 				<div class="col-sm-3">
-					<h4>Payment Status</h4>
+					<h4>Payment Status</h4><br>
 					<?php if($customer_order_status < 3){ ?>
-					<p style="text-align: center;">In Progress</p>
+					<p>In Progress</p>
 					<?php } else { ?>
-					<p style="text-align: center;">Done</p>
+					<p>Done</p>
 					<?php } ?>
 				</div>
 				<div class="col-sm-3">
-					<h4>Payment Method</h4>
+					<h4>Payment Method</h4><br>
 					<?php if($customer_payment_method == 1){ ?>
-					<p style="text-align: center;">Bank Withdraw</p>
+					<p>Bank Withdraw</p>
 					<?php } else { ?>
-					<p style="text-align: center;">Credit Card</p>
+					<p>Credit Card</p>
 					<?php } ?>
 				</div>
 			</div>

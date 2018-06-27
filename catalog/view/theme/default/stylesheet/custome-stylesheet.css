@@ -641,14 +641,18 @@ table td.td-right div.input-field {
 	padding-top: 20px;	
 }
 
-.step5-dt .order-info h2{
-	color: #0099cc;
-	text-align: center;
-}
 
 .step5-dt .order-info h4 {
 	color: #0099cc;
-	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 30%;
+}
+
+.step5-dt .order-info p {
+	display: inline-block;
+	margin-left: 30%;
+	width: 60%;
 }
 
 .step5-dt h2 {
@@ -688,15 +692,11 @@ table td.td-right div.input-field {
 
 
 .bank-withdraw .block-1 img {
-/*	width:  120px;
-	height: 100px;*/
 	display: block;
 	margin: 0 auto;	
 }
 
 .bank-withdraw .block-2 img {
-/*	width:  120px;
-	height: 150px;*/
 	display: block;
 	margin: 0 auto;	
 }
@@ -779,3 +779,4 @@ table td.td-right div.input-field {
     padding: 12px 12px;
     text-decoration: none;
 }
+
