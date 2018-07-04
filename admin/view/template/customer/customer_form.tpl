@@ -49,7 +49,11 @@
                     <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><?php echo $tab_address;?></a></li>
                     <?php $address_row++; ?>
                     <?php } ?>
-                    <!-- <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li> -->
+
+                    <?php if (!$addresses) { ?>
+                    <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li>
+                    <?php } ?>
+
                   </ul>
                 </div>
                 <div class="col-sm-10">
@@ -876,6 +880,9 @@ $('select[name=\'customer_group_id\']').trigger('change');
 var address_row = <?php echo $address_row; ?>;
 
 function addAddress() {
+
+  $('#address-add').hide();
+
 	html  = '<div class="tab-pane" id="tab-address' + address_row + '">';
 	html += '  <input type="hidden" name="address[' + address_row + '][address_id]" value="" />';
 
@@ -1050,7 +1057,9 @@ function addAddress() {
 
 	$('select[name=\'address[' + address_row + '][country_id]\']').trigger('change');
 
-	$('#address-add').before('<li><a href="#tab-address' + address_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$(\'#address a:first\').tab(\'show\'); $(\'a[href=\\\'#tab-address' + address_row + '\\\']\').parent().remove(); $(\'#tab-address' + address_row + '\').remove();"></i> <?php echo $tab_address; ?> ' + address_row + '</a></li>');
+	// $('#address-add').before('<li><a href="#tab-address' + address_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$(\'#address a:first\').tab(\'show\'); $(\'a[href=\\\'#tab-address' + address_row + '\\\']\').parent().remove(); $(\'#tab-address' + address_row + '\').remove();"></i> <?php echo $tab_address; ?> ' + address_row + '</a></li>');
+
+  $('#address-add').before('<li><a href="#tab-address' + address_row + '" data-toggle="tab"><i class="fa fa-minus-circle"></i> <?php echo $tab_address; ?> ' + address_row + '</a></li>');
 
 	$('#address a[href=\'#tab-address' + address_row + '\']').tab('show');
 
