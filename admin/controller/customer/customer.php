@@ -534,6 +534,7 @@ class ControllerCustomerCustomer extends Controller {
 				'state'          => $current_state,
 				'admin_note'     => $admin_note,
 				'modified_by'	 => $this->model_custome_info->getModifiedBy($result['customer_id']),
+				'date_added'     => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'approve'        => $approve,
 				'unlock'         => $unlock,
 				'edit'           => $this->url->link('customer/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, true)
