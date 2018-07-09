@@ -2,6 +2,26 @@
 
 class ModelCustomeInfo extends Model {
 
+	public function getLastCustomerId() {
+		$query = $this->db->query("SELECT customer_id FROM " . DB_PREFIX . "customer ORDER BY customer_id DESC LIMIT 1");
+		return $query->row['customer_id'];
+	}
+
+	public function createCustomerInitStates($customer_id) {
+		$query = $this->db->query("INSERT INTO " . DB_PREFIX . "customer_states SET customer_id = '".(int)$customer_id."'");
+		return $query;
+	}
+
+	public function createCustomerImages($customer_id) {
+		$query = $this->db->query("INSERT INTO " . DB_PREFIX . "customer_images SET customer_id = '".(int)$customer_id."'");
+		return $query;
+	}
+
+	public function createCustomerPayment($customer_id) {
+		$query = $this->db->query("INSERT INTO " . DB_PREFIX . "customer_payment SET customer_id = '".(int)$customer_id."'");
+		return $query;
+	}
+
 	public function getOrderStatus($customer_id) {
 		$query = $this->db->query("SELECT order_status FROM " . DB_PREFIX . "customer_states WHERE customer_id = '" . (int)$customer_id. "'");
 		return $query->row['order_status'];

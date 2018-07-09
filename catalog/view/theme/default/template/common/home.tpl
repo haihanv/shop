@@ -1,5 +1,13 @@
 <?php echo $header; ?>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0&appId=1960321884020677&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="navigation" id="myPage">
     <div class="container">
@@ -17,7 +25,7 @@
                       </button>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="collapse navbar-collapse" id="myNavbar" style="padding-left: 0px;">
                     <ul class="nav navbar-nav">
                       <li>
                         <a href="#myPage">
@@ -66,7 +74,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-11">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default" style="margin-bottom: 0px;">
                 <div class="container">
 
                     <div class="navbar-header">
@@ -135,7 +143,7 @@
         
         
         <div class="col-sm-4 col-xs-4 reason" id="reason_p1">
-            <div style="width: 100%; float: right;">
+            <div style="width: 73%; float: right;" id="reason_p11">
                 <p>Point 1</p>
                 <div>
                     <img src="<?php echo $img_7; ?>" class="img-responsive">
@@ -147,7 +155,7 @@
         
 
         <div class="col-sm-4 col-xs-4 reason" id="reason_p2">
-            <div style="width: 100%; margin-left: auto; margin-right: auto;">
+            <div style="width: 73%; margin-left: auto; margin-right: auto;" id="reason_p21">
                 <p>Point 2</p>
                 <div>
                     <img src="<?php echo $img_8; ?>" class="img-responsive">
@@ -159,7 +167,7 @@
         
 
         <div class="col-sm-4 col-xs-4 reason" id="reason_p3">
-            <div style="width: 100%; float: left;">
+            <div style="width: 73%; float: left;" id="reason_p31">
                 <p>Point 3</p>
                 <div>
                     <img src="<?php echo $img_9; ?>" class="img-responsive">
@@ -265,8 +273,8 @@
         <div class="col-sm-8 col-xs-12 reason-dt3">
             <p>
                 <i> * The actual communication speed varies depending on the customers' environment
-                (can reach maximum downlink from 261 to 350Mbps).<br> Communication speed may be lowerd due to the speed limitation
-                due to the stable provision of service during timezone (such as nighttime) when usage is concentrated.</i>
+                (can reach maximum downlink from 261 to 350Mbps).<br> Communication speed may be lower due to the speed limitation
+                due to the stable provision of service during timezone (such as night time) when usage is concentrated.</i>
             </p>
         </div>
         <div class="col-sm-2 col-xs-0"></div>
@@ -324,7 +332,7 @@
         <div class="row">
             <div class="col-sm-12 col-xs-12" style="margin: 0 auto; display: block;">
                 <div class="col-sm-4 col-xs-4">
-                    <a href=""><img class="img-responsive" src="<?php echo $img_30; ?>" style="display: inline-block; float: left;" /></a>
+                    <a href="<?php echo $custome_login ?>"><img class="img-responsive" src="<?php echo $img_30; ?>" style="display: inline-block; float: left;" /></a>
                 </div>
 
                 <div class="col-sm-4 col-xs-4">

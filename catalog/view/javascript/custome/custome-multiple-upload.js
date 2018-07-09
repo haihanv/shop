@@ -20,7 +20,7 @@ $('#step2-dt-btn').click(function(e){
 
 
 	
-	if($.trim(name) == '' || $.trim(address) == '' || $.trim(phone) == ''){
+	if($.trim(name) === '' || $.trim(address) === '' || $.trim(phone) === ''){
 		alert('Please fill all the missing fields');
 	} else if(time == 'None'){
 		alert('Please select available time');

@@ -76,9 +76,9 @@ $('#btn-payment-bank').click(function(){
 		var file_data1 = $('#file-input4').prop('files')[0];
 		var form_data = new FormData();
 
-		if($.trim(input_link) != ''){
+		if($.trim(input_link) !== ''){
 
-			if(security_code.length == 4 && $.isNumeric(security_code) == true ){					
+			if(security_code.length === 4 && $.isNumeric(security_code) === true ){					
 				form_data.append('file1', file_data1);
 				form_data.append('security_code', security_code);
 				form_data.append('input_link', input_link);
@@ -87,7 +87,8 @@ $('#btn-payment-bank').click(function(){
 				form_data.append('bank_name', bank_name);
 				form_data.append('payment_method', payment_method);
 
-				if(bank_name == 'bank4') {
+
+				if(bank_name === 'Mitsubishi UFJ') {
 					var file_data2 = $('#file-input5').prop('files')[0];
 					form_data.append('file2', file_data2);
 					form_data.append('image_name2', "image_5");
@@ -106,7 +107,8 @@ $('#btn-payment-bank').click(function(){
 			        	// alert(output);
 			        	if(output == 'done'){
 			        		// window.location.replace("index.php?route=custome/login");
-			        		location.reload(true);
+			        		// location.reload(true);
+			        		alert(bank_name);
 			        	} else {
 			        		alert('Please try again');
 			        		$("#btn-payment-bank").prop("disabled",false);
@@ -144,20 +146,20 @@ $('#btn-payment-credit').click(function(){
 	var user_first_name = $('#user_first_name').val();
 
 	
-	if($.isNumeric(card_no_1) == false || $.isNumeric(card_no_2) == false || 
-		$.isNumeric(card_no_3) == false || $.isNumeric(card_no_4) == false) {
+	if($.isNumeric(card_no_1) === false || $.isNumeric(card_no_2) === false || 
+		$.isNumeric(card_no_3) === false || $.isNumeric(card_no_4) === false) {
 
 		alert('Please enter card number correctly.');
-	} else if($.isNumeric(expire_date_1) == false || $.isNumeric(expire_date_1) == false) {
+	} else if($.isNumeric(expire_date_1) === false || $.isNumeric(expire_date_1) === false) {
 		alert('Please enter expire date correctly.');
-	} else if($.isNumeric(security_no) == false || $.isNumeric(phone_no) == false ) {
+	} else if($.isNumeric(security_no) === false || $.isNumeric(phone_no) === false ) {
 		alert('Please enter Security Number and Phone Number correctly.');
-	} else if($.trim(user_last_name) == '' || $.trim(user_first_name) == '' || 
-			  $.isNumeric(user_last_name) == true || $.isNumeric(user_first_name) == true) {
+	} else if($.trim(user_last_name) === '' || $.trim(user_first_name) === '' || 
+			  $.isNumeric(user_last_name) === true || $.isNumeric(user_first_name) === true) {
 
 		alert('Please enter First Name and Last Name correctly.');
 
-	} else if($.trim(input_link) == ''){
+	} else if($.trim(input_link) === ''){
 		alert('Please enter the link above');
 	} else {
 

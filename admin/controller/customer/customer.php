@@ -19,9 +19,16 @@ class ControllerCustomerCustomer extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('customer/customer');
+		$this->load->model('custome/info');
+		$this->load->model('custome/states');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_customer_customer->addCustomer($this->request->post);
+			$customer_id = $this->model_custome_info->getLastCustomerId();
+			$this->model_custome_info->createCustomerInitStates($customer_id);
+			$this->model_custome_info->createCustomerImages($customer_id);
+			$this->model_custome_info->createCustomerPayment($customer_id);
+			$this->model_custome_states->setCustomerCurrentStep($customer_id, 2);
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -67,6 +74,8 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
+			//ha added
+			$this->model_custome_info->setModifiedBy($customer_id, $this->user->getUserName());
 			$this->response->redirect($this->url->link('customer/customer', 'token=' . $this->session->data['token'] . $url, true));
 		}
 
@@ -501,7 +510,10 @@ class ControllerCustomerCustomer extends Controller {
 			$_state = $this->model_custome_states->getCustomerState($result['customer_id'], "state_".$current_step);
 			$avai_time = $this->model_custome_states->getCustomerTime($result['customer_id']);
 			$admin_note = $this->model_custome_info->getAdminNote($result['customer_id']);
+			$order_note = $this->model_custome_info->getOrderNote($result['customer_id']);
+			$_order_state = $this->model_custome_states->getCustomerOrderState($result['customer_id']);
 			$current_state = "";
+			$order_state = "";
 
 
 			switch ($_state) {
@@ -525,6 +537,24 @@ class ControllerCustomerCustomer extends Controller {
 					break;
 			}
 
+			switch ($_order_state) {
+				case 1:
+					$order_state = "Order active";
+					break;
+				case 2:
+					$order_state = "Order completed. Payment active";
+					break;
+				case 3:
+					$order_state = "Payment completed. Delivery active";
+					break;
+				case 4:
+					$order_state = "Delivery done";
+					break;
+				default:
+					$order_state = "Order not active";
+					break;
+			}
+
 			$data['customers'][] = array(
 				'customer_id'    => $result['customer_id'],
 				'name'           => $result['name'],
@@ -532,7 +562,9 @@ class ControllerCustomerCustomer extends Controller {
 				'avai_time'		 => $avai_time,
 				'step'           => "Step ".$current_step,
 				'state'          => $current_state,
+				'order_state'	 => $order_state,
 				'admin_note'     => $admin_note,
+				'order_note'	 => $order_note,
 				'modified_by'	 => $this->model_custome_info->getModifiedBy($result['customer_id']),
 				'date_added'     => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'approve'        => $approve,
@@ -931,7 +963,7 @@ class ControllerCustomerCustomer extends Controller {
 		} elseif (!empty($customer_info)) {
 			$data['lastname'] = $customer_info['lastname'];
 		} else {
-			$data['lastname'] = '';
+			$data['lastname'] = 'Not Enter';
 		}
 
 		if (isset($this->request->post['email'])) {

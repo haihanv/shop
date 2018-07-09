@@ -113,7 +113,7 @@
               <thead>
                 <tr>
                   <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
-                  <!-- <td class="text-left"><?php if ($sort == 'name') { ?>
+                  <td class="text-left"><?php if ($sort == 'name') { ?>
                     <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
@@ -122,7 +122,7 @@
                     <a href="<?php echo $sort_email; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_email; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_email; ?>"><?php echo $column_email; ?></a>
-                    <?php } ?></td> -->
+                    <?php } ?></td>
                   <!-- <td class="text-left"><?php if ($sort == 'customer_group') { ?>
                     <a href="<?php echo $sort_customer_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer_group; ?></a>
                     <?php } else { ?>
@@ -144,8 +144,8 @@
                     <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                     <?php } ?></td> -->
 
-                  <td class="text-left">Customer Name</td>
-                  <td class="text-left">Customer Email</td>
+                  <!-- <td class="text-left">Customer Name</td> -->
+                  <!-- <td class="text-left">Customer Email</td> -->
                   <td class="text-left">Available Time</td>
                   <td class="text-left">Current Step</td>
                   <td class="text-left">State</td>
@@ -157,7 +157,7 @@
                     <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
                     <?php } ?></td>
 
-                  <td class="text-left">Currently modified by</td>
+                  <td class="text-left">Modified by</td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -179,12 +179,20 @@
 
                   <!-- ha added -->
                   <td class="text-left"><?php echo $customer['avai_time']; ?></td>
+
+                  <?php if(($customer['step'] == 'Step 4') && ($customer['state'] == 'Ok')){ ?>
+                  <td class="text-left">Order</td>
+                  <td class="text-left"><?php echo $customer['order_state']; ?></td>
+                  <td class="text-left"><?php echo $customer['date_added']; ?></td>
+                  <td class="text-left"><?php echo $customer['modified_by']; ?></td>
+                 <?php } else { ?>
                   <td class="text-left"><?php echo $customer['step']; ?></td>
                   <td class="text-left"><?php echo $customer['state']; ?></td>
                   <!-- <td class="text-left"><?php echo $customer['admin_note']; ?></td> -->
                   <td class="text-left"><?php echo $customer['date_added']; ?></td>
                   <td class="text-left"><?php echo $customer['modified_by']; ?></td>
-
+		             <?php } ?>
+		  
                   <td class="text-right"><?php if ($customer['approve']) { ?>
                     <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
                     <?php } else { ?>

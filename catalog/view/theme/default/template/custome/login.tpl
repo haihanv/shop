@@ -368,6 +368,9 @@
 	      		<div style="text-align: center;">
 			  		<button type="submit" class="btn btn-primary submit-btn" id="step2-dt-btn" style="display: inline-block; margin: 0 auto;  ">Proceed to enter customer information</button>
 			  	</div>
+			  	<div style="text-align: center;">
+			  		<button type="submit" class="btn btn-primary submit-btn" id="step21-dt-btn" style="display: inline-block; margin: 0 auto;  ">Continue</button>
+			  	</div>
 		  		
 	      </div>
 	      <div id="step2-dt-1" style="display: none;">
@@ -513,15 +516,15 @@
 	      			<div class="bank-withdraw" style="display: none;">
 			      			<div class="block-1">
 				      			<div class="row">
-				      				<div class="col-sm-4">
+				      				<div class="col-sm-4 col-xs-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_19 ?>"></span><br>
 				      					<span><input type="checkbox" name="bank" value="Mizuho"></span>
 				      				</div>
-				      				<div class="col-sm-4">
+				      				<div class="col-sm-4 col-xs-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_20 ?>"></span><br>
 				      					<span><input type="checkbox" name="bank" value="Resona"></span>
 				      				</div>
-				      				<div class="col-sm-4">
+				      				<div class="col-sm-4 col-xs-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_21 ?>"></span><br>
 				      					<span><input type="checkbox" name="bank" value="Japan Post Bank (Yucho)"></span>
 				      				</div>
@@ -529,17 +532,17 @@
 			      			</div>
 			      			<div class="block-2">
 			      				<div class="row">
-			      				<div class="col-sm-4">
+			      				<div class="col-sm-4 col-xs-4">
 			      					<span><img class="img-responsive" src="<?php echo $custome_22 ?>"></span><br>
 			      					<span><input id="cb-mufg" type="checkbox" name="bank" value="Mitsubishi UFJ"></span>
 			      				</div>
-			      				<div class="col-sm-4">
+			      				<div class="col-sm-4 col-xs-4">
 			      					<span><img class="img-responsive" src="<?php echo $custome_23 ?>"></span><br>
 			      					<span><input type="checkbox" name="bank" value="Sumitomo (SMBC)"></span>
 			      				</div>
-			      				<div class="col-sm-4">
+			      				<div class="col-sm-4 col-xs-4">
 			      					<span style="color: #0099cc;"><b>OTHERS</b></span><br>
-			      					<span><input id="cb-other" type="checkbox" name="bank" value="other" style="margin-top: 65px;"></span>
+			      					<span><input id="cb-other" type="checkbox" name="bank" value="other" style="margin-top: 17%;"></span>
 			      				</div>
 			      				</div>
 		      				</div>
@@ -572,7 +575,7 @@
 										        </div>
 										    </div> 
 										    <div class="col-sm-1">
-										    	<div class="image-upload">
+										    	<div class="image-upload" style="margin-top: 100px;">
 												    <label for="file-input4">
 												        <img src="<?php echo $custome_upload ?>"/>
 												    </label>
@@ -619,7 +622,7 @@
 										        </div>
 										    </div> 
 										    <div class="col-sm-1">
-										    	<div class="image-upload">
+										    	<div class="image-upload" style="margin-top: 100px;">
 												    <label for="file-input5">
 												        <img src="<?php echo $custome_upload ?>"/>
 												    </label>
@@ -887,6 +890,8 @@ $(document).ready(function(){
 	
 	
 	$('button.btn-re-up').hide();
+	$('#step21-dt-btn').hide();
+
 
 	if(arr_initStates[0] != 'none' && arr_initStates[0] == '0'){
 		$('#step2-dt').hide();
@@ -945,6 +950,8 @@ $(document).ready(function(){
 		// get msg from admin to re-up data
 		$('#step3-dt').hide();
 		$('#step3-dt-1').fadeIn();
+		$('#step21-dt-btn').show();
+		$('#step2-dt-btn').hide();
 		var admin_msg = $('#admin_message').html();
 		if(admin_msg !== 'none')
 			$('#step3-dt-1').html(admin_msg); 

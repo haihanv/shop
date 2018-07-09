@@ -59,7 +59,7 @@ Please donate via PayPal to donate@opencart.com
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<footer class="custome-footer">  
+<footer class="custome-footer" style="margin-top: 0px;">  
   <div class="container">
    
 
@@ -119,8 +119,14 @@ function topFunction() {
 if(windowWith <700) {
   $('.logo h4 i').hide();
   $('#myPage1').hide();
+  $('#reason_p11').css("width", "100%");
+  $('#reason_p21').css("width", "100%");
+  $('#reason_p31').css("width", "100%");
 }else {
   $('.logo h4 i').show();
+  $('#reason_p11').css("width", "73%");
+  $('#reason_p21').css("width", "73%");
+  $('#reason_p31').css("width", "73%");
 }
 
 </script>

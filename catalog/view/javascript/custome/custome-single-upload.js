@@ -137,4 +137,8 @@ $('#btn-file-input6').click(function(){
 			alert('Please try again');
 		}
 	});
-});	
+});
+
+$('#step21-dt-btn').click(function(){
+	location.reload(true);
+});

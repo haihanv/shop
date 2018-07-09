@@ -26,34 +26,42 @@
       <div class="panel-body">
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-customer" class="form-horizontal">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
+            <li><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
             <?php if ($customer_id) { ?>
             <!-- <li><a href="#tab-history" data-toggle="tab"><?php echo $tab_history; ?></a></li> -->
             <!-- <li><a href="#tab-transaction" data-toggle="tab"><?php echo $tab_transaction; ?></a></li>
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-ip" data-toggle="tab"><?php echo $tab_ip; ?></a></li> -->
-            <li><a href="#tab-custome-info" data-toggle="tab">Customer Info</a></li>
+            <li class="active"><a href="#tab-custome-info" data-toggle="tab">Customer Info</a></li>
             <li><a href="#tab-custome-email" data-toggle="tab">Email</a></li>
             <?php } ?>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="tab-general">
+            <div class="tab-pane" id="tab-general">
               <div class="row">
                 <div class="col-sm-2">
                   <ul class="nav nav-pills nav-stacked" id="address">
                     <li class="active"><a href="#tab-customer" data-toggle="tab"><?php echo $tab_general; ?></a></li>
                     <?php $address_row = 1; ?>
                     <?php foreach ($addresses as $address) { ?>
-                    <!-- <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('#address a:first').tab('show'); $('#address a[href=\'#tab-address<?php echo $address_row; ?>\']').parent().remove(); $('#tab-address<?php echo $address_row; ?>').remove();"></i> <?php echo $tab_address . ' ' . $address_row; ?></a></li> -->
+                   <!--  <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('#address a:first').tab('show'); $('#address a[href=\'#tab-address<?php echo $address_row; ?>\']').parent().remove(); $('#tab-address<?php echo $address_row; ?>').remove();"></i> <?php echo $tab_address . ' ' . $address_row; ?></a></li> -->
 
                     <li><a href="#tab-address<?php echo $address_row; ?>" data-toggle="tab"><?php echo $tab_address;?></a></li>
                     <?php $address_row++; ?>
                     <?php } ?>
+                   
 
-                    <?php if (!$addresses) { ?>
-                    <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li>
+                    <?php if( empty($addresses)){ ?> 
+                     <li id="address-add"><a onclick="addAddress();"><i class="fa fa-plus-circle"></i> <?php echo $button_address_add; ?></a></li>
+                    <script type="text/javascript">
+                      var add_address = true;
+                    </script>
+                    <?php } else { ?>
+                      <script type="text/javascript">
+                        var add_address = false;
+                      </script>
                     <?php } ?>
-
+                    
                   </ul>
                 </div>
                 <div class="col-sm-10">
@@ -86,7 +94,7 @@
                       <div class="form-group required" style="display: none;">
                         <label class="col-sm-2 control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
                         <div class="col-sm-10">
-                          <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />
+                          <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control"/>
                           <?php if ($error_lastname) { ?>
                           <div class="text-danger"><?php echo $error_lastname; ?></div>
                           <?php } ?>
@@ -658,7 +666,7 @@
                 <button type="button" id="button-reward" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i> <?php echo $button_reward_add; ?></button>
               </div>
             </div> -->
-            <div id="tab-custome-info" class="tab-pane">
+            <div id="tab-custome-info" class="tab-pane active">
                 <table class="table table-bordered table-hover">
                      <thead>
                       <tr>
@@ -699,7 +707,7 @@
                           <!-- <td class="text-left"></td> -->
                           <td class="text-left">
                               <?php 
-                                  $tmp_order_note = "Delivery time here";
+                                  $tmp_order_note = "Order note:";
                                   if($order_note != 'none')
                                     $tmp_order_note = "Current note: " . $order_note;
                               ?>
@@ -887,16 +895,16 @@ function addAddress() {
 	html += '  <input type="hidden" name="address[' + address_row + '][address_id]" value="" />';
 
 	html += '  <div class="form-group required">';
-	html += '    <label class="col-sm-2 control-label" for="input-firstname' + address_row + '"><?php echo $entry_firstname; ?></label>';
+	html += '    <label class="col-sm-2 control-label" for="input-firstname' + address_row + '">Name</label>';
 	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][firstname]" value="" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname' + address_row + '" class="form-control" /></div>';
 	html += '  </div>';
 
-	html += '  <div class="form-group required">';
+	html += '  <div class="form-group required" style="display: none;">';
 	html += '    <label class="col-sm-2 control-label" for="input-lastname' + address_row + '"><?php echo $entry_lastname; ?></label>';
-	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][lastname]" value="" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname' + address_row + '" class="form-control" /></div>';
+	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][lastname]" value="Not Enter" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname' + address_row + '" class="form-control" /></div>';
 	html += '  </div>';
 
-	html += '  <div class="form-group">';
+	html += '  <div class="form-group" style="display: none;">';
 	html += '    <label class="col-sm-2 control-label" for="input-company' + address_row + '"><?php echo $entry_company; ?></label>';
 	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][company]" value="" placeholder="<?php echo $entry_company; ?>" id="input-company' + address_row + '" class="form-control" /></div>';
 	html += '  </div>';
@@ -906,7 +914,7 @@ function addAddress() {
 	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][address_1]" value="" placeholder="<?php echo $entry_address_1; ?>" id="input-address-1' + address_row + '" class="form-control" /></div>';
 	html += '  </div>';
 
-	html += '  <div class="form-group">';
+	html += '  <div class="form-group" style="display: none;">';
 	html += '    <label class="col-sm-2 control-label" for="input-address-2' + address_row + '"><?php echo $entry_address_2; ?></label>';
 	html += '    <div class="col-sm-10"><input type="text" name="address[' + address_row + '][address_2]" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2' + address_row + '" class="form-control" /></div>';
 	html += '  </div>';
@@ -1092,6 +1100,8 @@ function addAddress() {
 
 	address_row++;
 }
+
+
 //--></script>
   <script type="text/javascript"><!--
 function country(element, index, zone_id) {
@@ -1384,6 +1394,11 @@ $('#tab-customer .form-group[data-sort]').detach().each(function() {
 <div id="order_state_int" style="display: none;"><?php echo $order_state_int;?></div>
 
 <script src="view/javascript/custome/custome-admin.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  if(add_address)
+      addAddress();
+</script>
 
 </div>
 <?php echo $footer; ?>

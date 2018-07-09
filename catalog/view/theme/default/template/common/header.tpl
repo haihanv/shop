@@ -40,6 +40,7 @@
 <!-- <?php foreach ($analytics as $analytic) { ?>
 <?php echo $analytic; ?>
 <?php } ?> -->
+<meta property="fb:app_id" content="1960321884020677" />
 </head>
 <body class="<?php echo $class; ?>">
 
@@ -53,9 +54,9 @@
           <a href="<?php echo $home; ?>"><img class="img-responsive" src="<?php echo $custome_logo; ?>"></a>
         </div>
         <h4>
-          <span style="float: right; padding-top: 10px"><a href="#"><img src="<?php echo $skype_icon; ?>"></a></span>
-          <span style="float: right; padding-top: 10px"><a href="https://www.facebook.com/KantanWifiJP/" target="_blank"><img src="<?php echo $fb_icon; ?>"></a></span>           
-          <i style="float: right;">KANTAN WIFI JAPAN</i>      
+          <span style="float: right;"><a href="#"><img src="<?php echo $skype_icon; ?>"></a></span>
+          <span style="float: right;"><a href="https://www.facebook.com/KantanWifiJP/" target="_blank"><img src="<?php echo $fb_icon; ?>"></a></span>           
+          <i style="float: right;">KANTAN WIFI JAPAN</i>   
         </h4>      
 
       </div>
