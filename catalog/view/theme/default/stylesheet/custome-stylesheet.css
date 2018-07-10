@@ -478,17 +478,18 @@ i {
 #note h1{
 	font-weight: 600;
 	display: inline-block;
-	float: left;
+	/*float: left;*/
 	margin-right: 0px;
 	margin-right: 20px;
 
 }
 
 #note p{
-	float: left;
-	width: 80%;
+	/*float: left;
+	width: 80%;*/
 	padding: 10px 0;
 	line-height: 20px;
+	padding-left: 20px;
 }
 
 
@@ -547,8 +548,8 @@ table td.td-right div.required span {
 }
 
 table td.td-right div.input-field {
-	width: 75%;
-	float: left;
+	/*width: 75%;
+	float: left;*/
 	margin: 20px 0;
 }
 

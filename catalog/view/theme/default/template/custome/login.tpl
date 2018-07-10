@@ -35,14 +35,18 @@
 	      		<br><br>
 
 		      	<div id="note">
-		      		<h1>NOTE</h1>
-		      		<p style="padding-top: 18px;">
-		      			
-		      		Your account will be the email you registered for the application.
-		      		We will be sending important notices so please make sure that your email address is correct.
-		      		Please register an email address if you don't have one.
+		      		<div class="row">
+		      			<div class="col-sm-1 col-xs-3">
+			      		<h1>NOTE</h1></div>
+			      		<div class="col-sm-9 col-xs-9">
+			      		<p style="padding-top: 18px;">
+			      			
+			      		Your account will be the email you registered for the application.
+			      		We will be sending important notices so please make sure that your email address is correct.
+			      		Please register an email address if you don't have one.
 
-		      		</p>
+			      		</p></div>
+		      		</div>
 		      	</div>
 		      	<div class="clear"></div>
 		      	<!-- end note -->
@@ -53,10 +57,14 @@
 		  				<tr>
 					        <td class="td-left" valign="middle"><p>Email</p></td>
 					        <td class="td-right" valign="middle">
-						        <div>
-						        	<div class="required"><span>Required</span></div>
-						        	<div class="input-field">
-						        		<input type="email" id="step1-dt-email" name="email" class="form-control">
+						        <div class="row">
+						        	<div class="col-sm-1">
+						        		<div class="required"><span>Required</span></div>
+						        	</div>
+						        	<div class="col-sm-10">
+							        	<div class="input-field">
+							        		<input type="email" id="step1-dt-email" name="email" class="form-control">
+							        	</div>
 						        	</div>
 						        </div>
 					        </td>
@@ -64,10 +72,14 @@
 					    <tr>
 					        <td class="td-left"><p>Email <span>(re-enter)</span></p></td>
 					        <td class="td-right">
-					        	 <div>
-						        	<div class="required"><span>Required</span></div>
-						        	<div class="input-field">
-						        		<input type="email" id="step1-dt-re-email" name="email" class="form-control">
+					        	 <div class="row">
+					        	 	<div class="col-sm-1">
+						        		<div class="required"><span>Required</span></div>
+						        	</div>
+						        	<div class="col-sm-10">
+							        	<div class="input-field">
+							        		<input type="email" id="step1-dt-re-email" name="email" class="form-control">
+							        	</div>
 						        	</div>
 						        </div>
 					        </td>
@@ -75,11 +87,15 @@
 					    <tr>
 					        <td class="td-left"><p>Password</p></td>
 					        <td class="td-right">
-					        	 <div>
+					        	 <div class="row">
+					        	 	<div class="col-sm-1">
 						        	<div class="required"><span>Required</span></div>
-						        	<div class="input-field">
-						        		<input type="password" id="step1-dt-pass" name="password" class="form-control">
-						        		<span><i style="font-size: 12px;">Password (at least 6 characters)</i></span>
+						        	</div>
+						        	<div class="col-sm-10">
+							        	<div class="input-field">
+							        		<input type="password" id="step1-dt-pass" name="password" class="form-control">
+							        		<span><i style="font-size: 12px;">Password (at least 6 characters)</i></span>
+							        	</div>
 						        	</div>
 						        </div>
 					        </td>
@@ -87,10 +103,14 @@
 					    <tr>
 					        <td class="td-left"><p>Password <span>(re-enter)</span></p></td>
 					       	<td class="td-right">
-					        	 <div>
+					        	 <div class="row">
+					        	 	<div class="col-sm-1">
 						        	<div class="required"><span>Required</span></div>
-						        	<div class="input-field">
-						        		<input type="password" id="step1-dt-re-pass" name="confirm" class="form-control">
+						        	</div>
+						        	<div class="col-sm-10">
+							        	<div class="input-field">
+							        		<input type="password" id="step1-dt-re-pass" name="confirm" class="form-control">
+							        	</div>
 						        	</div>
 						        </div>
 					        </td>
@@ -203,10 +223,14 @@
 	      				<tr>
 					        <td class="td-left"><p>Name</p></td>
 					        <td class="td-right">
-					        	 <div>
-						        	<div class="required"><span>Required</span></div>
-						        	<div class="input-field">
-						        		<input type="text" id="step2-dt-name" class="form-control">
+					        	 <div class="row">
+					        	 	<div class="col-sm-1">
+						        		<div class="required"><span>Required</span></div>
+						        	</div>
+						        	<div class="col-sm-10">
+							        	<div class="input-field">
+							        		<input type="text" id="step2-dt-name" class="form-control">
+							        	</div>
 						        	</div>
 						        </div>
 					        </td>
@@ -214,30 +238,36 @@
 					    <tr>
 					        <td class="td-left"><p>Address</p></td>
 					        <td class="td-right">
-					        	 <div>
-						        	<div class="required"><span>Required</span></div>
+					        	 <div class="row">
+					        	 	<div class="col-sm-1">
+						        	<div class="required"><span>Required</span></div></div>
+						        	<div class="col-sm-10">
 						        	<div class="input-field">
 						        		<input type="text" id="step2-dt-address" class="form-control">
-						        	</div>
+						        	</div></div>
 						        </div>
 					        </td>
 					    </tr>
 					    <tr>
 					        <td class="td-left"><p>Phone Number</p></td>
 					        <td class="td-right">
-					        	 <div>
-						        	<div class="required"><span>Required</span></div>
+					        	 <div class="row">
+					        	 	<div class="col-sm-1">
+						        	<div class="required"><span>Required</span></div></div>
+						        	<div class="col-sm-10">
 						        	<div class="input-field">
 						        		<input type="text" id="step2-dt-phone" class="form-control">
-						        	</div>
+						        	</div></div>
 						        </div>
 					        </td>
 					    </tr>
 					    <tr>
 					        <td class="td-left"><p>Available time for calling</p></td>
 					        <td class="td-right">
-					        	<div id="sel">
-						        	<div class="required"><span>Required</span></div>
+					        	<div id="sel" class="row">
+					        		<div class="col-sm-1">
+						        	<div class="required"><span>Required</span></div></div>
+						        	<div class="col-sm-10">
 						        	<div class="input-field">
 						        		<select class="form-control" id="step2-dt-time">
 						        			<option>None</option>
@@ -251,7 +281,7 @@
 									        <option>5.pm - 6.pm</option>
 									        <option>6.pm - 7.pm</option>
 									    </select>
-						        	</div>
+						        	</div></div>
 					        	</div>
 					        </td>
 					    </tr>
@@ -268,10 +298,14 @@
 	      		<br>
 	      		<!-- begin note -->
 	      		<div id="note">
-	      			<h1>NOTE</h1>
-	      			<p style="padding-top: 27px;">
-	      				Please check the date of expiration of your document. We do not accept expired passport or residence card 
-	      			</p>
+	      			<div class="row">
+		      			<div class="col-sm-1 col-xs-3">
+		      				<h1>NOTE</h1></div>
+		      			<div class="col-sm-9 col-xs-9">
+			      			<p style="padding-top: 1.7em;">
+			      				Please check the date of expiration of your document. We do not accept expired passport or residence card 
+			      			</p></div>
+	      			</div>
 	      			<div class="clear"></div>
 	      		</div>
 	      		<!-- end note -->
@@ -460,10 +494,14 @@
 	    <div id="step4" class="tab-pane fade">
 	     	<div class="step4-dt" id="step4-dt">
 	     		<div id="note">
-	      			<h1>NOTE</h1>
-	      			<p style="padding-top: 30px;">
-	      				You will receive a link after contract confirmation call from SoftBank center ( 0800-111-2009 )
-	      			</p>
+	     			<div class="row">
+		     			<div class="col-sm-1 col-xs-2">
+		      				<h1>NOTE</h1></div>
+		      			<div class="col-sm-9 col-xs-9">
+			      			<p style="padding-top: 1.87em;">
+			      				You will receive a link after contract confirmation call from SoftBank center ( 0800-111-2009 )
+			      			</p></div>
+	      			</div>
 	      			<div class="clear"></div>
 	      		</div>
 	      		<!-- end note -->
@@ -650,19 +688,19 @@
 	      						<div class="col-sm-1"></div> 
 
 
-	      						<div class="col-sm-2">
+	      						<div class="col-sm-2 col-xs-4">
 	      							<img src="<?php echo $custome_24 ?>" class="img-responsive">
 	      						</div>
-	      						<div class="col-sm-2">
+	      						<div class="col-sm-2 col-xs-4">
 	      							<img src="<?php echo $custome_25 ?>" class="img-responsive">
 	      						</div>
-	      						<div class="col-sm-2">
+	      						<div class="col-sm-2 col-xs-4">
 	      							<img src="<?php echo $custome_26 ?>" class="img-responsive">
 	      						</div>
-	      						<div class="col-sm-2">
+	      						<div class="col-sm-2 col-xs-4">
 	      							<img src="<?php echo $custome_27 ?>" class="img-responsive">
 	      						</div>
-	      						<div class="col-sm-2">
+	      						<div class="col-sm-2 col-xs-4">
 	      							<img src="<?php echo $custome_28 ?>" class="img-responsive">
 	      						</div>
 
