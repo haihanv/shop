@@ -446,7 +446,7 @@
 		  		
 
 	     	</div> 
-	     	<div id="step3-dt-1" style="display: none; text-align: center; font-size: 25px; color: #FFD52B; font-style: italic;">
+	     	<div id="step3-dt-1" style="display: none; text-align: center; font-size: 1.2em; color: red; font-style: italic;">
 
 	     	</div>
 	     	<div id="step3-dt-2" style="display: none;">
@@ -788,7 +788,7 @@
 	      		<!-- end payment -->
 	     	</div>
 	     	<!-- end step4-dt -->
-	     	<div id="step4-dt-1" style="display: none; text-align: center; font-size: 20px; color: #FFD52B; font-style: italic;">
+	     	<div id="step4-dt-1" style="display: none; text-align: center; font-size: 1.2em; color: red; font-style: italic; ">
 
 	     	</div>
 	     	<div id="step4-dt-2" style="display: none;">

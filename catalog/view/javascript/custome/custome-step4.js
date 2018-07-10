@@ -107,8 +107,7 @@ $('#btn-payment-bank').click(function(){
 			        	// alert(output);
 			        	if(output == 'done'){
 			        		// window.location.replace("index.php?route=custome/login");
-			        		// location.reload(true);
-			        		alert(bank_name);
+			        		location.reload(true);
 			        	} else {
 			        		alert('Please try again');
 			        		$("#btn-payment-bank").prop("disabled",false);
@@ -179,9 +178,10 @@ $('#btn-payment-credit').click(function(){
 		 	'user_first_name': user_first_name,
 		 	'user_last_name': user_last_name
 		 }, function(data, stt){
-			 	if(output == 'done'){
+			 	if(data == 'done'){
 	        		// window.location.replace("index.php?route=custome/login");
 	        		location.reload(true);
+	        		
 	        	} else {
 	        		alert('Please try again');
 	        		$("#btn-payment-credit").prop("disabled",false);

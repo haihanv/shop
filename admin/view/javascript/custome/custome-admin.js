@@ -25,6 +25,8 @@ $('#btn_admin_apply1').on('click', function(e) {
 
 	var url = "index.php?route=custome/customer_info&token="+token;
 
+	
+
 	$.post(url, {
 		order_note: str_admin_order_note,
 		order_nextstate: _order_nextstate,
@@ -55,7 +57,7 @@ $('#btn_admin_apply2').on('click', function(e) {
 	var _admin_step_nextstate = parseInt(str_admin_step_nextstate);
 	var _action = parseInt(str_action);
 
-	// if(_admin_step_nextstate != 11){
+
 
 		var url = "index.php?route=custome/customer_info&token="+token;
 
@@ -71,30 +73,52 @@ $('#btn_admin_apply2').on('click', function(e) {
 			customer_step: _customer_step,
 			customer_id: _customer_id
 		}, function(value, stt){
-			// alert(value);
-
 			if(value == 'step_done' || value == 'done') {
 				window.location.replace("index.php?route=customer/customer/edit&token="+token+ "&customer_id=" + _customer_id);
 			} else {
 				alert('Failed');
 			}
 		});
-		
-		// alert('ki ta');
-				
-	// } else {
-	// 	alert(typeof _admin_step_nextstate);
-	// }
 
 });
 
 
-// for sending email in email tab
-// 
+// delete customer info
+
+$('#btn_admin_delete').on('click', function(e) {
+
+	e.preventDefault();
+	var token = $('#admin_token').html();
+	var str_payment_method = $('#admin_payment_method').html();
+	var str_email = $('#admin_customer_email').html();
+
+	var url = "index.php?route=custome/customer_delete&token="+token;
+
+	$("#btn_admin_delete").prop("disabled",true);
+
+	$.post(url, {
+		payment_method: str_payment_method,
+		email: str_email,
+		customer_id: _customer_id
+	}, function(value, stt){
+
+		if(value == 'done') {
+			window.location.replace("index.php?route=customer/customer/edit&token="+token+ "&customer_id=" + _customer_id);
+		} else {
+			$("#btn_admin_delete").prop("disabled",false);
+			alert("Failed to delete info.");
+		}
+	});
+
+});
+
+// for sending email in email tab 
 
 $('#btn_admin_sendMail').on('click', function(e) {
 
 	e.preventDefault();
+
+	$("#btn_admin_sendMail").prop("disabled",true);
 
 	var token = $('#admin_token').html();
 	var url = "index.php?route=custome/customer_mail&token="+token;
@@ -114,11 +138,10 @@ $('#btn_admin_sendMail').on('click', function(e) {
 			email: str_customer_email
 		}, function(value, stt){
 			if(value == 'done') {
-				$('#customer_subject').val("");
-				$('#customer_content').val("");
-				alert('Email sent successfully');
+				window.location.replace("index.php?route=customer/customer/edit&token="+token+ "&customer_id=" + _customer_id);
 			}else {
-				alert('Failed to send email')
+				alert('Failed to send email');
+				$("#btn_admin_sendMail").prop("disabled",false);
 			}	
 		});
 

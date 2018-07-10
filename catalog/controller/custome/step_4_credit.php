@@ -2,7 +2,7 @@
 
 class ControllerCustomeStep4Credit extends Controller{
 	public function index() {
-		$return = "failed";
+		$return = "";
 
 		if(isset($_POST['customer_id'])){
 			$this->load->model('custome/step_process');

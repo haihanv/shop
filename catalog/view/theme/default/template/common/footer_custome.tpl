@@ -122,6 +122,7 @@ if(windowWith <700) {
   $('#reason_p11').css("width", "100%");
   $('#reason_p21').css("width", "100%");
   $('#reason_p31').css("width", "100%");
+  $('body').css("font-size", "11px");
 }else {
   $('.logo h4 i').show();
   $('#reason_p11').css("width", "73%");

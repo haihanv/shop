@@ -194,6 +194,11 @@ class ModelCustomeInfo extends Model {
 	public function getCustomerImagePath($customer_id, $columnName){
 		$query = $this->db->query("SELECT ".$columnName." FROM " . DB_PREFIX . "customer_images WHERE customer_id = '" . (int)$customer_id. "'");
 		return $query->row[$columnName];
+	}
+
+	public function setCustomerImagePath($customer_id, $columnName, $path) {
+		$this->db->query("UPDATE " . DB_PREFIX . "customer_images SET ".$columnName." = '".$path."' WHERE customer_id = '" . (int)$customer_id. "'");
+		
 	}	
 
 }

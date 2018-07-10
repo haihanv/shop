@@ -815,7 +815,7 @@
                 <h4>SoftBank Link: <span style="color: #0099cc;"><?php echo $link ?></span></h4>
 
                 <br><br>
-                <!-- <button id="btn-admin-delete" class="btn btn-danger">Delete</button> -->
+                <button id="btn_admin_delete" class="btn btn-danger">Delete Payment Info</button>
 
             </div>
             <div id="tab-custome-email" class="tab-pane">
@@ -1392,6 +1392,9 @@ $('#tab-customer .form-group[data-sort]').detach().each(function() {
 <div id="admin_customer_step" style="display: none;"><?php echo $current_step;?></div>
 <div id="admin_token" style="display: none;"><?php echo $token;?></div>
 <div id="order_state_int" style="display: none;"><?php echo $order_state_int;?></div>
+<div id="admin_payment_method" style="display: none;"><?php echo $payment_method;?></div>
+<div id="admin_customer_email" style="display: none;"><?php echo $email; ?></div>
+
 
 <script src="view/javascript/custome/custome-admin.js" type="text/javascript"></script>
 
