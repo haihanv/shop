@@ -770,7 +770,7 @@
 		      									</div>
 		      								</div>
 		      								<div class="col-sm-5">
-		      									<input id="security_no" type="text" class="form-control">
+		      									<input id="security_no" type="text" class="form-control" style="margin-top: 5px;">
 		      								</div>
 	      								</div>
 	      							</td>
@@ -787,7 +787,7 @@
 		      									</div>
 		      								</div>
 		      								<div class="col-sm-5">
-		      									<input id="phone_no" type="text" class="form-control">
+		      									<input id="phone_no" type="text" class="form-control" style="margin-top: 5px;">
 		      								</div>
 	      								</div>
 	      							</td>
@@ -804,10 +804,10 @@
 		      									</div>
 		      								</div>
 		      								<div class="col-sm-2">
-		      									<input id="user_last_name" type="text" placeholder="Last Name" class="form-control">
+		      									<input id="user_last_name" type="text" placeholder="Last Name" class="form-control" style="margin-top: 5px;">
 		      								</div>
 		      								<div class="col-sm-2">
-		      									<input id="user_first_name" type="text" placeholder="First Name" class="form-control">
+		      									<input id="user_first_name" type="text" placeholder="First Name" class="form-control" style="margin-top: 5px;">
 		      								</div>
 	      								</div>
 	      							</td>
