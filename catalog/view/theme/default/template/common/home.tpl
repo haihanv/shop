@@ -137,9 +137,11 @@
 
 <div class="container" id="generalReason">
     <div class="row reason-general">
-        <div class="col-sm-12 col-xs-12">
+        <div class="col-sm-1 col-xs-0"></div>
+        <div class="col-sm-10 col-xs-12">
           <img src="<?php echo $img_6; ?>" class="img-responsive">  
         </div>
+        <div class="col-sm-1 col-xs-0"></div>
         
         
         <div class="col-sm-4 col-xs-4 reason" id="reason_p1">
