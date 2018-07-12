@@ -29,7 +29,11 @@ i {
 	align-items: center;
 	border-left: solid 1px;
 	border-color: #e6e6e6;
+	height: auto;
+}
 
+#myPage ul li a:hover {
+	border-bottom: 2px solid #0099cc;
 }
 
 #myPage ul li:first-child{
@@ -46,11 +50,11 @@ i {
 
 #myPage ul li a h5 {
 	text-align: center;
-	font-size: 1.06em;
+	font-size: 14px;
 }
 
 #myPage ul li a i {
-	height: 2em;
+	height: 2.2em;
 }
 
 #myPage ul li a i img {
