@@ -485,6 +485,7 @@ i {
 	display: inline-block;
 	margin-right: 0px;
 	margin-right: 20px;
+	font-size: 2.5em;
 
 }
 
@@ -793,7 +794,7 @@ table td.td-right div.input-field {
     text-decoration: none;
 }
 
-@media all and (max-width: 700px) { /* screen size until 740px */
+@media all and (max-width: 730px) { /* screen size until 740px */
 	body {
 	    font-size: 13px; /* 0.8x default size */
 
@@ -802,6 +803,42 @@ table td.td-right div.input-field {
 	.reason div div {
 		height: 160px;
 	}
+
+}
+
+@media all and (min-width: 740px) and (max-width: 970px) { /* screen size until 740px */
+	body {
+	    font-size: 13px; /* 0.8x default size */
+
+	}
+
+	body .nav-justified.nav-wizard > li:not(:last-child) a:after {
+	  position: absolute;
+	  content: "";
+	  top: 0px;
+	  right: -20px;
+	  width: 0px;
+	  height: 0px;
+	  border-style: solid;
+	  border-width: 40px 0 40px 20px;
+	  border-color: transparent transparent transparent #aaa;
+	  z-index: 150;
+	}
+
+	body .nav-justified.nav-wizard > li:not(:first-child) a:before {
+	  position: absolute;
+	  content: "";
+	  top: 0px;
+	  left: -20px;
+	  width: 0px;
+	  height: 0px;
+	  border-style: solid;
+	  border-width: 40px 0 40px 20px;
+	  border-color: #aaa #aaa #aaa transparent;
+	  z-index: 150;
+	}
+
+
 
 }
 

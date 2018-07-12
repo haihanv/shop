@@ -36,9 +36,9 @@
 
 		      	<div id="note">
 		      		<div class="row">
-		      			<div class="col-sm-2 col-xs-2">
+		      			<div class="col-sm-2 col-xs-2 col-lg-1">
 			      		<h1>NOTE</h1></div>
-			      		<div class="col-sm-10 col-xs-10">
+			      		<div class="col-sm-10 col-xs-10 col-lg-10">
 			      		<p style="padding-top: 18px;">
 			      			
 			      		Your account will be the email you registered for the application.
