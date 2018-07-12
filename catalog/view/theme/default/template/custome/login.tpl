@@ -36,9 +36,9 @@
 
 		      	<div id="note">
 		      		<div class="row">
-		      			<div class="col-sm-1 col-xs-3">
+		      			<div class="col-sm-2 col-xs-2">
 			      		<h1>NOTE</h1></div>
-			      		<div class="col-sm-9 col-xs-9">
+			      		<div class="col-sm-10 col-xs-10">
 			      		<p style="padding-top: 18px;">
 			      			
 			      		Your account will be the email you registered for the application.
@@ -58,10 +58,10 @@
 					        <td class="td-left" valign="middle"><p>Email</p></td>
 					        <td class="td-right" valign="middle">
 						        <div class="row">
-						        	<div class="col-sm-1">
+						        	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        		<div class="required"><span>Required</span></div>
 						        	</div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 							        	<div class="input-field">
 							        		<input type="email" id="step1-dt-email" name="email" class="form-control">
 							        	</div>
@@ -73,10 +73,10 @@
 					        <td class="td-left"><p>Email <span>(re-enter)</span></p></td>
 					        <td class="td-right">
 					        	 <div class="row">
-					        	 	<div class="col-sm-1">
+					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        		<div class="required"><span>Required</span></div>
 						        	</div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 							        	<div class="input-field">
 							        		<input type="email" id="step1-dt-re-email" name="email" class="form-control">
 							        	</div>
@@ -88,10 +88,10 @@
 					        <td class="td-left"><p>Password</p></td>
 					        <td class="td-right">
 					        	 <div class="row">
-					        	 	<div class="col-sm-1">
+					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        	<div class="required"><span>Required</span></div>
 						        	</div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 							        	<div class="input-field">
 							        		<input type="password" id="step1-dt-pass" name="password" class="form-control">
 							        		<span><i style="font-size: 12px;">Password (at least 6 characters)</i></span>
@@ -104,10 +104,10 @@
 					        <td class="td-left"><p>Password <span>(re-enter)</span></p></td>
 					       	<td class="td-right">
 					        	 <div class="row">
-					        	 	<div class="col-sm-1">
+					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        	<div class="required"><span>Required</span></div>
 						        	</div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 							        	<div class="input-field">
 							        		<input type="password" id="step1-dt-re-pass" name="confirm" class="form-control">
 							        	</div>
@@ -224,10 +224,10 @@
 					        <td class="td-left"><p>Name</p></td>
 					        <td class="td-right">
 					        	 <div class="row">
-					        	 	<div class="col-sm-1">
+					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        		<div class="required"><span>Required</span></div>
 						        	</div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 							        	<div class="input-field">
 							        		<input type="text" id="step2-dt-name" class="form-control">
 							        	</div>
@@ -239,9 +239,9 @@
 					        <td class="td-left"><p>Address</p></td>
 					        <td class="td-right">
 					        	 <div class="row">
-					        	 	<div class="col-sm-1">
+					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        	<div class="required"><span>Required</span></div></div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 						        	<div class="input-field">
 						        		<input type="text" id="step2-dt-address" class="form-control">
 						        	</div></div>
@@ -252,9 +252,9 @@
 					        <td class="td-left"><p>Phone Number</p></td>
 					        <td class="td-right">
 					        	 <div class="row">
-					        	 	<div class="col-sm-1">
+					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
 						        	<div class="required"><span>Required</span></div></div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 						        	<div class="input-field">
 						        		<input type="text" id="step2-dt-phone" class="form-control">
 						        	</div></div>
@@ -265,9 +265,9 @@
 					        <td class="td-left"><p>Available time for calling</p></td>
 					        <td class="td-right">
 					        	<div id="sel" class="row">
-					        		<div class="col-sm-1">
+					        		<div class="col-sm-2 col-xs-2 col-lg-1">
 						        	<div class="required"><span>Required</span></div></div>
-						        	<div class="col-sm-10">
+						        	<div class="col-sm-10 col-xs-10 col-lg-10">
 						        	<div class="input-field">
 						        		<select class="form-control" id="step2-dt-time">
 						        			<option>None</option>
@@ -299,9 +299,9 @@
 	      		<!-- begin note -->
 	      		<div id="note">
 	      			<div class="row">
-		      			<div class="col-sm-1 col-xs-3">
+		      			<div class="col-sm-2 col-xs-2">
 		      				<h1>NOTE</h1></div>
-		      			<div class="col-sm-9 col-xs-9">
+		      			<div class="col-sm-10 col-xs-10">
 			      			<p style="padding-top: 1.7em;">
 			      				Please check the date of expiration of your document. We do not accept expired passport or residence card 
 			      			</p></div>
