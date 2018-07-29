@@ -36,10 +36,10 @@
                 <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
                 <input type="text" name="filter_name" value="<?php echo $filter_name; ?>" placeholder="<?php echo $entry_name; ?>" id="input-name" class="form-control" />
               </div>
-              <!-- <div class="form-group">
+              <div class="form-group">
                 <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
                 <input type="text" name="filter_email" value="<?php echo $filter_email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
-              </div> -->
+              </div>
             </div>
             <!-- <div class="col-sm-3">
               <div class="form-group">
@@ -118,11 +118,11 @@
                     <?php } else { ?>
                     <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
                     <?php } ?></td>
-                  <td class="text-left"><?php if ($sort == 'c.email') { ?>
+                  <!-- <td class="text-left"><?php if ($sort == 'c.email') { ?>
                     <a href="<?php echo $sort_email; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_email; ?></a>
                     <?php } else { ?>
                     <a href="<?php echo $sort_email; ?>"><?php echo $column_email; ?></a>
-                    <?php } ?></td>
+                    <?php } ?></td> -->
                   <!-- <td class="text-left"><?php if ($sort == 'customer_group') { ?>
                     <a href="<?php echo $sort_customer_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer_group; ?></a>
                     <?php } else { ?>
@@ -145,7 +145,7 @@
                     <?php } ?></td> -->
 
                   <!-- <td class="text-left">Customer Name</td> -->
-                  <!-- <td class="text-left">Customer Email</td> -->
+                  <td class="text-left">Email</td>
                   <td class="text-left">Available Time</td>
                   <td class="text-left">Current Step</td>
                   <td class="text-left">State</td>
@@ -158,6 +158,7 @@
                     <?php } ?></td>
 
                   <td class="text-left">Modified by</td>
+                  <td class="text-left">Admin Note</td>
                   <td class="text-right"><?php echo $column_action; ?></td>
                 </tr>
               </thead>
@@ -185,12 +186,14 @@
                   <td class="text-left"><?php echo $customer['order_state']; ?></td>
                   <td class="text-left"><?php echo $customer['date_added']; ?></td>
                   <td class="text-left"><?php echo $customer['modified_by']; ?></td>
+                  <td class="text-left"><?php echo $customer['admin_note']; ?></td>
                  <?php } else { ?>
                   <td class="text-left"><?php echo $customer['step']; ?></td>
                   <td class="text-left"><?php echo $customer['state']; ?></td>
                   <!-- <td class="text-left"><?php echo $customer['admin_note']; ?></td> -->
                   <td class="text-left"><?php echo $customer['date_added']; ?></td>
                   <td class="text-left"><?php echo $customer['modified_by']; ?></td>
+                  <td class="text-left"><?php echo $customer['admin_note']; ?></td>
 		             <?php } ?>
 		  
                   <td class="text-right"><?php if ($customer['approve']) { ?>
@@ -210,7 +213,7 @@
                     <?php if ($customer['unlock']) { ?>
                     <a href="<?php echo $customer['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
                     <?php } else { ?>
-                    <button type="button" class="btn btn-warning" style="display: none;" disabled><i class="fa fa-unlock"></i></button>
+                    <button type="button" class="btn btn-warning" disabled><i class="fa fa-unlock"></i></button>
                     <?php } ?>
                     <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                 </tr>

@@ -46,7 +46,7 @@ $('#step1-dt-btn').click(function(){
 		        				        		
 		        	}
 		        	else{
-		        		alert("Registration is not successful. Please try again.");
+		        		alert("Registration is not successful. Please try again or register with an other email.");
 		        		$("#step1-dt-btn").prop("disabled",false);
 		        	}
 		        } 

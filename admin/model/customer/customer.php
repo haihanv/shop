@@ -87,15 +87,15 @@ class ModelCustomerCustomer extends Model {
 
 		$implode = array();
 
-		if (!empty($data['filter_name'])) {
+		if (!empty( trim($data['filter_name']) )) {
 			// $implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
 			// ha added
-			$implode[] = "c.firstname LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+			$implode[] = "c.firstname LIKE '%" . $this->db->escape(trim($data['filter_name'])) . "%'";
 		}
 
-		// if (!empty($data['filter_email'])) {
-		// 	$implode[] = "c.email LIKE '" . $this->db->escape($data['filter_email']) . "%'";
-		// }
+		if (!empty( trim($data['filter_email']) )) {
+			$implode[] = "c.email LIKE '" . $this->db->escape($data['filter_email']) . "%'";
+		}
 
 		// if (isset($data['filter_newsletter']) && !is_null($data['filter_newsletter'])) {
 		// 	$implode[] = "c.newsletter = '" . (int)$data['filter_newsletter'] . "'";
@@ -117,7 +117,7 @@ class ModelCustomerCustomer extends Model {
 		// 	$implode[] = "c.approved = '" . (int)$data['filter_approved'] . "'";
 		// }
 
-		if (!empty($data['filter_date_added'])) {
+		if (!empty( trim($data['filter_date_added']) )) {
 			$implode[] = "DATE(c.date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
 		}
 

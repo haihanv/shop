@@ -66,16 +66,16 @@ Please donate via PayPal to donate@opencart.com
     <div class="col-sm-6">
         <h2> Comapy Information</h2>
         <div class="row" style="border-bottom: 1px solid black; border-top: 1px solid #000;">
-            <div class="col-sm-3"><span>Name</span></div>
-            <div class="col-sm-8"><span>DMA株式会社</span></div>
+            <div class="col-sm-3 col-xs-3"><span>Name</span></div>
+            <div class="col-sm-8 col-xs-8"><span>DMA株式会社</span></div>
         </div>
         <div class="row" style="border-bottom: 1px solid black;">
-            <div class="col-sm-3"><span>Location</span></div>
-            <div class="col-sm-8"><span>埼玉県春日部市備後東2丁目2番18号大熊アパートFー101</span></div>
+            <div class="col-sm-3 col-xs-3"><span>Location</span></div>
+            <div class="col-sm-8 col-xs-8"><span>埼玉県春日部市備後東2丁目2番18号大熊アパートFー101</span></div>
         </div>
         <div class="row" style="border-bottom: 1px solid black;">
-            <div class="col-sm-3"><span>Tel</span></div>
-            <div class="col-sm-8"><span>0123456</span></div>
+            <div class="col-sm-3 col-xs-3"><span>Tel</span></div>
+            <div class="col-sm-8 col-xs-8"><span>0123456</span></div>
         </div>
     </div>
 
@@ -103,11 +103,13 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         // document.getElementById("myBtn").style.display = "block";
+        $('#myPage_nav').addClass("navbar-fixed-top");
         if(windowWith > 700)
             document.getElementById("myPage1").style.display = "block";
     } else {
         // document.getElementById("myBtn").style.display = "none";
         document.getElementById("myPage1").style.display = "none";
+        $('#myPage_nav').removeClass("navbar-fixed-top");
     }
 }
 
@@ -123,11 +125,16 @@ if(windowWith <700) {
   $('#reason_p21').css("width", "100%");
   $('#reason_p31').css("width", "100%");
   $('body').css("font-size", "11px");
+  $('ul.list-inline').hide();
+  $('ol.list-inline').show();
+
 }else {
   $('.logo h4 i').show();
   $('#reason_p11').css("width", "73%");
   $('#reason_p21').css("width", "73%");
   $('#reason_p31').css("width", "73%");
+  $('ul.list-inline').show();
+  $('ol.list-inline').hide();
 }
 
 </script>

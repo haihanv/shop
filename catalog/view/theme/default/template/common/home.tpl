@@ -14,15 +14,31 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-11">
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default" id="myPage_nav">
                 <div class="container" style="padding-left: 0px;">
 
                     <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" id="button-toggle">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span> 
-                      </button>
+                      </button>  
+
+
+                        <ol class="list-inline" style="display:inline-block; float: right; margin-top: 10px;">
+                          <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"></span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+
+                              <?php if ($logged) { ?>
+                              <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+                              <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+                              <?php } else { ?>
+                              <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
+                              <?php } ?>
+                            </ul>
+                          </li>
+                        </ol>
+                        
                     </div>
 
                     <div class="collapse navbar-collapse" id="myNavbar" style="padding-left: 0px;">
@@ -190,7 +206,7 @@
                 <p>Point 1</p>
             </div>
             <div>
-                <p style="margin-left: 15%;">SIMPLE - NO INSTALLATION NEEDED</p>
+                <p>SIMPLE - NO INSTALLATION NEEDED</p>
             </div>
         </div>      
         

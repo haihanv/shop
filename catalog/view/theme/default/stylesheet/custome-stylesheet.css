@@ -254,6 +254,13 @@ i {
 	display: block;
 }
 
+
+
+#reason-dtt_p1 div:last-child p{
+	margin-left: 15%;
+}
+
+
 .reason-dt1 img {
 	display: block;
 	margin: 0 auto;
@@ -794,6 +801,33 @@ table td.td-right div.input-field {
     text-decoration: none;
 }
 
+@media all and (max-width: 450px) { /* screen size until 740px */
+	body {
+	    font-size: 10px; /* 0.8x default size */
+
+	}
+
+	.reason div div {
+		height: 150px;
+	}
+
+	#note h1 {
+		font-size: 1.6em;
+		padding-top: 20px;
+	}
+
+	.logo h4 img {
+		width: 1.7em;
+		height: 1.7em;
+	}
+
+	body #reason-dtt_p1 div:last-child p {
+		margin-left: 0%;
+	}
+
+
+}
+
 @media all and (max-width: 730px) { /* screen size until 740px */
 	body {
 	    font-size: 13px; /* 0.8x default size */
@@ -801,7 +835,41 @@ table td.td-right div.input-field {
 	}
 
 	.reason div div {
-		height: 160px;
+		height: 150px;
+	}
+
+	.reason div div p {
+		font-size: 1.5em;
+	}
+
+	.reason div div img {
+		height: 50px;
+	}
+
+	#myPage ul li a {
+		text-align: left;
+	}
+
+	#myPage ul li a i {
+		margin-left: 10px;
+		float: left;
+		display: block;
+		width: 3em;
+		margin-right: 20px;
+	}
+
+	#myPage ul li a h5 {
+		/*margin-left: 20px;*/
+		text-align: left;
+	}
+
+	#myPage ul li a button {
+		margin-left: 20px;
+	}
+
+	#button-toggle {
+		float: left;
+		margin-left: 10px;
 	}
 
 }
