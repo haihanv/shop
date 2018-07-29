@@ -846,6 +846,10 @@ table td.td-right div.input-field {
 		height: 50px;
 	}
 
+	#myPage ul li:last-child {
+		display: none;
+	}
+
 	#myPage ul li a {
 		text-align: left;
 	}
