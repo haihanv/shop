@@ -127,6 +127,7 @@ if(windowWith <700) {
   $('body').css("font-size", "11px");
   $('ul.list-inline').hide();
   $('ol.list-inline').show();
+  $('#myPage_button').show();
 
 }else {
   $('.logo h4 i').show();
@@ -135,6 +136,7 @@ if(windowWith <700) {
   $('#reason_p31').css("width", "73%");
   $('ul.list-inline').show();
   $('ol.list-inline').hide();
+  $('#myPage_button').hide();
 }
 
 </script>

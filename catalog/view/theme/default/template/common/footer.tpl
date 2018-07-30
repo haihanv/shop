@@ -76,7 +76,7 @@ Please donate via PayPal to donate@opencart.com
     <div class="col-sm-3"></div>
 
     <div class="col-sm-6">
-        <h2> Comapy Information</h4>
+        <h2> Comapy Information</h2>
         <div class="row" style="border-bottom: 1px solid black; border-top: 1px solid #000;">
             <div class="col-sm-3 col-xs-3"><span>Name</span></div>
             <div class="col-sm-8 col-xs-8"><span>DMA株式会社</span></div>

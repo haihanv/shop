@@ -525,7 +525,7 @@
 	      		<div class="link">
 	      			<div class="col-sm-3"><span><b>Please enter the link here:</b></span></div>
 	      			<div class="col-sm-9">
-	      				<input type="text" id="input_link" class="form-control">
+	      				<input type="text" id="input_link" class="form-control" value="none">
 	      			</div>
 	      		</div>
 

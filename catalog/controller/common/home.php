@@ -45,6 +45,16 @@ class ControllerCommonHome extends Controller {
 		$data['img_31'] = $server . 'image/custome/31.png';
 		$data['img_32'] = $server . 'image/custome/32.png';
 		$data['custome_login'] = $this->url->link('custome/login', '', true);
+
+		$this->load->language('common/header');
+
+		$data['home_logged'] = $this->customer->isLogged();
+		$data['home_text_account'] = $this->language->get('text_account');
+		$data['home_text_login'] = $this->language->get('text_login');
+		$data['home_text_logout'] = $this->language->get('text_logout');
+		$data['home_account'] = $this->url->link('account/account', '', true);
+		$data['home_login'] = $this->url->link('account/login', '', true);
+		$data['home_logout'] = $this->url->link('account/logout', '', true);
 		
 
 

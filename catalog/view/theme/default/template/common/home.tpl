@@ -25,15 +25,17 @@
                       </button>  
 
 
+                      <a id="myPage_button" href="<?php echo $custome_login ?>"><button class="btn navbar-btn"><b>APPLY NOW</b></button></a>
+
                         <ol class="list-inline" style="display:inline-block; float: right; margin-top: 10px;">
-                          <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"></span> <span class="caret"></span></a>
+                          <li class="dropdown"><a href="<?php echo $home_account; ?>" title="<?php echo $home_text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"></span> <span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right">
 
-                              <?php if ($logged) { ?>
-                              <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-                              <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
+                              <?php if ($home_logged) { ?>
+                              <li><a href="<?php echo $home_account; ?>"><?php echo $home_text_account; ?></a></li>
+                              <li><a href="<?php echo $home_logout; ?>"><?php echo $home_text_logout; ?></a></li>
                               <?php } else { ?>
-                              <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
+                              <li><a href="<?php echo $home_login; ?>"><?php echo $home_text_login;?></a></li>                                 
                               <?php } ?>
                             </ul>
                           </li>

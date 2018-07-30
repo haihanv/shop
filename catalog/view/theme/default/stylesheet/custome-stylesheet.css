@@ -138,6 +138,12 @@ i {
 	color: white;
 }
 
+#myPage_button button {
+	background-color: #EF135B;
+	color: white;
+	margin-left: 20px;
+}
+
 .top-banner {
 	margin: 0px;
 	padding-top: 0px;
@@ -846,7 +852,7 @@ table td.td-right div.input-field {
 		height: 50px;
 	}
 
-	#myPage ul li:last-child {
+	#myPage div#myNavbar ul li:last-child {
 		display: none;
 	}
 
