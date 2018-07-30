@@ -728,7 +728,7 @@
                             <select id="admin-step-nextstate" style="text-align: center; width: 50%; margin-right: 20px;">
                               <option value="11"> Undefined</option>
                               <option value="1">Ok</option>
-                              <option value="2">Failed</option>
+                              <!--<option value="2">Failed</option>-->
                               <option value="4">Re-up</option>
                             </select>
                             

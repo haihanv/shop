@@ -213,7 +213,7 @@
                     <?php if ($customer['unlock']) { ?>
                     <a href="<?php echo $customer['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
                     <?php } else { ?>
-                    <button type="button" class="btn btn-warning" disabled><i class="fa fa-unlock"></i></button>
+                    <button type="button" class="btn btn-warning" style="display: none;" disabled><i class="fa fa-unlock"></i></button>
                     <?php } ?>
                     <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                 </tr>

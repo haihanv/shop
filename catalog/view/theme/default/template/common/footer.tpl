@@ -122,8 +122,10 @@ function topFunction() {
 if(windowWith <700) {
   $('.logo h4 i').hide();
   $('#myPage1').hide();
+  $('#logo_second_text').show();
 }else {
   $('.logo h4 i').show();
+  $('#logo_second_text').hide();
 }
 
 </script>

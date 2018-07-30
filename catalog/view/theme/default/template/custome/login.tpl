@@ -36,9 +36,9 @@
 
 		      	<div id="note">
 		      		<div class="row">
-		      			<div class="col-sm-2 col-xs-2 col-lg-1">
+		      			<div class="col-sm-2 col-xs-3 col-lg-1">
 			      		<h1>NOTE</h1></div>
-			      		<div class="col-sm-10 col-xs-10 col-lg-10">
+			      		<div class="col-sm-10 col-xs-9 col-lg-10">
 			      		<p style="padding-top: 18px;">
 			      			
 			      		Your account will be the email you registered for the application.
@@ -299,9 +299,9 @@
 	      		<!-- begin note -->
 	      		<div id="note">
 	      			<div class="row">
-		      			<div class="col-sm-2 col-xs-2">
+		      			<div class="col-sm-2 col-xs-3">
 		      				<h1>NOTE</h1></div>
-		      			<div class="col-sm-10 col-xs-10">
+		      			<div class="col-sm-10 col-xs-9">
 			      			<p style="padding-top: 1.7em;">
 			      				Please check the date of expiration of your document. We do not accept expired passport or residence card 
 			      			</p></div>
@@ -400,10 +400,10 @@
 	      		</table>
 
 	      		<div style="text-align: center;">
-			  		<button type="submit" class="btn btn-primary submit-btn" id="step2-dt-btn" style="display: inline-block; margin: 0 auto;  ">Proceed to enter customer information</button>
+			  		<button class="btn btn-primary submit-btn" id="step2-dt-btn" style="display: inline-block; margin: 0 auto;  ">Proceed to enter customer information</button>
 			  	</div>
 			  	<div style="text-align: center;">
-			  		<button type="submit" class="btn btn-primary submit-btn" id="step21-dt-btn" style="display: inline-block; margin: 0 auto;  ">Continue</button>
+			  		<button class="btn btn-primary submit-btn" id="step21-dt-btn" style="display: inline-block; margin: 0 auto;  ">Continue</button>
 			  	</div>
 		  		
 	      </div>
@@ -495,7 +495,7 @@
 	     	<div class="step4-dt" id="step4-dt">
 	     		<div id="note">
 	     			<div class="row">
-		     			<div class="col-sm-1 col-xs-2">
+		     			<div class="col-sm-1 col-xs-3">
 		      				<h1>NOTE</h1></div>
 		      			<div class="col-sm-9 col-xs-9">
 			      			<p style="padding-top: 1.87em;">
@@ -564,7 +564,7 @@
 				      				</div>
 				      				<div class="col-sm-4 col-xs-4">
 				      					<span><img class="img-responsive" src="<?php echo $custome_21 ?>"></span><br>
-				      					<span><input type="checkbox" name="bank" value="Japan Post Bank (Yucho)"></span>
+				      					<span><input type="checkbox" name="bank" value="Japan Post Bank (Yucho)" checked></span>
 				      				</div>
 				      			</div>
 			      			</div>
@@ -619,7 +619,7 @@
 												    </label>
 												    <input id="file-input4" type="file" style="display: none;"/>
 												</div>
-										    	<button id="btn-file-input4" class="btn btn-primary btn-re-up">Re-up</button>
+										    	<!-- <button id="btn-file-input4" class="btn btn-primary btn-re-up">Re-up</button> -->
 										    </div>
 									    </div>
 	      							</td>
@@ -637,7 +637,7 @@
 			      								<input type="password" id="security_code" class="form-control" style="width: 90%; margin-left: 20px;">
 			      							</div>
 			      							<div class="col-sm-1">
-										    	<button class="btn btn-primary btn-re-up">Re-up</button>
+										    	<!-- <button class="btn btn-primary btn-re-up">Re-up</button> -->
 										    </div>
 									    </div>
 	      							</td>
@@ -666,7 +666,7 @@
 												    </label>
 												    <input id="file-input5" type="file" style="display: none;"/>
 												</div>
-										    	<button id="btn-file-input5" class="btn btn-primary btn-re-up">Re-up</button>
+										    	<!-- <button id="btn-file-input5" class="btn btn-primary btn-re-up">Re-up</button> -->
 										    </div>
 									    </div>
 	      							</td>

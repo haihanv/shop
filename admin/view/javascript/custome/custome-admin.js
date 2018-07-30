@@ -127,7 +127,7 @@ $('#btn_admin_sendMail').on('click', function(e) {
 	var str_subject = $('#customer_subject').val();
 	var str_content = $('#customer_content').val();
 
-	if($.trim(str_subject) == '' || $.trim(str_content) == ''){
+	if($.trim(str_subject) === '' || $.trim(str_content) === ''){
 		alert("Please fill both Subject and Content of email");
 	} else {
 

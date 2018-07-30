@@ -128,6 +128,7 @@ if(windowWith <700) {
   $('ul.list-inline').hide();
   $('ol.list-inline').show();
   $('#myPage_button').show();
+  $('#logo_second_text').show();
 
 }else {
   $('.logo h4 i').show();
@@ -137,6 +138,7 @@ if(windowWith <700) {
   $('ul.list-inline').show();
   $('ol.list-inline').hide();
   $('#myPage_button').hide();
+  $('#logo_second_text').hide();
 }
 
 </script>

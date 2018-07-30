@@ -53,7 +53,7 @@ class ControllerCustomeCustomerDelete extends Controller {
 					$ret = "done";
 				}
 
-				$this->sendMail($_POST['email']);
+				//$this->sendMail($_POST['email']);
 
 			}else{
 				$ret = "failed";

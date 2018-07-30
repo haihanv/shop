@@ -107,6 +107,15 @@ i {
 	display: block;
 }
 
+.logo #logo_second_text span {
+	font-size: 1.7em;
+	font-weight: 600;
+	height: inherit;
+	vertical-align: middle;
+	color: #0099cc;
+	font-style: italic;
+}
+
 .navigation ul {
 	width: 100%;
 }

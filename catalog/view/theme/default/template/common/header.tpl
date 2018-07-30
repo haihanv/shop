@@ -61,6 +61,12 @@
 
       </div>
     </div>
+    <div class="row" id="logo_second_text">
+       <div class="col-sm-1"></div>
+       <div class="col-sm-11">
+          <span>KANTAN WIFI JAPAN</span>
+       </div>
+    </div>
   </div>
 </div> <!--end logo-->
 

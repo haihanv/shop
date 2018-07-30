@@ -162,7 +162,7 @@
         <div class="col-sm-1 col-xs-0"></div>
         
         
-        <div class="col-sm-4 col-xs-4 reason" id="reason_p1">
+        <div class="col-sm-4 col-xs-12 reason" id="reason_p1">
             <div style="width: 73%; float: right;" id="reason_p11">
                 <p>Point 1</p>
                 <div>
@@ -174,7 +174,7 @@
         </div>
         
 
-        <div class="col-sm-4 col-xs-4 reason" id="reason_p2">
+        <div class="col-sm-4 col-xs-12 reason" id="reason_p2">
             <div style="width: 73%; margin-left: auto; margin-right: auto;" id="reason_p21">
                 <p>Point 2</p>
                 <div>
@@ -186,7 +186,7 @@
         </div>
         
 
-        <div class="col-sm-4 col-xs-4 reason" id="reason_p3">
+        <div class="col-sm-4 col-xs-12 reason" id="reason_p3">
             <div style="width: 73%; float: left;" id="reason_p31">
                 <p>Point 3</p>
                 <div>
