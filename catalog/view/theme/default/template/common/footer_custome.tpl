@@ -103,9 +103,13 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         // document.getElementById("myBtn").style.display = "block";
-        $('#myPage_nav').addClass("navbar-fixed-top");
+
+       
         if(windowWith > 700)
             document.getElementById("myPage1").style.display = "block";
+        else 
+           $('#myPage_nav').addClass("navbar-fixed-top");
+
     } else {
         // document.getElementById("myBtn").style.display = "none";
         document.getElementById("myPage1").style.display = "none";

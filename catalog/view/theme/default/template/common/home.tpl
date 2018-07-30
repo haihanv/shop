@@ -96,14 +96,14 @@
                 <div class="container">
 
                     <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span> 
                       </button>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <div class="collapse navbar-collapse" id="myNavbar1">
                     <ul class="nav navbar-nav">
                       <li>
                         <a href="#myPage">

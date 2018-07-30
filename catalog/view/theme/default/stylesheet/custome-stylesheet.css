@@ -44,17 +44,19 @@ i {
 	
 	display: block;
 	margin: 0 auto;
-	text-align: center;
 	
 }
 
 #myPage ul li a h5 {
 	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
+
 }
 
 #myPage ul li a i {
-	height: 2.2em;
+	height: 2em;
+	margin-left: 2.1em;
+
 }
 
 #myPage ul li a i img {
