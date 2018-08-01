@@ -46,8 +46,13 @@ $("input:checkbox").on('change', function(){
 	if($box.attr('name') == 'bank'){
 		if($box.is(':checked')){
 			var group = "input:checkbox[name='" + $box.attr("name") + "']";
+			$('.bank_name').css("border", "none");
+
 			$(group).prop("checked", false);
 			$box.prop("checked", true);
+			($box.parent()).siblings().css("border", "2px solid #337bc4");
+		} else {
+			($box.parent()).siblings().css("border", "none");
 		}
 
 		if($box.attr('id') != 'cb-other' && $box.attr('id') != 'cb-mufg'){
