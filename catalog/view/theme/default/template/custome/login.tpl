@@ -1032,7 +1032,7 @@ $(document).ready(function(){
 	
 	//active current step
 	var current_step = parseInt($('#current_step').html());
-	$('ul.nav-wizard li').each(function(index){
+	$('ul.nav-justified li').each(function(index){
 		if($(this).hasClass('active')){
 			$(this).removeClass('active');
 		}
@@ -1049,9 +1049,9 @@ $(document).ready(function(){
 	});
 
 	if(current_step == 0) {
-		$('ul.nav-wizard li:first-child').addClass('active'); 
-		$('ul.nav-wizard li:first-child a').attr('data-toggle', 'tab');
-		$('ul.nav-wizard li:first-child a').attr('href', '#step1');
+		$('ul.nav-justified li:first-child').addClass('active'); 
+		$('ul.nav-justified li:first-child a').attr('data-toggle', 'tab');
+		$('ul.nav-justified li:first-child a').attr('href', '#step1');
 
 	}
 

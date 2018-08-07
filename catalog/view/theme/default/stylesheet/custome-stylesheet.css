@@ -818,6 +818,71 @@ table td.td-right div.input-field {
     text-decoration: none;
 }
 
+
+@media all and (max-width: 710px){
+
+  .nav-justified.nav-wizard1 > li {
+    position: relative;
+    background-color: #aaa;
+    border-radius: 5px;    
+    
+  }
+  .nav-justified.nav-wizard1 > li a {
+    color: white;
+  }
+
+
+  .nav-justified.nav-wizard1 > li:not(:last-child) a:after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  top:auto;
+  left: 48%;
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid #aaa;
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-bottom: 0px solid transparent; 
+  z-index: 350;
+}
+
+  .nav-justified.nav-wizard1 > li:not(:first-child) a:before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 48%;
+  border-top: 10px solid white;
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent;
+  border-bottom: 0px solid transparent;  
+  z-index: 150;
+}
+
+
+
+.nav-justified.nav-wizard1 > li:hover a {
+  background-color: #aaa;
+  color: #fff;
+}
+
+
+.nav-justified.nav-wizard1 > li:hover:not(:last-child) a:after {
+  border-top: 10px solid #aaa;
+}
+
+
+.nav-justified.nav-wizard1 > li.active:not(:last-child) a:after {
+  border-top: 10px solid #428bca;
+
+}
+
+.nav-justified.nav-wizard1 > li.active a {
+  background-color: #428bca;
+}
+
+}
+
 @media all and (max-width: 450px) { /* screen size until 740px */
 	body {
 	    font-size: 10px; /* 0.8x default size */
@@ -853,6 +918,11 @@ table td.td-right div.input-field {
 	body table td.td-right div.input-field input {
 		margin-left: 12px;
 	}
+
+	
+
+
+
 }
 
 @media all and (min-width: 460px) and (max-width: 700px) { /* screen size until 740px */
@@ -916,6 +986,10 @@ table td.td-right div.input-field {
 
 }
 
+
+
+
+
 @media all and (min-width: 750px) and (max-width: 1024px) { /* screen size until 740px */
 	body {
 	    font-size: 13px; /* 0.8x default size */
@@ -951,4 +1025,6 @@ table td.td-right div.input-field {
 
 
 }
+
+
 

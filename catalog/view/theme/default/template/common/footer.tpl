@@ -144,6 +144,9 @@ if(windowWith <= 700) {
     $('#read_more').show();
     $(this).hide();
   });
+
+  $('ul.nav-justified').removeClass('nav-wizard');
+  $('ul.nav-justified').addClass('nav-wizard1');
 } else {
   $('#read_more').hide();
   $('#read_less').hide();
