@@ -70,7 +70,7 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left"><p>Email <span>(re-enter)</span></p></td>
+					        <td class="td-left"><p>Email <br><span>(re-enter)</span></p></td>
 					        <td class="td-right">
 					        	 <div class="row">
 					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
@@ -101,7 +101,7 @@
 					        </td>
 					    </tr>
 					    <tr>
-					        <td class="td-left"><p>Password <span>(re-enter)</span></p></td>
+					        <td class="td-left"><p>Password <br><span>(re-enter)</span></p></td>
 					       	<td class="td-right">
 					        	 <div class="row">
 					        	 	<div class="col-sm-2 col-xs-2 col-lg-1">
@@ -141,7 +141,10 @@
 		  					How you can correct any inaccuracies in the information.
 		  				</li>
 		  			</ol>
-		  			<br><br>
+		  			
+
+		  			<div id="to_read_more">
+		  			<br>
 		  		
 		  			<p><b>Information Collection, Use, and Sharing</b></p>
 
@@ -190,7 +193,12 @@
 		  			<span>
 		  				If you feel that we are not abiding by this privacy, you should contact us immediately via email <b>abc@xyx</b>
 		  			</span>
+
+		  			</div> <!-- end to_read_more -->
+		  				<a id="read_more" style="float: right;">Read more..</a>
+		  				<a id="read_less" style="float: right;">Read less</a> <br>
 		  			</div>
+
 		  		</div>
 		  		<!-- end Privacy -->
 		  		<br><br>
@@ -495,9 +503,9 @@
 	     	<div class="step4-dt" id="step4-dt">
 	     		<div id="note">
 	     			<div class="row">
-		     			<div class="col-sm-1 col-xs-3">
-		      				<h1>NOTE</h1></div>
-		      			<div class="col-sm-9 col-xs-9">
+		     			<div class="col-sm-2 col-xs-2 col-lg-1">
+		      				<h1 style="display: inline-block; vertical-align: middle">NOTE</h1></div>
+		      			<div class="col-sm-10 col-xs-10 col-lg-10">
 			      			<p style="padding-top: 1.87em;">
 			      				You will receive a link after contract confirmation call from SoftBank center ( 0800-111-2009 )
 			      			</p></div>
@@ -535,14 +543,14 @@
 	      				<img src="<?php echo $custome_18 ?>" class="img-responsive" style="width: 100%;">
 	      			</div>
 	      			<br><br><br>
-	      			<div class="col-sm-6">
+	      			<div class="col-sm-6 col-xs-6">
 	      				<div class="payment-type">
 		      				<span><input type="checkbox" id="cb-bank"></span><br>
 		      				<h4>BANK WITHDRAW</h4>
 	      				</div>
 	      			</div>
 
-	      			<div class="col-sm-6">
+	      			<div class="col-sm-6 col-xs-6">
 	      				<div class="payment-type">
 		      				<span><input type="checkbox" id="cb-credit"></span><br>
 		      				<h4>CREDIT CARD</h4>
@@ -630,10 +638,10 @@
 	      							</td>
 	      							<td class="payment-right">
 	      								<div class="row">
-			      							<div class="col-sm-3">
+			      							<div class="col-sm-3 col-xs-4">
 			      								<span style="font-style: italic;">*4 digits</span>
 			      							</div>
-			      							<div class="col-sm-6">
+			      							<div class="col-sm-6 col-xs-8">
 			      								<input type="password" id="security_code" class="form-control" style="width: 90%; margin-left: 20px;">
 			      							</div>
 			      							<div class="col-sm-1">
@@ -720,12 +728,12 @@
 	      							</td>
 	      							<td class="credit-right">
 	      								<div class="row">
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-xs-2">
 		      									<div class="credit-note">
 		      										<span> Required</span>
 		      									</div>
 		      								</div>
-		      								<div class="col-sm-10">
+		      								<div class="col-sm-10 col-xs-10 col-lg-6">
 		      									<div>
 		      										<input id="card_no_1" type="text" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 		      										<span> - </span>
@@ -745,12 +753,12 @@
 	      							</td>
 	      							<td class="credit-right">
 	      								<div class="row">
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-xs-2">
 		      									<div class="credit-note">
 		      										<span> Required</span>
 		      									</div>
 		      								</div>
-		      								<div class="col-sm-10">
+		      								<div class="col-sm-10 col-xs-10 col-lg-6">
 		      									<input id="expire_date_1" type="text" placeholder="01" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
 		  										<span> / </span>
 		  										<input id="expire_date_2" type="text" placeholder="2020" style="max-width: 80px; border-radius: 5px; margin: 3px; text-align: center;">
@@ -764,12 +772,12 @@
 	      							</td>
 	      							<td class="credit-right">
 	      								<div class="row">
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-xs-2">
 		      									<div class="credit-note">
 		      										<span> Required</span>
 		      									</div>
 		      								</div>
-		      								<div class="col-sm-5">
+		      								<div class="col-sm-5 col-xs-8 col-lg-6">
 		      									<input id="security_no" type="text" class="form-control" style="margin-top: 5px;">
 		      								</div>
 	      								</div>
@@ -781,12 +789,12 @@
 	      							</td>
 	      							<td class="credit-right">
 	      								<div class="row">
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-xs-2">
 		      									<div class="credit-note">
 		      										<span> Required</span>
 		      									</div>
 		      								</div>
-		      								<div class="col-sm-5">
+		      								<div class="col-sm-5 col-xs-8 col-lg-6">
 		      									<input id="phone_no" type="text" class="form-control" style="margin-top: 5px;">
 		      								</div>
 	      								</div>
@@ -798,15 +806,15 @@
 	      							</td>
 	      							<td class="credit-right">
 	      								<div class="row">
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-lg-2">
 		      									<div class="credit-note">
 		      										<span> Required</span>
 		      									</div>
 		      								</div>
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-lg-3">
 		      									<input id="user_last_name" type="text" placeholder="Last Name" class="form-control" style="margin-top: 5px;">
 		      								</div>
-		      								<div class="col-sm-2">
+		      								<div class="col-sm-2 col-lg-3">
 		      									<input id="user_first_name" type="text" placeholder="First Name" class="form-control" style="margin-top: 5px;">
 		      								</div>
 	      								</div>
@@ -1069,7 +1077,6 @@ $(document).ready(function(){
 
 });
 </script>
-
 
 <script src="catalog/view/javascript/custome/custome-register.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/custome/custome-preview.js" type="text/javascript"></script>

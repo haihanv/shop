@@ -110,7 +110,7 @@ i {
 }
 
 .logo #logo_second_text span {
-	font-size: 1.7em;
+	/*font-size: 1.7em;*/
 	font-weight: 600;
 	height: inherit;
 	vertical-align: middle;
@@ -508,8 +508,8 @@ i {
 	font-weight: 600;
 	display: inline-block;
 	margin-right: 0px;
-	margin-right: 20px;
-	font-size: 2.5em;
+	font-size: 2em;
+	
 
 }
 
@@ -559,7 +559,7 @@ table td.td-right {
 }
 
 table td.td-right div.required {
-	width: 20%;
+	/*width: 20%;*/
 	text-align: center;
 	float: left;
 	margin: 20px 0;
@@ -825,12 +825,16 @@ table td.td-right div.input-field {
 	}
 
 	.reason div div {
-		height: 150px;
+		height: 120px;
 	}
 
-	#note h1 {
+	#note div {
+		display: flex;
+	}
+	#note div h1 {
 		font-size: 1.6em;
-		padding-top: 20px;
+		padding-top: 55%;
+		
 	}
 
 	.logo h4 img {
@@ -842,17 +846,23 @@ table td.td-right div.input-field {
 		margin-left: 0%;
 	}
 
+	body .description-dt p {
+		width: 90%;
+	}
 
+	body table td.td-right div.input-field input {
+		margin-left: 12px;
+	}
 }
 
-@media all and (max-width: 730px) { /* screen size until 740px */
+@media all and (min-width: 460px) and (max-width: 700px) { /* screen size until 740px */
 	body {
 	    font-size: 13px; /* 0.8x default size */
 
 	}
 
 	.reason div div {
-		height: 150px;
+		height: 120px;
 	}
 
 	.reason div div p {
@@ -860,7 +870,7 @@ table td.td-right div.input-field {
 	}
 
 	.reason div div img {
-		height: 50px;
+		height: 35px;
 	}
 
 	#myPage div#myNavbar ul li:last-child {
@@ -893,9 +903,20 @@ table td.td-right div.input-field {
 		margin-left: 10px;
 	}
 
+	.logo #logo_second_text span {
+		font-size: 18px;
+	}
+
+	#note div h1 {
+
+		padding-top: 20px;
+	}
+
+
+
 }
 
-@media all and (min-width: 740px) and (max-width: 970px) { /* screen size until 740px */
+@media all and (min-width: 750px) and (max-width: 1024px) { /* screen size until 740px */
 	body {
 	    font-size: 13px; /* 0.8x default size */
 

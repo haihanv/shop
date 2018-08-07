@@ -128,6 +128,27 @@ if(windowWith <700) {
   $('#logo_second_text').hide();
 }
 
+
+if(windowWith <= 700) {
+  $('#to_read_more').hide();
+  $('#read_less').hide();
+
+  $('#read_more').click(function(){
+    $('#to_read_more').show();
+    $('#read_less').show();
+    $(this).hide();
+  });
+
+  $('#read_less').click(function(){
+    $('#to_read_more').hide();
+    $('#read_more').show();
+    $(this).hide();
+  });
+} else {
+  $('#read_more').hide();
+  $('#read_less').hide();
+}
+
 </script>
 
 </body>
