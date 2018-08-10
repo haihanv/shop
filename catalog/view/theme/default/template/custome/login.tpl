@@ -34,7 +34,7 @@
 	      		</div>
 	      		<br><br>
 
-		      	<div id="note">
+		      	<div id="note" class="note1">
 		      		<div class="row">
 		      			<div class="col-sm-2 col-xs-3 col-lg-1">
 			      		<h1>NOTE</h1></div>
@@ -305,7 +305,7 @@
 	      		<h4><b>UPLOAD INFORMATION</b></h4>
 	      		<br>
 	      		<!-- begin note -->
-	      		<div id="note">
+	      		<div id="note" class="note2">
 	      			<div class="row">
 		      			<div class="col-sm-2 col-xs-3">
 		      				<h1>NOTE</h1></div>
@@ -501,7 +501,7 @@
 
 	    <div id="step4" class="tab-pane fade">
 	     	<div class="step4-dt" id="step4-dt">
-	     		<div id="note">
+	     		<div id="note" class="note4">
 	     			<div class="row">
 		     			<div class="col-sm-2 col-xs-2 col-lg-1">
 		      				<h1 style="display: inline-block; vertical-align: middle">NOTE</h1></div>
