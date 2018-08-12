@@ -27,3 +27,8 @@ define('DB_PASSWORD', '1234');
 define('DB_DATABASE', 'shop');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+
+//Company
+define('COMPANY_NAME', 'DMA株式会社');
+define('COMPANY_LOC', '東京都 新宿区 北新宿4-33-8 広田ビル301号室');
+define('COMPANY_TEL', '03-5358-9497');

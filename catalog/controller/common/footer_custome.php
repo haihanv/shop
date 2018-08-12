@@ -73,6 +73,11 @@ class ControllerCommonFooterCustome extends Controller {
 		}
 
 		$data['custome_login'] = $this->url->link('custome/login', '', true);
+
+		$data['company_name'] = COMPANY_NAME;
+		$data['company_loc'] = COMPANY_LOC;
+		$data['company_tel'] = COMPANY_TEL;
+
 		return $this->load->view('common/footer_custome', $data);
 	}
 }

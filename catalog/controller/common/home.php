@@ -56,9 +56,7 @@ class ControllerCommonHome extends Controller {
 		$data['home_login'] = $this->url->link('account/login', '', true);
 		$data['home_logout'] = $this->url->link('account/logout', '', true);
 		
-
-
-		 $this->response->setOutput($this->load->view('common/home', $data));
+		$this->response->setOutput($this->load->view('common/home', $data));
 
 	}
 }

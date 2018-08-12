@@ -16,9 +16,9 @@ h3 {
 }
 
 
-i {
+/*i {
 	padding-left: 12px;
-}
+}*/
 
 #myPage ul {
 	padding-left: 0px;
@@ -889,6 +889,37 @@ color: white;
 
 	}
 
+	.logo #logo_second_text {
+		font-size: 1.5em;
+	}
+
+	#button-toggle {
+		float: left;
+		margin-left: 10px;
+	}
+
+	#myPage div#myNavbar ul li:last-child {
+		display: none;
+	}
+
+	#myPage ul li a {
+		text-align: left;
+	}
+
+	#myPage ul li a i {
+		margin-top: 5px;
+		margin-left: 25px;
+		float: left;
+		display: block;
+		width: 3em;
+		margin-right: 5px;
+	}
+
+	#myPage ul li a h5 {
+		margin-left: auto;
+		text-align: left;
+	}
+
 	.reason div div {
 		height: 120px;
 	}
@@ -915,7 +946,9 @@ color: white;
 	}
 
 	.note1 div h1{
-		padding-top: 30%;
+		display: inline-block;
+		position: absolute;
+		top: 30%;
 	}
 
 	.note2 div h1{
@@ -933,11 +966,15 @@ color: white;
 	}
 
 	body .description-dt p {
-		width: 90%;
+		width: 95%;
 	}
 
 	body table td.td-right div.input-field input {
-		margin-left: 12px;
+		margin-left: 5px;
+	}
+
+	.description-dt p span {
+		font-size: 2em;
 	}
 
 
@@ -1035,15 +1072,16 @@ color: white;
 	}
 
 	#myPage ul li a i {
-		margin-left: 10px;
+		margin-top: 5px;
+		margin-left: 25px;
 		float: left;
 		display: block;
 		width: 3em;
-		margin-right: 20px;
+		margin-right: 5px;
 	}
 
 	#myPage ul li a h5 {
-		/*margin-left: 20px;*/
+		margin-left: auto;
 		text-align: left;
 	}
 

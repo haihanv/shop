@@ -67,15 +67,15 @@ Please donate via PayPal to donate@opencart.com
         <h2> Company Information</h2>
         <div class="row" style="border-bottom: 1px solid black; border-top: 1px solid #000;">
             <div class="col-sm-3 col-xs-3"><span>Name</span></div>
-            <div class="col-sm-8 col-xs-8"><span>DMA株式会社</span></div>
+            <div class="col-sm-8 col-xs-8 company_name"><span><?php echo $company_name; ?></span></div>
         </div>
         <div class="row" style="border-bottom: 1px solid black;">
             <div class="col-sm-3 col-xs-3"><span>Location</span></div>
-            <div class="col-sm-8 col-xs-8"><span>埼玉県春日部市備後東2丁目2番18号大熊アパートFー101</span></div>
+            <div class="col-sm-8 col-xs-8 company_location"><span><?php echo $company_loc; ?></span></div>
         </div>
         <div class="row" style="border-bottom: 1px solid black;">
             <div class="col-sm-3 col-xs-3"><span>Tel</span></div>
-            <div class="col-sm-8 col-xs-8"><span>080-1223-0708</span></div>
+            <div class="col-sm-8 col-xs-8 company_tel"><span><?php echo $company_tel; ?></span></div>
         </div>
     </div>
 
@@ -144,6 +144,10 @@ if(windowWith <700) {
   $('#myPage_button').hide();
   $('#logo_second_text').hide();
 }
+
+$('.navbar-collapse a').click(function(){
+  $(".navbar-collapse").collapse('hide');
+});
 
 </script>
 
